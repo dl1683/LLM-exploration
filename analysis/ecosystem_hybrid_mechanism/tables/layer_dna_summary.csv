@@ -1,0 +1,9 @@
+inferred_paradigm,model_count,raw_config_coverage,mean_attn_layer_ratio,mean_transition_complexity,mean_attn_periodicity,mean_kv_cache_mb_per_1k_tokens,mean_state_memory_proxy
+hybrid,16,0.0,0.2982760721247563,0.47071150097465886,,47.149658203125,26.2568359375
+transformer,16,0.0,1.0,0.0,,120.44270833333333,
+ssm,5,0.0,0.0,0.0,,,4.609375
+reasoning,5,0.0,1.0,0.0,,117.96875,
+liquid,3,0.0,1.0,0.0,,58.59375,
+diffusion,2,0.0,1.0,0.0,,39.0625,
+rwkv,2,0.0,0.5,0.0,,54.6875,1.5
+xlstm,1,0.0,,,,,

@@ -1,0 +1,17 @@
+models_total: 50
+raw_config_available: 0 (0.0%)
+compatibility_tax_mean_hybrid: 0.6498
+compatibility_tax_mean_transformer: 0.0635
+mediation_indirect_effect: +0.0544
+mediation_indirect_ci95: [-0.3499, +1.2353]
+mediation_direct_effect: -1.6245
+mediation_total_effect: -1.5701
+mediation_bootstrap_p: 0.4850
+hybrid_coef_stage1: -2.0697
+hybrid_coef_final: -1.6245
+hybrid_coef_shift: +0.4451
+final_stage_r2: 0.8458
+permutation_observed_beta: -1.6245
+permutation_p_two_sided: 0.3209
+permutation_n: 16
+top_hybridization_with_tax: Zamba2-2.7B:0.724; Zamba2-1.2B:0.717; Nemotron-H-4B-Instruct-128K:0.709

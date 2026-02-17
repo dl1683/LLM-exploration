@@ -1,0 +1,2 @@
+n,controls,observed_beta,perm_mean,perm_std,z_vs_null,p_value_two_sided,n_permutations
+16,compatibility_tax|log1p_kv_cache_mb_per_1k_tokens|log1p_state_memory_proxy|transition_complexity|architecture_quality_index|convergence_score|has_quant_f|is_long_context_128k_f,-1.6245320947625923,-0.08614014316205351,3.9381558150991935,-0.3906376547372338,0.3209358128374325,5000
