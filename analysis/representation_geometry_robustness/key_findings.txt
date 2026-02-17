@@ -1,0 +1,23 @@
+models_analyzed: 11
+core_layer_skip: 2 (first 2 + last 1)
+bootstrap_resamples: 200
+transformer_core_PR_mean: 2.13 +/- 1.61
+transformer_core_PR_over_d: 0.001349
+transformer_core_ER_mean: 3.54
+transformer_core_anisotropy: 0.9694
+ssm_core_PR_mean: 11.30 +/- 1.97
+ssm_core_PR_over_d: 0.005599
+ssm_core_ER_mean: 12.92
+ssm_core_anisotropy: 0.6035
+hybrid_core_PR_mean: 6.02 +/- 4.07
+hybrid_core_PR_over_d: 0.004291
+hybrid_core_ER_mean: 8.24
+hybrid_core_anisotropy: 0.8583
+reasoning_core_PR_mean: 1.19 +/- 0.38
+reasoning_core_PR_over_d: 0.000772
+reasoning_core_ER_mean: 1.57
+reasoning_core_anisotropy: 0.9924
+ssm_vs_transformer_PR_ratio: 5.3x
+Mann-Whitney U (SSM > Transformer PR): p=1.08e-40
+Mann-Whitney U (Hybrid > Transformer PR): p=4.03e-15
+Mann-Whitney U (SSM > Transformer PR/d_model): p=4.47e-39

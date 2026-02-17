@@ -1,0 +1,4 @@
+test,statistic,p_value,effect_size,n1,n2
+Mann-Whitney U (SSM > Transformer PR),15312.0,1.075590073885265e-40,0.9942857142857143,154,100
+Mann-Whitney U (Hybrid > Transformer PR),7588.0,4.033874760040985e-15,0.8247826086956521,92,100
+Mann-Whitney U (SSM > Transformer PR/d_model),15151.0,4.466094986958537e-39,0.9838311688311688,154,100
