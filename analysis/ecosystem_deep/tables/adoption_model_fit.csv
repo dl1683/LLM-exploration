@@ -1,0 +1,4 @@
+model,r2,n
+baseline_size_recency,0.04325704767975269,46
+full_plus_architecture,0.6980667215628976,36
+incremental_architecture_r2,0.6548096738831449,36
