@@ -36,89 +36,221 @@ ARCH_SUPPORT: Dict[str, Dict[str, float]] = {
     "qwen2":        {"vllm": 1.0, "llamacpp": 1.0, "tgi": 1.0, "gptq": 1.0, "awq": 1.0, "bnb": 1.0},
     "qwen3":        {"vllm": 1.0, "llamacpp": 1.0, "tgi": 0.0, "gptq": 1.0, "awq": 1.0, "bnb": 1.0},
     "gemma":        {"vllm": 1.0, "llamacpp": 1.0, "tgi": 1.0, "gptq": 1.0, "awq": 1.0, "bnb": 1.0},
+    "gemma2":       {"vllm": 1.0, "llamacpp": 1.0, "tgi": 1.0, "gptq": 1.0, "awq": 1.0, "bnb": 1.0},
     "gemma3":       {"vllm": 1.0, "llamacpp": 1.0, "tgi": 1.0, "gptq": 1.0, "awq": 0.0, "bnb": 1.0},
     "phi3":         {"vllm": 1.0, "llamacpp": 1.0, "tgi": 1.0, "gptq": 1.0, "awq": 1.0, "bnb": 1.0},
+    "phi4":         {"vllm": 1.0, "llamacpp": 1.0, "tgi": 1.0, "gptq": 1.0, "awq": 1.0, "bnb": 1.0},
     "granite":      {"vllm": 1.0, "llamacpp": 1.0, "tgi": 1.0, "gptq": 1.0, "awq": 0.0, "bnb": 1.0},
     "olmo2":        {"vllm": 1.0, "llamacpp": 1.0, "tgi": 0.0, "gptq": 1.0, "awq": 0.0, "bnb": 1.0},
     "smollm3":      {"vllm": 1.0, "llamacpp": 1.0, "tgi": 0.0, "gptq": 1.0, "awq": 0.0, "bnb": 1.0},
     "deepseek_r1":  {"vllm": 1.0, "llamacpp": 1.0, "tgi": 1.0, "gptq": 1.0, "awq": 1.0, "bnb": 1.0},
+    "falcon3":      {"vllm": 1.0, "llamacpp": 1.0, "tgi": 1.0, "gptq": 1.0, "awq": 1.0, "bnb": 1.0},
+    "mistral":      {"vllm": 1.0, "llamacpp": 1.0, "tgi": 1.0, "gptq": 1.0, "awq": 1.0, "bnb": 1.0},
+    "cohere":       {"vllm": 1.0, "llamacpp": 1.0, "tgi": 1.0, "gptq": 1.0, "awq": 0.5, "bnb": 1.0},
+    "internlm":     {"vllm": 1.0, "llamacpp": 1.0, "tgi": 0.5, "gptq": 1.0, "awq": 1.0, "bnb": 1.0},
+    "baichuan":     {"vllm": 1.0, "llamacpp": 1.0, "tgi": 0.0, "gptq": 1.0, "awq": 1.0, "bnb": 1.0},
+    "tinyllama":    {"vllm": 1.0, "llamacpp": 1.0, "tgi": 1.0, "gptq": 1.0, "awq": 1.0, "bnb": 1.0},
+    "nemotron":     {"vllm": 1.0, "llamacpp": 1.0, "tgi": 1.0, "gptq": 1.0, "awq": 1.0, "bnb": 1.0},
+    # MoE - Mixture of Experts
+    "mixtral":      {"vllm": 1.0, "llamacpp": 1.0, "tgi": 1.0, "gptq": 1.0, "awq": 1.0, "bnb": 1.0},
+    "deepseek_moe": {"vllm": 1.0, "llamacpp": 1.0, "tgi": 0.5, "gptq": 0.5, "awq": 0.0, "bnb": 0.5},
+    "qwen_moe":     {"vllm": 1.0, "llamacpp": 1.0, "tgi": 0.0, "gptq": 0.5, "awq": 0.0, "bnb": 0.5},
+    "olmoe":        {"vllm": 1.0, "llamacpp": 1.0, "tgi": 0.0, "gptq": 0.5, "awq": 0.0, "bnb": 0.5},
+    "arctic":       {"vllm": 0.5, "llamacpp": 0.5, "tgi": 0.0, "gptq": 0.0, "awq": 0.0, "bnb": 0.5},
+    "llama4_moe":   {"vllm": 1.0, "llamacpp": 1.0, "tgi": 0.5, "gptq": 0.5, "awq": 0.0, "bnb": 0.5},
     # Pure SSM
     "mamba":        {"vllm": 1.0, "llamacpp": 1.0, "tgi": 1.0, "gptq": 0.0, "awq": 0.0, "bnb": 0.5},
+    "mamba2":       {"vllm": 0.5, "llamacpp": 0.5, "tgi": 0.0, "gptq": 0.0, "awq": 0.0, "bnb": 0.5},
     "falcon_mamba": {"vllm": 1.0, "llamacpp": 1.0, "tgi": 0.0, "gptq": 0.0, "awq": 0.0, "bnb": 0.5},
+    "rene":         {"vllm": 0.0, "llamacpp": 0.0, "tgi": 0.0, "gptq": 0.0, "awq": 0.0, "bnb": 0.5},
     # Hybrid SSM+Attention
     "falcon_h1":    {"vllm": 1.0, "llamacpp": 1.0, "tgi": 0.0, "gptq": 1.0, "awq": 0.0, "bnb": 0.5},
     "granite_hybrid": {"vllm": 0.5, "llamacpp": 1.0, "tgi": 0.0, "gptq": 0.0, "awq": 0.0, "bnb": 0.5},
     "nemotron_h":   {"vllm": 1.0, "llamacpp": 1.0, "tgi": 0.0, "gptq": 1.0, "awq": 0.0, "bnb": 0.5},
     "zamba2":       {"vllm": 1.0, "llamacpp": 1.0, "tgi": 0.0, "gptq": 0.0, "awq": 0.0, "bnb": 0.5},
     "jamba":        {"vllm": 1.0, "llamacpp": 1.0, "tgi": 0.0, "gptq": 0.0, "awq": 0.0, "bnb": 0.5},
-    "bamba":        {"vllm": 1.0, "llamacpp": 1.0, "tgi": 0.0, "gptq": 0.0, "awq": 0.0, "bnb": 0.5},
+    "hymba":        {"vllm": 0.5, "llamacpp": 0.5, "tgi": 0.0, "gptq": 0.0, "awq": 0.0, "bnb": 0.5},
+    "stripedhyena": {"vllm": 0.0, "llamacpp": 0.0, "tgi": 0.0, "gptq": 0.0, "awq": 0.0, "bnb": 0.5},
     # Liquid
     "lfm2":         {"vllm": 1.0, "llamacpp": 1.0, "tgi": 0.0, "gptq": 0.0, "awq": 0.0, "bnb": 0.5},
     # RWKV
     "rwkv7":        {"vllm": 0.0, "llamacpp": 1.0, "tgi": 0.0, "gptq": 0.0, "awq": 0.0, "bnb": 0.5},
+    "rwkv6":        {"vllm": 0.0, "llamacpp": 1.0, "tgi": 0.0, "gptq": 0.0, "awq": 0.0, "bnb": 0.5},
+    "rwkv5":        {"vllm": 0.0, "llamacpp": 1.0, "tgi": 0.0, "gptq": 0.0, "awq": 0.0, "bnb": 0.5},
     "arwkv7":       {"vllm": 0.0, "llamacpp": 1.0, "tgi": 0.0, "gptq": 0.0, "awq": 0.0, "bnb": 0.5},
     # xLSTM
     "xlstm":        {"vllm": 0.0, "llamacpp": 0.0, "tgi": 0.0, "gptq": 0.0, "awq": 0.0, "bnb": 0.5},
+    # RetNet
+    "retnet":       {"vllm": 0.0, "llamacpp": 0.0, "tgi": 0.0, "gptq": 0.0, "awq": 0.0, "bnb": 0.5},
     # Diffusion LLM
     "llada":        {"vllm": 0.0, "llamacpp": 1.0, "tgi": 0.0, "gptq": 0.0, "awq": 0.0, "bnb": 0.5},
     "llada2":       {"vllm": 0.0, "llamacpp": 1.0, "tgi": 0.0, "gptq": 0.0, "awq": 0.0, "bnb": 0.5},
+    # Reasoning (QwQ uses qwen2 arch)
+    "qwq":          {"vllm": 1.0, "llamacpp": 1.0, "tgi": 1.0, "gptq": 1.0, "awq": 1.0, "bnb": 1.0},
+    "marco_o1":     {"vllm": 1.0, "llamacpp": 1.0, "tgi": 1.0, "gptq": 1.0, "awq": 1.0, "bnb": 1.0},
 }
 
-# Map each of our 50 model_ids to their architecture key
+# Map all 129 model_ids to their architecture key
 MODEL_TO_ARCH: Dict[str, str] = {
-    # Tier 1
-    "HuggingFaceTB/SmolLM3-3B": "smollm3",
-    "LiquidAI/LFM2-1.2B-Exp": "lfm2",
-    "LiquidAI/LFM2-2.6B-Exp": "lfm2",
-    "LiquidAI/LFM2-350M-Exp": "lfm2",
+    # ── Tier 1 ──
+    # Transformers
     "Qwen/Qwen3-0.6B": "qwen3",
     "Qwen/Qwen3-1.7B": "qwen3",
-    "RWKV/RWKV7-Goose-World3-1.5B-HF": "rwkv7",
-    "Zyphra/Zamba2-1.2B": "zamba2",
-    "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B": "deepseek_r1",
+    "Qwen/Qwen2.5-0.5B": "qwen2",
+    "Qwen/Qwen2.5-1.5B": "qwen2",
     "google/gemma-3-1b-it": "gemma3",
-    "ibm-granite/granite-4.0-1b": "granite_hybrid",
-    "ibm-granite/granite-4.0-350m": "granite_hybrid",
-    "ibm-granite/granite-4.0-h-1b": "granite_hybrid",
-    "ibm-granite/granite-4.0-h-350m": "granite_hybrid",
-    "state-spaces/mamba-1.4b-hf": "mamba",
+    "google/gemma-2-2b-it": "gemma2",
+    "HuggingFaceTB/SmolLM3-3B": "smollm3",
+    "ibm-granite/granite-4.0-350m": "granite",
+    "ibm-granite/granite-4.0-1b": "granite",
+    "tiiuae/Falcon3-1B-Instruct": "falcon3",
+    # SSM - Mamba v1
+    "state-spaces/mamba-130m-hf": "mamba",
     "state-spaces/mamba-370m-hf": "mamba",
     "state-spaces/mamba-790m-hf": "mamba",
+    "state-spaces/mamba-1.4b-hf": "mamba",
+    "state-spaces/mamba-2.8b-hf": "mamba",
+    # SSM - Mamba v2
+    "state-spaces/mamba2-130m": "mamba2",
+    "state-spaces/mamba2-370m": "mamba2",
+    "state-spaces/mamba2-780m": "mamba2",
+    "state-spaces/mamba2-1.3b": "mamba2",
+    "state-spaces/mamba2-2.7b": "mamba2",
+    # SSM - Other
+    "cartesia-ai/Rene-v0.1-1.3b-pytorch": "rene",
+    # Hybrid
     "tiiuae/Falcon-H1-0.5B-Instruct": "falcon_h1",
     "tiiuae/Falcon-H1-1.5B-Instruct": "falcon_h1",
-    # Tier 2
-    "ML-GSAI/LLaDA-8B-Base": "llada",
-    "NX-AI/xLSTM-7b": "xlstm",
+    "ibm-granite/granite-4.0-h-350m": "granite_hybrid",
+    "ibm-granite/granite-4.0-h-1b": "granite_hybrid",
+    "Zyphra/Zamba2-1.2B": "zamba2",
+    "Zyphra/Zamba2-1.2B-instruct": "zamba2",
+    "nvidia/Hymba-1.5B-Base": "hymba",
+    # Liquid
+    "LiquidAI/LFM2-350M-Exp": "lfm2",
+    "LiquidAI/LFM2-1.2B-Exp": "lfm2",
+    "LiquidAI/LFM2-2.6B-Exp": "lfm2",
+    # RWKV
+    "RWKV/RWKV7-Goose-World3-1.5B-HF": "rwkv7",
+    "RWKV/v6-Finch-1B6-HF": "rwkv6",
+    # MoE
+    "Qwen/Qwen1.5-MoE-A2.7B": "qwen_moe",
+    # Reasoning
+    "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B": "deepseek_r1",
+
+    # ── Tier 2 ──
+    # Transformers
     "Qwen/Qwen3-4B": "qwen3",
     "Qwen/Qwen3-8B": "qwen3",
-    "RWKV-Red-Team/ARWKV-R1-7B": "arwkv7",
-    "Zyphra/Zamba2-2.7B": "zamba2",
-    "Zyphra/Zamba2-7B": "zamba2",
-    "allenai/Olmo-3-7B": "olmo2",
-    "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B": "deepseek_r1",
+    "Qwen/Qwen2.5-3B": "qwen2",
+    "Qwen/Qwen2.5-7B": "qwen2",
+    "Qwen/Qwen2.5-Coder-7B": "qwen2",
     "google/gemma-3-4b-it": "gemma3",
-    "ibm-granite/granite-4.0-h-tiny": "granite_hybrid",
-    "ibm-granite/granite-4.0-micro": "granite_hybrid",
-    "ibm-granite/granite-4.0-tiny-preview": "granite_hybrid",
-    "microsoft/Phi-4-mini-reasoning": "phi3",
-    "nvidia/Nemotron-H-4B-Instruct-128K": "nemotron_h",
+    "microsoft/Phi-4-mini-instruct": "phi3",
+    "meta-llama/Llama-3.2-3B-Instruct": "llama",
+    "meta-llama/Llama-3.1-8B-Instruct": "llama",
+    "mistralai/Ministral-8B-Instruct-2410": "mistral",
+    "CohereForAI/aya-expanse-8b": "cohere",
+    "CohereForAI/c4ai-command-r7b-12-2024": "cohere",
+    "internlm/internlm2_5-7b-chat": "internlm",
+    "internlm/internlm3-8b-instruct": "internlm",
+    "allenai/Olmo-3-7B": "olmo2",
+    "ibm-granite/granite-4.0-micro": "granite",
+    "ibm-granite/granite-4.0-tiny-preview": "granite",
+    "ibm-granite/granite-3.1-8b-instruct": "granite",
+    "ibm-granite/granite-3.2-8b-instruct": "granite",
+    "tiiuae/Falcon3-3B-Instruct": "falcon3",
+    "tiiuae/Falcon3-7B-Instruct": "falcon3",
+    # SSM
+    "tiiuae/falcon-mamba-7b": "falcon_mamba",
+    "tiiuae/falcon-mamba-7b-instruct": "falcon_mamba",
+    # Hybrid
     "tiiuae/Falcon-H1-3B-Instruct": "falcon_h1",
     "tiiuae/Falcon-H1-7B-Instruct": "falcon_h1",
-    "tiiuae/falcon-mamba-7b": "falcon_mamba",
-    # Tier 3
+    "nvidia/Nemotron-H-4B-Instruct-128K": "nemotron_h",
+    "Zyphra/Zamba2-2.7B": "zamba2",
+    "Zyphra/Zamba2-2.7B-instruct": "zamba2",
+    "Zyphra/Zamba2-7B": "zamba2",
+    "Zyphra/Zamba2-7B-Instruct": "zamba2",
+    "ibm-granite/granite-4.0-h-tiny": "granite_hybrid",
+    "togethercomputer/StripedHyena-Nous-7B": "stripedhyena",
+    "togethercomputer/StripedHyena-Hessian-7B": "stripedhyena",
+    # xLSTM
+    "NX-AI/xLSTM-7b": "xlstm",
+    # RWKV
+    "RWKV-Red-Team/ARWKV-R1-7B": "arwkv7",
+    "RWKV/v5-Eagle-7B-HF": "rwkv5",
+    "RWKV/v6-Finch-3B-HF": "rwkv6",
+    "RWKV/v6-Finch-7B-HF": "rwkv6",
+    # MoE
+    "allenai/OLMoE-1B-7B-0924": "olmoe",
+    # Reasoning
+    "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B": "deepseek_r1",
+    "deepseek-ai/DeepSeek-R1-Distill-Llama-8B": "deepseek_r1",
+    "microsoft/Phi-4-mini-reasoning": "phi3",
+    "AIDC-AI/Marco-o1": "marco_o1",
+    # Diffusion
+    "ML-GSAI/LLaDA-8B-Base": "llada",
+    # RetNet
+    "Spiral-AI/Spiral-RetNet-3b-base": "retnet",
+
+    # ── Tier 3 ──
+    # Transformers
     "Qwen/Qwen3-14B": "qwen3",
     "Qwen/Qwen3-32B": "qwen3",
-    "allenai/Olmo-3-1125-7B": "olmo2",
-    "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B": "deepseek_r1",
+    "Qwen/Qwen2.5-14B": "qwen2",
+    "Qwen/Qwen2.5-32B": "qwen2",
+    "Qwen/Qwen2.5-72B": "qwen2",
+    "Qwen/Qwen2.5-Coder-32B-Instruct": "qwen2",
     "google/gemma-3-12b-it": "gemma3",
     "google/gemma-3-27b-it": "gemma3",
-    "ibm-granite/granite-4.0-h-small": "granite_hybrid",
-    "meta-llama/Llama-3.2-3B-Instruct": "llama",
-    "microsoft/Phi-4-mini-instruct": "phi3",
-    "microsoft/Phi-4-multimodal-instruct": "phi3",
+    "google/gemma-2-9b-it": "gemma2",
+    "google/gemma-2-27b-it": "gemma2",
+    "meta-llama/Llama-3.3-70B-Instruct": "llama",
+    "mistralai/Mistral-Small-24B-Instruct-2501": "mistral",
+    "mistralai/Mistral-Small-3.1-24B-Instruct-2503": "mistral",
+    "CohereForAI/c4ai-command-r-08-2024": "cohere",
+    "CohereForAI/aya-expanse-32b": "cohere",
+    "openai/gpt-oss-20b": "llama",
+    "allenai/Olmo-3-1125-32B": "olmo2",
+    "allenai/OLMo-2-0325-32B-Instruct": "olmo2",
+    "nvidia/Llama-3.1-Nemotron-70B-Instruct-HF": "nemotron",
+    "nvidia/Llama-3_1-Nemotron-51B-Instruct": "nemotron",
+    "microsoft/Phi-4": "phi4",
+    "baichuan-inc/Baichuan-M1-14B-Base": "baichuan",
+    "tiiuae/Falcon3-10B-Instruct": "falcon3",
+    # Hybrid
     "tiiuae/Falcon-H1-34B-Instruct": "falcon_h1",
-    # Unassigned
-    "ML-GSAI/LLaDA2.0-8B-Base": "llada2",
+    "tiiuae/Falcon-H1-34B-Base": "falcon_h1",
+    "ibm-granite/granite-4.0-h-small": "granite_hybrid",
+    "ai21labs/Jamba-v0.1": "jamba",
+    "ai21labs/AI21-Jamba-1.5-Mini": "jamba",
+    "ai21labs/AI21-Jamba-1.5-Large": "jamba",
+    # RWKV
+    "RWKV/v6-Finch-14B-HF": "rwkv6",
+    # MoE
+    "mistralai/Mixtral-8x7B-Instruct-v0.1": "mixtral",
+    "mistralai/Mixtral-8x22B-Instruct-v0.1": "mixtral",
+    "mistralai/Mistral-Large-Instruct-2411": "mistral",
+    "deepseek-ai/DeepSeek-V2.5": "deepseek_moe",
+    "deepseek-ai/DeepSeek-V3": "deepseek_moe",
+    "Qwen/Qwen2.5-72B-Instruct": "qwen2",
+    "Qwen/Qwen3-235B-A22B": "qwen_moe",
+    "meta-llama/Llama-4-Scout-17B-16E-Instruct": "llama4_moe",
+    "meta-llama/Llama-4-Maverick-17B-128E-Instruct": "llama4_moe",
+    "Snowflake/snowflake-arctic-instruct": "arctic",
+    # Reasoning
+    "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B": "deepseek_r1",
+    "deepseek-ai/DeepSeek-R1-Distill-Llama-70B": "deepseek_r1",
+    "deepseek-ai/DeepSeek-R1": "deepseek_moe",
+    "microsoft/Phi-4-reasoning": "phi4",
+    "microsoft/phi-4-reasoning-plus": "phi4",
+    "Qwen/QwQ-32B": "qwq",
+    "Qwen/QwQ-32B-Preview": "qwq",
+    # Diffusion
+    "inclusionAI/LLaDA2.0-mini": "llada2",
+    # Phase transition (legacy)
+    "TinyLlama/TinyLlama-1.1B-Chat-v1.0": "tinyllama",
 }
 
 # Framework weights for computing composite score
