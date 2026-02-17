@@ -1,9 +1,9 @@
 {
   "source_file": "canonical_registry.json",
-  "generated_at_utc": "2026-02-17T06:37:10+00:00",
-  "model_count": 50,
-  "failed_count": 5,
-  "success_count": 45,
+  "generated_at_utc": "2026-02-17T08:15:46+00:00",
+  "model_count": 129,
+  "failed_count": 15,
+  "success_count": 114,
   "models": [
     {
       "model_id": "HuggingFaceTB/SmolLM3-3B",
@@ -21,7 +21,7 @@
         "org": "HuggingFaceTB",
         "release_date": "2025-07-08",
         "license": "apache-2.0",
-        "downloads": 80791,
+        "downloads": 82514,
         "likes": 897
       },
       "architecture": {
@@ -127,7 +127,7 @@
         "safetensors_index": null
       },
       "errors": [
-        "hf_api_error: 404 Client Error. (Request ID: Root=1-69940c8f-7699c31302ae7b1c7f046eef;4adef36e-c7e2-4018-857c-e7bc186083e1)\n\nRepository Not Found for url: https://huggingface.co/api/models/LiquidAI/LFM2-1.2B-Exp/revision/main?blobs=True.\nPlease make sure you specified the correct `repo_id` and `repo_type`.\nIf you are trying to access a private or gated repo, make sure you are authenticated. For more details, see https://huggingface.co/docs/huggingface_hub/authentication"
+        "hf_api_error: 404 Client Error. (Request ID: Root=1-699423ad-3c73eeb3179791ca266bafee;3a89b710-b38b-49bf-a4f7-d92339097609)\n\nRepository Not Found for url: https://huggingface.co/api/models/LiquidAI/LFM2-1.2B-Exp/revision/main?blobs=True.\nPlease make sure you specified the correct `repo_id` and `repo_type`.\nIf you are trying to access a private or gated repo, make sure you are authenticated. For more details, see https://huggingface.co/docs/huggingface_hub/authentication"
       ]
     },
     {
@@ -146,7 +146,7 @@
         "org": "LiquidAI",
         "release_date": "2025-12-25",
         "license": "other",
-        "downloads": 23315,
+        "downloads": 21514,
         "likes": 330
       },
       "architecture": {
@@ -258,8 +258,194 @@
         "safetensors_index": null
       },
       "errors": [
-        "hf_api_error: 404 Client Error. (Request ID: Root=1-69940c8f-12dabab9481c34d13680a492;f343fb53-735b-4ec9-8fdf-5a3917f178b2)\n\nRepository Not Found for url: https://huggingface.co/api/models/LiquidAI/LFM2-350M-Exp/revision/main?blobs=True.\nPlease make sure you specified the correct `repo_id` and `repo_type`.\nIf you are trying to access a private or gated repo, make sure you are authenticated. For more details, see https://huggingface.co/docs/huggingface_hub/authentication"
+        "hf_api_error: 404 Client Error. (Request ID: Root=1-699423ad-0aec5e4b01db61c17c72ea74;6e9a029b-ffa8-4592-9d5d-a53efe602caf)\n\nRepository Not Found for url: https://huggingface.co/api/models/LiquidAI/LFM2-350M-Exp/revision/main?blobs=True.\nPlease make sure you specified the correct `repo_id` and `repo_type`.\nIf you are trying to access a private or gated repo, make sure you are authenticated. For more details, see https://huggingface.co/docs/huggingface_hub/authentication"
       ]
+    },
+    {
+      "model_id": "Qwen/Qwen1.5-MoE-A2.7B",
+      "org": "Qwen",
+      "registry": {
+        "family": "Qwen1.5",
+        "variant": "MoE-A2.7B",
+        "tier": "tier1",
+        "paradigm": "moe",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "Qwen/Qwen1.5-MoE-A2.7B",
+        "org": "Qwen",
+        "release_date": "2024-02-29",
+        "license": "other",
+        "downloads": 61805,
+        "likes": 219
+      },
+      "architecture": {
+        "num_params": 14315784192,
+        "num_layers": 24,
+        "hidden_size": 2048,
+        "ffn_size": 5632,
+        "num_heads": 16,
+        "num_kv_heads": 16,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 32768,
+        "sliding_window": 32768,
+        "vocab_size": 151936,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": "Qwen2Tokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "Qwen/Qwen2.5-0.5B",
+      "org": "Qwen",
+      "registry": {
+        "family": "Qwen2.5",
+        "variant": "0.5B",
+        "tier": "tier1",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "Qwen/Qwen2.5-0.5B",
+        "org": "Qwen",
+        "release_date": "2024-09-15",
+        "license": "apache-2.0",
+        "downloads": 1085332,
+        "likes": 372
+      },
+      "architecture": {
+        "num_params": 494032768,
+        "num_layers": 24,
+        "hidden_size": 896,
+        "ffn_size": 4864,
+        "num_heads": 14,
+        "num_kv_heads": 2,
+        "head_dim": 64,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 131072,
+        "sliding_window": 32768,
+        "vocab_size": 151936,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 128000,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "Qwen2Tokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": null
+      },
+      "errors": []
+    },
+    {
+      "model_id": "Qwen/Qwen2.5-1.5B",
+      "org": "Qwen",
+      "registry": {
+        "family": "Qwen2.5",
+        "variant": "1.5B",
+        "tier": "tier1",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "Qwen/Qwen2.5-1.5B",
+        "org": "Qwen",
+        "release_date": "2024-09-15",
+        "license": "apache-2.0",
+        "downloads": 444508,
+        "likes": 165
+      },
+      "architecture": {
+        "num_params": 1543714304,
+        "num_layers": 28,
+        "hidden_size": 1536,
+        "ffn_size": 8960,
+        "num_heads": 12,
+        "num_kv_heads": 2,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 131072,
+        "sliding_window": 131072,
+        "vocab_size": 151936,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 128000,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "Qwen2Tokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": null
+      },
+      "errors": []
     },
     {
       "model_id": "Qwen/Qwen3-0.6B",
@@ -277,7 +463,7 @@
         "org": "Qwen",
         "release_date": "2025-04-27",
         "license": "apache-2.0",
-        "downloads": 10082918,
+        "downloads": 10187332,
         "likes": 1081
       },
       "architecture": {
@@ -339,7 +525,7 @@
         "org": "Qwen",
         "release_date": "2025-04-27",
         "license": "apache-2.0",
-        "downloads": 4176824,
+        "downloads": 4314635,
         "likes": 422
       },
       "architecture": {
@@ -401,7 +587,7 @@
         "org": "RWKV",
         "release_date": "2025-03-17",
         "license": "apache-2.0",
-        "downloads": 209,
+        "downloads": 212,
         "likes": 4
       },
       "architecture": {
@@ -448,6 +634,67 @@
       "errors": []
     },
     {
+      "model_id": "RWKV/v6-Finch-1B6-HF",
+      "org": "RWKV",
+      "registry": {
+        "family": "v6",
+        "variant": "Finch-1B6-HF",
+        "tier": "tier1",
+        "paradigm": "rwkv",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "RWKV/v6-Finch-1B6-HF",
+        "org": "RWKV",
+        "release_date": "2024-07-22",
+        "license": "apache-2.0",
+        "downloads": 54,
+        "likes": 6
+      },
+      "architecture": {
+        "num_params": null,
+        "num_layers": 24,
+        "hidden_size": 2048,
+        "ffn_size": null,
+        "num_heads": 64,
+        "num_kv_heads": null,
+        "head_dim": 32,
+        "norm_type": null,
+        "activation": null,
+        "positional_scheme": null,
+        "max_context": null,
+        "sliding_window": null,
+        "vocab_size": 65536
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": "Rwkv6Tokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": null
+      },
+      "errors": []
+    },
+    {
       "model_id": "Zyphra/Zamba2-1.2B",
       "org": "Zyphra",
       "registry": {
@@ -463,7 +710,7 @@
         "org": "Zyphra",
         "release_date": "2024-08-16",
         "license": "apache-2.0",
-        "downloads": 789,
+        "downloads": 803,
         "likes": 75
       },
       "architecture": {
@@ -517,6 +764,137 @@
       "errors": []
     },
     {
+      "model_id": "Zyphra/Zamba2-1.2B-instruct",
+      "org": "Zyphra",
+      "registry": {
+        "family": "Zamba2",
+        "variant": "1.2B-instruct",
+        "tier": "tier1",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "Zyphra/Zamba2-1.2B-instruct",
+        "org": "Zyphra",
+        "release_date": "2024-09-19",
+        "license": "apache-2.0",
+        "downloads": 59819,
+        "likes": 30
+      },
+      "architecture": {
+        "num_params": 1215064704,
+        "num_layers": 38,
+        "hidden_size": 2048,
+        "ffn_size": 8192,
+        "num_heads": 32,
+        "num_kv_heads": 32,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "gelu",
+        "positional_scheme": "rope",
+        "max_context": 4096,
+        "sliding_window": null,
+        "vocab_size": 32000,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": 128,
+        "ssm_conv_kernel": 4,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {
+          "mamba_d_conv": 4,
+          "mamba_d_state": 128,
+          "mamba_expand": 2,
+          "mamba_headdim": 64,
+          "mamba_ngroups": 1,
+          "n_mamba_heads": 64
+        }
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": "LlamaTokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": null
+      },
+      "errors": []
+    },
+    {
+      "model_id": "cartesia-ai/Rene-v0.1-1.3b-pytorch",
+      "org": "cartesia-ai",
+      "registry": {
+        "family": "Rene-v0.1",
+        "variant": "1.3b-pytorch",
+        "tier": "tier1",
+        "paradigm": "ssm",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "cartesia-ai/Rene-v0.1-1.3b-pytorch",
+        "org": "cartesia-ai",
+        "release_date": "2024-08-25",
+        "license": "apache-2.0",
+        "downloads": 6,
+        "likes": 60
+      },
+      "architecture": {
+        "num_params": 1433295104,
+        "num_layers": 48,
+        "hidden_size": 2048,
+        "ffn_size": null,
+        "num_heads": null,
+        "num_kv_heads": null,
+        "head_dim": null,
+        "norm_type": null,
+        "activation": null,
+        "positional_scheme": null,
+        "max_context": null,
+        "sliding_window": null,
+        "vocab_size": 50280,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 1500000000000,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": null
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": null,
+        "model_card": "README.md",
+        "safetensors_index": null
+      },
+      "errors": []
+    },
+    {
       "model_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
       "org": "deepseek-ai",
       "registry": {
@@ -532,7 +910,7 @@
         "org": "deepseek-ai",
         "release_date": "2025-01-20",
         "license": "mit",
-        "downloads": 1252044,
+        "downloads": 1385896,
         "likes": 1446
       },
       "architecture": {
@@ -579,6 +957,72 @@
       "errors": []
     },
     {
+      "model_id": "google/gemma-2-2b-it",
+      "org": "google",
+      "registry": {
+        "family": "gemma-2",
+        "variant": "2b-it",
+        "tier": "tier1",
+        "paradigm": "transformer",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "google/gemma-2-2b-it",
+        "org": "google",
+        "release_date": "2024-07-16",
+        "license": "gemma",
+        "downloads": 337883,
+        "likes": 1285
+      },
+      "architecture": {
+        "num_params": 2614341888,
+        "num_layers": 26,
+        "hidden_size": 2304,
+        "ffn_size": 9216,
+        "num_heads": 8,
+        "num_kv_heads": 4,
+        "head_dim": 256,
+        "norm_type": "rmsnorm",
+        "activation": "gelu_pytorch_tanh",
+        "positional_scheme": "rope",
+        "max_context": 8192,
+        "sliding_window": 4096,
+        "vocab_size": 256000,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 13000000000000,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "GemmaTokenizer"
+      },
+      "quantization": {
+        "available_formats": [
+          "BITSANDBYTES",
+          "INT8",
+          "INT4"
+        ]
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
       "model_id": "google/gemma-3-1b-it",
       "org": "google",
       "registry": {
@@ -594,7 +1038,7 @@
         "org": "google",
         "release_date": "2025-03-10",
         "license": "gemma",
-        "downloads": 1438910,
+        "downloads": 1492182,
         "likes": 840
       },
       "architecture": {
@@ -658,7 +1102,7 @@
         "org": "ibm-granite",
         "release_date": "2025-10-07",
         "license": "apache-2.0",
-        "downloads": 10358,
+        "downloads": 10350,
         "likes": 43
       },
       "architecture": {
@@ -728,7 +1172,7 @@
         "org": "ibm-granite",
         "release_date": "2025-10-07",
         "license": "apache-2.0",
-        "downloads": 9406,
+        "downloads": 9760,
         "likes": 56
       },
       "architecture": {
@@ -798,7 +1242,7 @@
         "org": "ibm-granite",
         "release_date": "2025-10-07",
         "license": "apache-2.0",
-        "downloads": 7353,
+        "downloads": 7345,
         "likes": 136
       },
       "architecture": {
@@ -868,7 +1312,7 @@
         "org": "ibm-granite",
         "release_date": "2025-10-07",
         "license": "apache-2.0",
-        "downloads": 4054,
+        "downloads": 4160,
         "likes": 91
       },
       "architecture": {
@@ -923,6 +1367,74 @@
       "errors": []
     },
     {
+      "model_id": "nvidia/Hymba-1.5B-Base",
+      "org": "nvidia",
+      "registry": {
+        "family": "Hymba",
+        "variant": "1.5B-Base",
+        "tier": "tier1",
+        "paradigm": "hybrid",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "nvidia/Hymba-1.5B-Base",
+        "org": "nvidia",
+        "release_date": "2024-10-09",
+        "license": "other",
+        "downloads": 374,
+        "likes": 157
+      },
+      "architecture": {
+        "num_params": 1522797824,
+        "num_layers": 32,
+        "hidden_size": 1600,
+        "ffn_size": 5504,
+        "num_heads": 25,
+        "num_kv_heads": 5,
+        "head_dim": 64,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 8192,
+        "sliding_window": 1024,
+        "vocab_size": 32001,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": 16,
+        "ssm_conv_kernel": 4,
+        "ssm_dt_rank": 100,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {
+          "mamba_d_conv": 4,
+          "mamba_d_state": 16,
+          "mamba_dt_rank": 100,
+          "mamba_expand": 2,
+          "num_mamba": 1
+        }
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": "LlamaTokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": null
+      },
+      "errors": []
+    },
+    {
       "model_id": "state-spaces/mamba-1.4b-hf",
       "org": "state-spaces",
       "registry": {
@@ -938,7 +1450,7 @@
         "org": "state-spaces",
         "release_date": "2024-03-05",
         "license": null,
-        "downloads": 2028,
+        "downloads": 2130,
         "likes": 15
       },
       "architecture": {
@@ -988,6 +1500,136 @@
       "errors": []
     },
     {
+      "model_id": "state-spaces/mamba-130m-hf",
+      "org": "state-spaces",
+      "registry": {
+        "family": "mamba",
+        "variant": "130m-hf",
+        "tier": "tier1",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "state-spaces/mamba-130m-hf",
+        "org": "state-spaces",
+        "release_date": "2024-03-06",
+        "license": null,
+        "downloads": 137155,
+        "likes": 68
+      },
+      "architecture": {
+        "num_params": 129135360,
+        "num_layers": 24,
+        "hidden_size": 768,
+        "ffn_size": 1536,
+        "num_heads": null,
+        "num_kv_heads": null,
+        "head_dim": null,
+        "norm_type": null,
+        "activation": "silu",
+        "positional_scheme": "implicit_recurrence",
+        "max_context": null,
+        "sliding_window": null,
+        "vocab_size": 50280,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": 16,
+        "ssm_conv_kernel": 4,
+        "ssm_dt_rank": 48,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {
+          "conv_kernel": 4,
+          "state_size": 16
+        }
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": "GPTNeoXTokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": null
+      },
+      "errors": []
+    },
+    {
+      "model_id": "state-spaces/mamba-2.8b-hf",
+      "org": "state-spaces",
+      "registry": {
+        "family": "mamba",
+        "variant": "2.8b-hf",
+        "tier": "tier1",
+        "paradigm": "ssm",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "state-spaces/mamba-2.8b-hf",
+        "org": "state-spaces",
+        "release_date": "2024-03-05",
+        "license": null,
+        "downloads": 5470,
+        "likes": 111
+      },
+      "architecture": {
+        "num_params": 2768345600,
+        "num_layers": 64,
+        "hidden_size": 2560,
+        "ffn_size": 5120,
+        "num_heads": null,
+        "num_kv_heads": null,
+        "head_dim": null,
+        "norm_type": null,
+        "activation": "silu",
+        "positional_scheme": "implicit_recurrence",
+        "max_context": null,
+        "sliding_window": null,
+        "vocab_size": 50280,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": 16,
+        "ssm_conv_kernel": 4,
+        "ssm_dt_rank": 160,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {
+          "conv_kernel": 4,
+          "state_size": 16
+        }
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": "GPTNeoXTokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
       "model_id": "state-spaces/mamba-370m-hf",
       "org": "state-spaces",
       "registry": {
@@ -1003,7 +1645,7 @@
         "org": "state-spaces",
         "release_date": "2024-03-06",
         "license": null,
-        "downloads": 4239,
+        "downloads": 4265,
         "likes": 16
       },
       "architecture": {
@@ -1068,7 +1710,7 @@
         "org": "state-spaces",
         "release_date": "2024-03-06",
         "license": null,
-        "downloads": 1234,
+        "downloads": 1233,
         "likes": 4
       },
       "architecture": {
@@ -1118,6 +1760,311 @@
       "errors": []
     },
     {
+      "model_id": "state-spaces/mamba2-1.3b",
+      "org": "state-spaces",
+      "registry": {
+        "family": "mamba2",
+        "variant": "1.3b",
+        "tier": "tier1",
+        "paradigm": "ssm",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "state-spaces/mamba2-1.3b",
+        "org": "state-spaces",
+        "release_date": "2024-05-28",
+        "license": "apache-2.0",
+        "downloads": 298,
+        "likes": 4
+      },
+      "architecture": {
+        "num_params": null,
+        "num_layers": 48,
+        "hidden_size": 2048,
+        "ffn_size": null,
+        "num_heads": null,
+        "num_kv_heads": null,
+        "head_dim": null,
+        "norm_type": null,
+        "activation": null,
+        "positional_scheme": null,
+        "max_context": null,
+        "sliding_window": null,
+        "vocab_size": 50277
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": null
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": null,
+        "model_card": "README.md",
+        "safetensors_index": null
+      },
+      "errors": []
+    },
+    {
+      "model_id": "state-spaces/mamba2-130m",
+      "org": "state-spaces",
+      "registry": {
+        "family": "mamba2",
+        "variant": "130m",
+        "tier": "tier1",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "state-spaces/mamba2-130m",
+        "org": "state-spaces",
+        "release_date": "2024-05-28",
+        "license": "apache-2.0",
+        "downloads": 7446,
+        "likes": 11
+      },
+      "architecture": {
+        "num_params": null,
+        "num_layers": 24,
+        "hidden_size": 768,
+        "ffn_size": null,
+        "num_heads": null,
+        "num_kv_heads": null,
+        "head_dim": null,
+        "norm_type": null,
+        "activation": null,
+        "positional_scheme": null,
+        "max_context": null,
+        "sliding_window": null,
+        "vocab_size": 50277
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": null
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": null,
+        "model_card": "README.md",
+        "safetensors_index": null
+      },
+      "errors": []
+    },
+    {
+      "model_id": "state-spaces/mamba2-2.7b",
+      "org": "state-spaces",
+      "registry": {
+        "family": "mamba2",
+        "variant": "2.7b",
+        "tier": "tier1",
+        "paradigm": "ssm",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "state-spaces/mamba2-2.7b",
+        "org": "state-spaces",
+        "release_date": "2024-05-28",
+        "license": "apache-2.0",
+        "downloads": 1452,
+        "likes": 19
+      },
+      "architecture": {
+        "num_params": null,
+        "num_layers": 64,
+        "hidden_size": 2560,
+        "ffn_size": null,
+        "num_heads": null,
+        "num_kv_heads": null,
+        "head_dim": null,
+        "norm_type": null,
+        "activation": null,
+        "positional_scheme": null,
+        "max_context": null,
+        "sliding_window": null,
+        "vocab_size": 50277
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": null
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": null,
+        "model_card": "README.md",
+        "safetensors_index": null
+      },
+      "errors": []
+    },
+    {
+      "model_id": "state-spaces/mamba2-370m",
+      "org": "state-spaces",
+      "registry": {
+        "family": "mamba2",
+        "variant": "370m",
+        "tier": "tier1",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "state-spaces/mamba2-370m",
+        "org": "state-spaces",
+        "release_date": "2024-05-28",
+        "license": "apache-2.0",
+        "downloads": 484,
+        "likes": 6
+      },
+      "architecture": {
+        "num_params": null,
+        "num_layers": 48,
+        "hidden_size": 1024,
+        "ffn_size": null,
+        "num_heads": null,
+        "num_kv_heads": null,
+        "head_dim": null,
+        "norm_type": null,
+        "activation": null,
+        "positional_scheme": null,
+        "max_context": null,
+        "sliding_window": null,
+        "vocab_size": 50277
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": null
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": null,
+        "model_card": "README.md",
+        "safetensors_index": null
+      },
+      "errors": []
+    },
+    {
+      "model_id": "state-spaces/mamba2-780m",
+      "org": "state-spaces",
+      "registry": {
+        "family": "mamba2",
+        "variant": "780m",
+        "tier": "tier1",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "state-spaces/mamba2-780m",
+        "org": "state-spaces",
+        "release_date": "2024-05-28",
+        "license": "apache-2.0",
+        "downloads": 465,
+        "likes": 1
+      },
+      "architecture": {
+        "num_params": null,
+        "num_layers": 48,
+        "hidden_size": 1536,
+        "ffn_size": null,
+        "num_heads": null,
+        "num_kv_heads": null,
+        "head_dim": null,
+        "norm_type": null,
+        "activation": null,
+        "positional_scheme": null,
+        "max_context": null,
+        "sliding_window": null,
+        "vocab_size": 50277
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": null
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": null,
+        "model_card": "README.md",
+        "safetensors_index": null
+      },
+      "errors": []
+    },
+    {
       "model_id": "tiiuae/Falcon-H1-0.5B-Instruct",
       "org": "tiiuae",
       "registry": {
@@ -1133,7 +2080,7 @@
         "org": "tiiuae",
         "release_date": "2025-05-01",
         "license": "other",
-        "downloads": 991,
+        "downloads": 998,
         "likes": 32
       },
       "architecture": {
@@ -1209,7 +2156,7 @@
         "org": "tiiuae",
         "release_date": "2025-05-01",
         "license": "other",
-        "downloads": 683,
+        "downloads": 612,
         "likes": 17
       },
       "architecture": {
@@ -1268,6 +2215,262 @@
         "safetensors_index": null
       },
       "errors": []
+    },
+    {
+      "model_id": "tiiuae/Falcon3-1B-Instruct",
+      "org": "tiiuae",
+      "registry": {
+        "family": "Falcon3",
+        "variant": "1B-Instruct",
+        "tier": "tier1",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "tiiuae/Falcon3-1B-Instruct",
+        "org": "tiiuae",
+        "release_date": "2024-12-14",
+        "license": "other",
+        "downloads": 8033,
+        "likes": 44
+      },
+      "architecture": {
+        "num_params": 1669408768,
+        "num_layers": 18,
+        "hidden_size": 2048,
+        "ffn_size": 8192,
+        "num_heads": 8,
+        "num_kv_heads": 4,
+        "head_dim": 256,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 32768,
+        "sliding_window": null,
+        "vocab_size": 131072,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 1200000,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "PreTrainedTokenizerFast"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": null
+      },
+      "errors": []
+    },
+    {
+      "model_id": "AIDC-AI/Marco-o1",
+      "org": "AIDC-AI",
+      "registry": {
+        "family": "Marco",
+        "variant": "o1",
+        "tier": "tier2",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "AIDC-AI/Marco-o1",
+        "org": "AIDC-AI",
+        "release_date": "2024-11-13",
+        "license": "apache-2.0",
+        "downloads": 3304,
+        "likes": 713
+      },
+      "architecture": {
+        "num_params": 7615616512,
+        "num_layers": 28,
+        "hidden_size": 3584,
+        "ffn_size": 18944,
+        "num_heads": 28,
+        "num_kv_heads": 4,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 131072,
+        "sliding_window": null,
+        "vocab_size": 152064,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": "Qwen2Tokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "CohereForAI/aya-expanse-8b",
+      "org": "CohereForAI",
+      "registry": {
+        "family": "aya-expanse",
+        "variant": "8b",
+        "tier": "tier2",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "CohereForAI/aya-expanse-8b",
+        "org": "CohereForAI",
+        "release_date": "2024-10-23",
+        "license": "cc-by-nc-4.0",
+        "downloads": 72348,
+        "likes": 421
+      },
+      "architecture": {
+        "num_params": 8028033024,
+        "num_layers": null,
+        "hidden_size": null,
+        "ffn_size": null,
+        "num_heads": null,
+        "num_kv_heads": null,
+        "head_dim": null,
+        "norm_type": null,
+        "activation": null,
+        "positional_scheme": null,
+        "max_context": null,
+        "sliding_window": null,
+        "vocab_size": null,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": null
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": null,
+        "tokenizer_config_json": null,
+        "model_card": "README.md",
+        "safetensors_index": null
+      },
+      "errors": [
+        "config.json: 403 Client Error. (Request ID: Root=1-699423ae-04e5ec894bace1ce59a681dc;dcc17465-8c4f-4af9-90d1-a479ff865355)\n\nCannot access gated repo for url https://huggingface.co/CohereForAI/aya-expanse-8b/resolve/main/config.json.\nAccess to model CohereLabs/aya-expanse-8b is restricted and you are not in the authorized list. Visit https://huggingface.co/CohereLabs/aya-expanse-8b to ask for access.",
+        "tokenizer_config.json: 403 Client Error. (Request ID: Root=1-699423ae-036a7eec0d49d5d474b8ee69;14651795-5f04-4f7d-a44d-fe6f38cac83a)\n\nCannot access gated repo for url https://huggingface.co/CohereForAI/aya-expanse-8b/resolve/main/tokenizer_config.json.\nAccess to model CohereLabs/aya-expanse-8b is restricted and you are not in the authorized list. Visit https://huggingface.co/CohereLabs/aya-expanse-8b to ask for access.",
+        "model.safetensors.index.json: 403 Client Error. (Request ID: Root=1-699423ae-69ff89c556da70d50ee4b2c6;5aa9badd-d15c-4c62-9566-c442a132ac57)\n\nCannot access gated repo for url https://huggingface.co/CohereForAI/aya-expanse-8b/resolve/main/model.safetensors.index.json.\nAccess to model CohereLabs/aya-expanse-8b is restricted and you are not in the authorized list. Visit https://huggingface.co/CohereLabs/aya-expanse-8b to ask for access."
+      ]
+    },
+    {
+      "model_id": "CohereForAI/c4ai-command-r7b-12-2024",
+      "org": "CohereForAI",
+      "registry": {
+        "family": "c4ai",
+        "variant": "command-r7b-12-2024",
+        "tier": "tier2",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "CohereForAI/c4ai-command-r7b-12-2024",
+        "org": "CohereForAI",
+        "release_date": "2024-12-11",
+        "license": "cc-by-nc-4.0",
+        "downloads": 11424,
+        "likes": 407
+      },
+      "architecture": {
+        "num_params": 8028047968,
+        "num_layers": null,
+        "hidden_size": null,
+        "ffn_size": null,
+        "num_heads": null,
+        "num_kv_heads": null,
+        "head_dim": null,
+        "norm_type": null,
+        "activation": null,
+        "positional_scheme": null,
+        "max_context": null,
+        "sliding_window": null,
+        "vocab_size": null,
+        "num_params_source": "repo_safetensors_file_sizes"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 23,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": null
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": null,
+        "tokenizer_config_json": null,
+        "model_card": "README.md",
+        "safetensors_index": null
+      },
+      "errors": [
+        "config.json: 403 Client Error. (Request ID: Root=1-699423ae-15d9edd83949e28b2a894546;d6b251e5-8cd5-4784-82f0-89454bd77097)\n\nCannot access gated repo for url https://huggingface.co/CohereForAI/c4ai-command-r7b-12-2024/resolve/main/config.json.\nAccess to model CohereLabs/c4ai-command-r7b-12-2024 is restricted and you are not in the authorized list. Visit https://huggingface.co/CohereLabs/c4ai-command-r7b-12-2024 to ask for access.",
+        "tokenizer_config.json: 403 Client Error. (Request ID: Root=1-699423ae-34f0f6e2344eb9c844d91c7c;268e1b11-fb42-4ae4-a743-fe570b10d265)\n\nCannot access gated repo for url https://huggingface.co/CohereForAI/c4ai-command-r7b-12-2024/resolve/main/tokenizer_config.json.\nAccess to model CohereLabs/c4ai-command-r7b-12-2024 is restricted and you are not in the authorized list. Visit https://huggingface.co/CohereLabs/c4ai-command-r7b-12-2024 to ask for access.",
+        "model.safetensors.index.json: 403 Client Error. (Request ID: Root=1-699423ae-58be7beb31c2db0176de9717;8cf0c1af-f691-4f85-ad94-6dba72146fc7)\n\nCannot access gated repo for url https://huggingface.co/CohereForAI/c4ai-command-r7b-12-2024/resolve/main/model.safetensors.index.json.\nAccess to model CohereLabs/c4ai-command-r7b-12-2024 is restricted and you are not in the authorized list. Visit https://huggingface.co/CohereLabs/c4ai-command-r7b-12-2024 to ask for access."
+      ]
     },
     {
       "model_id": "ML-GSAI/LLaDA-8B-Base",
@@ -1329,7 +2532,7 @@
         "safetensors_index": null
       },
       "errors": [
-        "hf_api_error: 404 Client Error. (Request ID: Root=1-69940c91-3aac032d7abec88501c10c3f;6e907d9e-2c9b-48c5-a256-6b60ff05711d)\n\nRepository Not Found for url: https://huggingface.co/api/models/ML-GSAI/LLaDA-8B-Base/revision/main?blobs=True.\nPlease make sure you specified the correct `repo_id` and `repo_type`.\nIf you are trying to access a private or gated repo, make sure you are authenticated. For more details, see https://huggingface.co/docs/huggingface_hub/authentication"
+        "hf_api_error: 404 Client Error. (Request ID: Root=1-699423ae-0dfe1cbf5652c93526e7db99;fbd49f98-e3bd-40f5-b778-010322f6124e)\n\nRepository Not Found for url: https://huggingface.co/api/models/ML-GSAI/LLaDA-8B-Base/revision/main?blobs=True.\nPlease make sure you specified the correct `repo_id` and `repo_type`.\nIf you are trying to access a private or gated repo, make sure you are authenticated. For more details, see https://huggingface.co/docs/huggingface_hub/authentication"
       ]
     },
     {
@@ -1348,7 +2551,7 @@
         "org": "NX-AI",
         "release_date": "2024-12-11",
         "license": "other",
-        "downloads": 652,
+        "downloads": 694,
         "likes": 113
       },
       "architecture": {
@@ -1397,6 +2600,192 @@
       "errors": []
     },
     {
+      "model_id": "Qwen/Qwen2.5-3B",
+      "org": "Qwen",
+      "registry": {
+        "family": "Qwen2.5",
+        "variant": "3B",
+        "tier": "tier2",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "Qwen/Qwen2.5-3B",
+        "org": "Qwen",
+        "release_date": "2024-09-15",
+        "license": "other",
+        "downloads": 247654,
+        "likes": 169
+      },
+      "architecture": {
+        "num_params": 3085938688,
+        "num_layers": 36,
+        "hidden_size": 2048,
+        "ffn_size": 11008,
+        "num_heads": 16,
+        "num_kv_heads": 2,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 131072,
+        "sliding_window": 32768,
+        "vocab_size": 151936,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 128000,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "Qwen2Tokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "Qwen/Qwen2.5-7B",
+      "org": "Qwen",
+      "registry": {
+        "family": "Qwen2.5",
+        "variant": "7B",
+        "tier": "tier2",
+        "paradigm": "transformer",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "Qwen/Qwen2.5-7B",
+        "org": "Qwen",
+        "release_date": "2024-09-15",
+        "license": "apache-2.0",
+        "downloads": 1332247,
+        "likes": 263
+      },
+      "architecture": {
+        "num_params": 7615616512,
+        "num_layers": 28,
+        "hidden_size": 3584,
+        "ffn_size": 18944,
+        "num_heads": 28,
+        "num_kv_heads": 4,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 131072,
+        "sliding_window": 131072,
+        "vocab_size": 152064,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 131072,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "Qwen2Tokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "Qwen/Qwen2.5-Coder-7B",
+      "org": "Qwen",
+      "registry": {
+        "family": "Qwen2.5-Coder",
+        "variant": "7B",
+        "tier": "tier2",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "Qwen/Qwen2.5-Coder-7B",
+        "org": "Qwen",
+        "release_date": "2024-09-16",
+        "license": "apache-2.0",
+        "downloads": 253750,
+        "likes": 134
+      },
+      "architecture": {
+        "num_params": 7615616512,
+        "num_layers": 28,
+        "hidden_size": 3584,
+        "ffn_size": 18944,
+        "num_heads": 28,
+        "num_kv_heads": 4,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 32768,
+        "sliding_window": 131072,
+        "vocab_size": 152064,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 131072,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "Qwen2Tokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
       "model_id": "Qwen/Qwen3-4B",
       "org": "Qwen",
       "registry": {
@@ -1412,7 +2801,7 @@
         "org": "Qwen",
         "release_date": "2025-04-27",
         "license": "apache-2.0",
-        "downloads": 5129131,
+        "downloads": 5120931,
         "likes": 552
       },
       "architecture": {
@@ -1476,7 +2865,7 @@
         "org": "Qwen",
         "release_date": "2025-04-27",
         "license": "apache-2.0",
-        "downloads": 4685993,
+        "downloads": 4744158,
         "likes": 936
       },
       "architecture": {
@@ -1589,6 +2978,252 @@
       "errors": []
     },
     {
+      "model_id": "RWKV/v5-Eagle-7B-HF",
+      "org": "RWKV",
+      "registry": {
+        "family": "v5-Eagle",
+        "variant": "7B-HF",
+        "tier": "tier2",
+        "paradigm": "rwkv",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "RWKV/v5-Eagle-7B-HF",
+        "org": "RWKV",
+        "release_date": "2024-01-29",
+        "license": "apache-2.0",
+        "downloads": 5904,
+        "likes": 72
+      },
+      "architecture": {
+        "num_params": null,
+        "num_layers": 32,
+        "hidden_size": 4096,
+        "ffn_size": null,
+        "num_heads": null,
+        "num_kv_heads": null,
+        "head_dim": null,
+        "norm_type": null,
+        "activation": null,
+        "positional_scheme": null,
+        "max_context": 4096,
+        "sliding_window": null,
+        "vocab_size": 65536
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": "RWKVWorldTokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": null
+      },
+      "errors": []
+    },
+    {
+      "model_id": "RWKV/v6-Finch-3B-HF",
+      "org": "RWKV",
+      "registry": {
+        "family": "v6-Finch",
+        "variant": "3B-HF",
+        "tier": "tier2",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "RWKV/v6-Finch-3B-HF",
+        "org": "RWKV",
+        "release_date": "2024-07-21",
+        "license": "apache-2.0",
+        "downloads": 7,
+        "likes": 2
+      },
+      "architecture": {
+        "num_params": null,
+        "num_layers": 32,
+        "hidden_size": 2560,
+        "ffn_size": null,
+        "num_heads": 64,
+        "num_kv_heads": null,
+        "head_dim": 40,
+        "norm_type": null,
+        "activation": null,
+        "positional_scheme": null,
+        "max_context": null,
+        "sliding_window": null,
+        "vocab_size": 65536
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": "Rwkv6Tokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": null
+      },
+      "errors": []
+    },
+    {
+      "model_id": "RWKV/v6-Finch-7B-HF",
+      "org": "RWKV",
+      "registry": {
+        "family": "v6-Finch",
+        "variant": "7B-HF",
+        "tier": "tier2",
+        "paradigm": "rwkv",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "RWKV/v6-Finch-7B-HF",
+        "org": "RWKV",
+        "release_date": "2024-07-21",
+        "license": "apache-2.0",
+        "downloads": 5221,
+        "likes": 4
+      },
+      "architecture": {
+        "num_params": 7635746816,
+        "num_layers": 32,
+        "hidden_size": 4096,
+        "ffn_size": null,
+        "num_heads": 64,
+        "num_kv_heads": null,
+        "head_dim": 64,
+        "norm_type": null,
+        "activation": null,
+        "positional_scheme": null,
+        "max_context": null,
+        "sliding_window": null,
+        "vocab_size": 65536,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": "Rwkv6Tokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": null
+      },
+      "errors": []
+    },
+    {
+      "model_id": "Spiral-AI/Spiral-RetNet-3b-base",
+      "org": "Spiral-AI",
+      "registry": {
+        "family": "Spiral-RetNet",
+        "variant": "3b-base",
+        "tier": "tier2",
+        "paradigm": "retnet",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "Spiral-AI/Spiral-RetNet-3b-base",
+        "org": "Spiral-AI",
+        "release_date": "2024-04-30",
+        "license": "mit",
+        "downloads": 2,
+        "likes": 5
+      },
+      "architecture": {
+        "num_params": 2856228106,
+        "num_layers": 32,
+        "hidden_size": null,
+        "ffn_size": null,
+        "num_heads": null,
+        "num_kv_heads": null,
+        "head_dim": null,
+        "norm_type": "layernorm",
+        "activation": null,
+        "positional_scheme": null,
+        "max_context": null,
+        "sliding_window": null,
+        "vocab_size": 65024,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 80000000000,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "GPTNeoXTokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
       "model_id": "Zyphra/Zamba2-2.7B",
       "org": "Zyphra",
       "registry": {
@@ -1644,6 +3279,76 @@
       "training": {
         "pretrain_tokens": 3000000000000,
         "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "LlamaTokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "Zyphra/Zamba2-2.7B-instruct",
+      "org": "Zyphra",
+      "registry": {
+        "family": "Zamba2",
+        "variant": "2.7B-instruct",
+        "tier": "tier2",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "Zyphra/Zamba2-2.7B-instruct",
+        "org": "Zyphra",
+        "release_date": "2024-08-29",
+        "license": "apache-2.0",
+        "downloads": 198,
+        "likes": 82
+      },
+      "architecture": {
+        "num_params": 2662214560,
+        "num_layers": 54,
+        "hidden_size": 2560,
+        "ffn_size": 10240,
+        "num_heads": 32,
+        "num_kv_heads": 32,
+        "head_dim": 160,
+        "norm_type": "rmsnorm",
+        "activation": "gelu",
+        "positional_scheme": "rope",
+        "max_context": 4096,
+        "sliding_window": null,
+        "vocab_size": 32000,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": 64,
+        "ssm_conv_kernel": 4,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {
+          "hybrid_layer_ids": 51,
+          "mamba_d_conv": 4,
+          "mamba_d_state": 64,
+          "mamba_expand": 2,
+          "mamba_headdim": 64,
+          "mamba_ngroups": 1,
+          "n_mamba_heads": 80
+        }
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
         "tokenizer_type": "LlamaTokenizer"
       },
       "quantization": {
@@ -1719,10 +3424,142 @@
         "safetensors_index": null
       },
       "errors": [
-        "config.json: 403 Client Error. (Request ID: Root=1-69940c92-56b9826b560d40487b02fd8d;244c8d30-9747-4cf8-a079-d13bd430c1fc)\n\nCannot access gated repo for url https://huggingface.co/Zyphra/Zamba2-7B/resolve/main/config.json.\nAccess to model Zyphra/Zamba2-7B is restricted and you are not in the authorized list. Visit https://huggingface.co/Zyphra/Zamba2-7B to ask for access.",
-        "tokenizer_config.json: 403 Client Error. (Request ID: Root=1-69940c92-7ab1ec0649c314ce7932e129;49bbd41c-51dd-44af-b483-59ffd1b75d71)\n\nCannot access gated repo for url https://huggingface.co/Zyphra/Zamba2-7B/resolve/main/tokenizer_config.json.\nAccess to model Zyphra/Zamba2-7B is restricted and you are not in the authorized list. Visit https://huggingface.co/Zyphra/Zamba2-7B to ask for access.",
-        "model.safetensors.index.json: 403 Client Error. (Request ID: Root=1-69940c92-46289da62b552abc4bb14910;461e6895-b382-4292-8f04-099a7509a558)\n\nCannot access gated repo for url https://huggingface.co/Zyphra/Zamba2-7B/resolve/main/model.safetensors.index.json.\nAccess to model Zyphra/Zamba2-7B is restricted and you are not in the authorized list. Visit https://huggingface.co/Zyphra/Zamba2-7B to ask for access."
+        "config.json: 403 Client Error. (Request ID: Root=1-699423af-008d2bd1344487e468ac786b;ed936b4d-4932-420e-b443-edbe71d443c4)\n\nCannot access gated repo for url https://huggingface.co/Zyphra/Zamba2-7B/resolve/main/config.json.\nAccess to model Zyphra/Zamba2-7B is restricted and you are not in the authorized list. Visit https://huggingface.co/Zyphra/Zamba2-7B to ask for access.",
+        "tokenizer_config.json: 403 Client Error. (Request ID: Root=1-699423af-721644cd1466f87b71f9b783;a97c0ddf-ee67-4090-a7ab-7e0cdd57cca9)\n\nCannot access gated repo for url https://huggingface.co/Zyphra/Zamba2-7B/resolve/main/tokenizer_config.json.\nAccess to model Zyphra/Zamba2-7B is restricted and you are not in the authorized list. Visit https://huggingface.co/Zyphra/Zamba2-7B to ask for access.",
+        "model.safetensors.index.json: 403 Client Error. (Request ID: Root=1-699423af-36e2574611824a564c6853fe;aaa8b1cf-5c29-48de-ac47-d16d3de5080d)\n\nCannot access gated repo for url https://huggingface.co/Zyphra/Zamba2-7B/resolve/main/model.safetensors.index.json.\nAccess to model Zyphra/Zamba2-7B is restricted and you are not in the authorized list. Visit https://huggingface.co/Zyphra/Zamba2-7B to ask for access."
       ]
+    },
+    {
+      "model_id": "Zyphra/Zamba2-7B-Instruct",
+      "org": "Zyphra",
+      "registry": {
+        "family": "Zamba2",
+        "variant": "7B-Instruct",
+        "tier": "tier2",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "Zyphra/Zamba2-7B-Instruct",
+        "org": "Zyphra",
+        "release_date": "2024-10-10",
+        "license": "apache-2.0",
+        "downloads": 10925,
+        "likes": 92
+      },
+      "architecture": {
+        "num_params": 7356749648,
+        "num_layers": 81,
+        "hidden_size": 3584,
+        "ffn_size": 14336,
+        "num_heads": 32,
+        "num_kv_heads": 32,
+        "head_dim": 224,
+        "norm_type": "rmsnorm",
+        "activation": "gelu",
+        "positional_scheme": "rope",
+        "max_context": 4096,
+        "sliding_window": null,
+        "vocab_size": 32000,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": 64,
+        "ssm_conv_kernel": 4,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {
+          "hybrid_layer_ids": 77,
+          "mamba_d_conv": 4,
+          "mamba_d_state": 64,
+          "mamba_expand": 2,
+          "mamba_headdim": 64,
+          "mamba_ngroups": 2,
+          "n_mamba_heads": 112
+        }
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": "LlamaTokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "allenai/OLMoE-1B-7B-0924",
+      "org": "allenai",
+      "registry": {
+        "family": "OLMoE",
+        "variant": "1B-7B-0924",
+        "tier": "tier2",
+        "paradigm": "moe",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "allenai/OLMoE-1B-7B-0924",
+        "org": "allenai",
+        "release_date": "2024-07-20",
+        "license": "apache-2.0",
+        "downloads": 21439,
+        "likes": 141
+      },
+      "architecture": {
+        "num_params": 6919161856,
+        "num_layers": 16,
+        "hidden_size": 2048,
+        "ffn_size": 1024,
+        "num_heads": 16,
+        "num_kv_heads": 16,
+        "head_dim": 128,
+        "norm_type": null,
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 4096,
+        "sliding_window": null,
+        "vocab_size": 50304,
+        "num_params_source": "safetensors_index.metadata.total_size"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 100000000000,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "GPTNeoXTokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
     },
     {
       "model_id": "allenai/Olmo-3-7B",
@@ -1784,8 +3621,70 @@
         "safetensors_index": null
       },
       "errors": [
-        "hf_api_error: 404 Client Error. (Request ID: Root=1-69940c92-066ec2923926ef5038fe92e9;fee26a25-bea3-4b15-a242-a63fc554b33a)\n\nRepository Not Found for url: https://huggingface.co/api/models/allenai/Olmo-3-7B/revision/main?blobs=True.\nPlease make sure you specified the correct `repo_id` and `repo_type`.\nIf you are trying to access a private or gated repo, make sure you are authenticated. For more details, see https://huggingface.co/docs/huggingface_hub/authentication"
+        "hf_api_error: 404 Client Error. (Request ID: Root=1-699423af-01388f97249c8c9715a245e1;1dcb2a37-a792-45ec-978f-283463a774a0)\n\nRepository Not Found for url: https://huggingface.co/api/models/allenai/Olmo-3-7B/revision/main?blobs=True.\nPlease make sure you specified the correct `repo_id` and `repo_type`.\nIf you are trying to access a private or gated repo, make sure you are authenticated. For more details, see https://huggingface.co/docs/huggingface_hub/authentication"
       ]
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
+      "org": "deepseek-ai",
+      "registry": {
+        "family": "DeepSeek-R1-Distill-Llama",
+        "variant": "8B",
+        "tier": "tier2",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
+        "org": "deepseek-ai",
+        "release_date": "2025-01-20",
+        "license": "mit",
+        "downloads": 493205,
+        "likes": 844
+      },
+      "architecture": {
+        "num_params": 8030261248,
+        "num_layers": 32,
+        "hidden_size": 4096,
+        "ffn_size": 14336,
+        "num_heads": 32,
+        "num_kv_heads": 8,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 131072,
+        "sliding_window": null,
+        "vocab_size": 128256,
+        "num_params_source": "safetensors_index.metadata.total_size"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 32768,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "LlamaTokenizerFast"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
     },
     {
       "model_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
@@ -1794,7 +3693,7 @@
         "family": "DeepSeek-R1-Distill-Qwen",
         "variant": "7B",
         "tier": "tier2",
-        "paradigm": "unassigned",
+        "paradigm": "reasoning",
         "is_quick_test": false,
         "is_phase_transition": false
       },
@@ -1803,7 +3702,7 @@
         "org": "deepseek-ai",
         "release_date": "2025-01-20",
         "license": "mit",
-        "downloads": 707158,
+        "downloads": 717189,
         "likes": 787
       },
       "architecture": {
@@ -1865,7 +3764,7 @@
         "org": "google",
         "release_date": "2025-02-20",
         "license": "gemma",
-        "downloads": 1169176,
+        "downloads": 1178782,
         "likes": 1185
       },
       "architecture": {
@@ -1912,6 +3811,130 @@
       "errors": []
     },
     {
+      "model_id": "ibm-granite/granite-3.1-8b-instruct",
+      "org": "ibm-granite",
+      "registry": {
+        "family": "granite-3.1",
+        "variant": "8b-instruct",
+        "tier": "tier2",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "ibm-granite/granite-3.1-8b-instruct",
+        "org": "ibm-granite",
+        "release_date": "2024-12-06",
+        "license": "apache-2.0",
+        "downloads": 97035,
+        "likes": 166
+      },
+      "architecture": {
+        "num_params": 8170848256,
+        "num_layers": 40,
+        "hidden_size": 4096,
+        "ffn_size": 12800,
+        "num_heads": 32,
+        "num_kv_heads": 8,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 131072,
+        "sliding_window": null,
+        "vocab_size": 49155,
+        "num_params_source": "safetensors_index.metadata.total_size"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": "GPT2Tokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "ibm-granite/granite-3.2-8b-instruct",
+      "org": "ibm-granite",
+      "registry": {
+        "family": "granite-3.2",
+        "variant": "8b-instruct",
+        "tier": "tier2",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "ibm-granite/granite-3.2-8b-instruct",
+        "org": "ibm-granite",
+        "release_date": "2025-02-17",
+        "license": "apache-2.0",
+        "downloads": 10598,
+        "likes": 89
+      },
+      "architecture": {
+        "num_params": 8170848256,
+        "num_layers": 40,
+        "hidden_size": 4096,
+        "ffn_size": 12800,
+        "num_heads": 32,
+        "num_kv_heads": 8,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 131072,
+        "sliding_window": null,
+        "vocab_size": 49155,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": "GPT2Tokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
       "model_id": "ibm-granite/granite-4.0-h-tiny",
       "org": "ibm-granite",
       "registry": {
@@ -1927,7 +3950,7 @@
         "org": "ibm-granite",
         "release_date": "2025-09-16",
         "license": "apache-2.0",
-        "downloads": 22970,
+        "downloads": 23075,
         "likes": 189
       },
       "architecture": {
@@ -1997,7 +4020,7 @@
         "org": "ibm-granite",
         "release_date": "2025-09-16",
         "license": "apache-2.0",
-        "downloads": 57865,
+        "downloads": 59036,
         "likes": 257
       },
       "architecture": {
@@ -2067,7 +4090,7 @@
         "org": "ibm-granite",
         "release_date": "2025-04-30",
         "license": "apache-2.0",
-        "downloads": 25834,
+        "downloads": 26137,
         "likes": 182
       },
       "architecture": {
@@ -2122,6 +4145,268 @@
       "errors": []
     },
     {
+      "model_id": "internlm/internlm2_5-7b-chat",
+      "org": "internlm",
+      "registry": {
+        "family": "internlm2_5",
+        "variant": "7b-chat",
+        "tier": "tier2",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "internlm/internlm2_5-7b-chat",
+        "org": "internlm",
+        "release_date": "2024-06-27",
+        "license": "other",
+        "downloads": 26152,
+        "likes": 199
+      },
+      "architecture": {
+        "num_params": 7737708544,
+        "num_layers": 32,
+        "hidden_size": 4096,
+        "ffn_size": 14336,
+        "num_heads": 32,
+        "num_kv_heads": 8,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 65536,
+        "sliding_window": null,
+        "vocab_size": 92544,
+        "num_params_source": "safetensors_index.metadata.total_size"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": "InternLM2Tokenizer"
+      },
+      "quantization": {
+        "available_formats": [
+          "GGUF"
+        ]
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "internlm/internlm3-8b-instruct",
+      "org": "internlm",
+      "registry": {
+        "family": "internlm3",
+        "variant": "8b-instruct",
+        "tier": "tier2",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "internlm/internlm3-8b-instruct",
+        "org": "internlm",
+        "release_date": "2025-01-13",
+        "license": "apache-2.0",
+        "downloads": 8816,
+        "likes": 229
+      },
+      "architecture": {
+        "num_params": 8804241408,
+        "num_layers": 48,
+        "hidden_size": 4096,
+        "ffn_size": 10240,
+        "num_heads": 32,
+        "num_kv_heads": 2,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 196608,
+        "sliding_window": null,
+        "vocab_size": 128512,
+        "num_params_source": "safetensors_index.metadata.total_size"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": "InternLM3Tokenizer"
+      },
+      "quantization": {
+        "available_formats": [
+          "BITSANDBYTES",
+          "INT8",
+          "INT4"
+        ]
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+      "org": "meta-llama",
+      "registry": {
+        "family": "Llama-3.1",
+        "variant": "8B-Instruct",
+        "tier": "tier2",
+        "paradigm": "transformer",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+        "org": "meta-llama",
+        "release_date": "2024-07-18",
+        "license": "llama3.1",
+        "downloads": 5837840,
+        "likes": 5463
+      },
+      "architecture": {
+        "num_params": 8030261248,
+        "num_layers": 32,
+        "hidden_size": 4096,
+        "ffn_size": 14336,
+        "num_heads": 32,
+        "num_kv_heads": 8,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 131072,
+        "sliding_window": null,
+        "vocab_size": 128256,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 15000000000000,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "PreTrainedTokenizerFast"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "meta-llama/Llama-3.2-3B-Instruct",
+      "org": "meta-llama",
+      "registry": {
+        "family": "Llama-3.2",
+        "variant": "3B-Instruct",
+        "tier": "tier2",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "meta-llama/Llama-3.2-3B-Instruct",
+        "org": "meta-llama",
+        "release_date": "2024-09-18",
+        "license": "llama3.2",
+        "downloads": 2210460,
+        "likes": 1985
+      },
+      "architecture": {
+        "num_params": 3212749824,
+        "num_layers": null,
+        "hidden_size": null,
+        "ffn_size": null,
+        "num_heads": null,
+        "num_kv_heads": null,
+        "head_dim": null,
+        "norm_type": null,
+        "activation": null,
+        "positional_scheme": null,
+        "max_context": null,
+        "sliding_window": null,
+        "vocab_size": null,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 9000000000000,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": null
+      },
+      "quantization": {
+        "available_formats": [
+          "GPTQ",
+          "INT8",
+          "INT4"
+        ]
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": null,
+        "tokenizer_config_json": null,
+        "model_card": "README.md",
+        "safetensors_index": null
+      },
+      "errors": [
+        "config.json: 403 Client Error. (Request ID: Root=1-699423af-6284053701b406f878ab8cf1;37a3b1dc-2e86-40f4-9da8-c82e198ed334)\n\nCannot access gated repo for url https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/config.json.\nAccess to model meta-llama/Llama-3.2-3B-Instruct is restricted and you are not in the authorized list. Visit https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct to ask for access.",
+        "tokenizer_config.json: 403 Client Error. (Request ID: Root=1-699423af-110b30184ad3a2d7686bb0d7;85ec948f-e00b-4c7e-9c57-2f025ae03c13)\n\nCannot access gated repo for url https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/tokenizer_config.json.\nAccess to model meta-llama/Llama-3.2-3B-Instruct is restricted and you are not in the authorized list. Visit https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct to ask for access.",
+        "model.safetensors.index.json: 403 Client Error. (Request ID: Root=1-699423af-66cffed24d51c8142790c82e;52d09c7e-a9e9-4fdb-841a-24fd9ec54375)\n\nCannot access gated repo for url https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct/resolve/main/model.safetensors.index.json.\nAccess to model meta-llama/Llama-3.2-3B-Instruct is restricted and you are not in the authorized list. Visit https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct to ask for access."
+      ]
+    },
+    {
       "model_id": "microsoft/Phi-4-mini-instruct",
       "org": "microsoft",
       "registry": {
@@ -2137,7 +4422,7 @@
         "org": "microsoft",
         "release_date": "2025-02-19",
         "license": "mit",
-        "downloads": 206123,
+        "downloads": 212939,
         "likes": 685
       },
       "architecture": {
@@ -2199,7 +4484,7 @@
         "org": "microsoft",
         "release_date": "2025-04-29",
         "license": "mit",
-        "downloads": 10187,
+        "downloads": 9680,
         "likes": 216
       },
       "architecture": {
@@ -2246,6 +4531,68 @@
       "errors": []
     },
     {
+      "model_id": "mistralai/Ministral-8B-Instruct-2410",
+      "org": "mistralai",
+      "registry": {
+        "family": "Ministral",
+        "variant": "8B-Instruct-2410",
+        "tier": "tier2",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "mistralai/Ministral-8B-Instruct-2410",
+        "org": "mistralai",
+        "release_date": "2024-10-15",
+        "license": "other",
+        "downloads": 111051,
+        "likes": 572
+      },
+      "architecture": {
+        "num_params": 8019808256,
+        "num_layers": 36,
+        "hidden_size": 4096,
+        "ffn_size": 12288,
+        "num_heads": 32,
+        "num_kv_heads": 8,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 32768,
+        "sliding_window": 32768,
+        "vocab_size": 131072,
+        "num_params_source": "safetensors_index.metadata.total_size"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 100000,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "LlamaTokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
       "model_id": "nvidia/Nemotron-H-4B-Instruct-128K",
       "org": "nvidia",
       "registry": {
@@ -2261,7 +4608,7 @@
         "org": "nvidia",
         "release_date": "2025-04-15",
         "license": "other",
-        "downloads": 27804,
+        "downloads": 28485,
         "likes": 8
       },
       "architecture": {
@@ -2395,7 +4742,7 @@
         "family": "Falcon-H1",
         "variant": "7B-Instruct",
         "tier": "tier2",
-        "paradigm": "unassigned",
+        "paradigm": "hybrid",
         "is_quick_test": false,
         "is_phase_transition": false
       },
@@ -2404,7 +4751,7 @@
         "org": "tiiuae",
         "release_date": "2025-05-01",
         "license": "other",
-        "downloads": 3130,
+        "downloads": 3542,
         "likes": 30
       },
       "architecture": {
@@ -2465,6 +4812,130 @@
       "errors": []
     },
     {
+      "model_id": "tiiuae/Falcon3-3B-Instruct",
+      "org": "tiiuae",
+      "registry": {
+        "family": "Falcon3",
+        "variant": "3B-Instruct",
+        "tier": "tier2",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "tiiuae/Falcon3-3B-Instruct",
+        "org": "tiiuae",
+        "release_date": "2024-12-14",
+        "license": "other",
+        "downloads": 5876,
+        "likes": 28
+      },
+      "architecture": {
+        "num_params": 3227655168,
+        "num_layers": 22,
+        "hidden_size": 3072,
+        "ffn_size": 9216,
+        "num_heads": 12,
+        "num_kv_heads": 4,
+        "head_dim": 256,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 32768,
+        "sliding_window": null,
+        "vocab_size": 131072,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 1200000,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "PreTrainedTokenizerFast"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "tiiuae/Falcon3-7B-Instruct",
+      "org": "tiiuae",
+      "registry": {
+        "family": "Falcon3",
+        "variant": "7B-Instruct",
+        "tier": "tier2",
+        "paradigm": "transformer",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "tiiuae/Falcon3-7B-Instruct",
+        "org": "tiiuae",
+        "release_date": "2024-11-29",
+        "license": "other",
+        "downloads": 13474,
+        "likes": 76
+      },
+      "architecture": {
+        "num_params": 7455550464,
+        "num_layers": 28,
+        "hidden_size": 3072,
+        "ffn_size": 23040,
+        "num_heads": 12,
+        "num_kv_heads": 4,
+        "head_dim": 256,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 32768,
+        "sliding_window": null,
+        "vocab_size": 131072,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 1200000,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "PreTrainedTokenizerFast"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
       "model_id": "tiiuae/falcon-mamba-7b",
       "org": "tiiuae",
       "registry": {
@@ -2480,7 +4951,7 @@
         "org": "tiiuae",
         "release_date": "2024-07-17",
         "license": "other",
-        "downloads": 7035,
+        "downloads": 7334,
         "likes": 242
       },
       "architecture": {
@@ -2533,6 +5004,768 @@
       "errors": []
     },
     {
+      "model_id": "tiiuae/falcon-mamba-7b-instruct",
+      "org": "tiiuae",
+      "registry": {
+        "family": "falcon-mamba",
+        "variant": "7b-instruct",
+        "tier": "tier2",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "tiiuae/falcon-mamba-7b-instruct",
+        "org": "tiiuae",
+        "release_date": "2024-07-30",
+        "license": "other",
+        "downloads": 6617,
+        "likes": 70
+      },
+      "architecture": {
+        "num_params": 7272665088,
+        "num_layers": 64,
+        "hidden_size": 4096,
+        "ffn_size": 8192,
+        "num_heads": null,
+        "num_kv_heads": null,
+        "head_dim": null,
+        "norm_type": null,
+        "activation": "silu",
+        "positional_scheme": null,
+        "max_context": null,
+        "sliding_window": null,
+        "vocab_size": 65024,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": 16,
+        "ssm_conv_kernel": 4,
+        "ssm_dt_rank": 256,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {
+          "conv_kernel": 4,
+          "state_size": 16
+        }
+      },
+      "training": {
+        "pretrain_tokens": 256,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "PreTrainedTokenizerFast"
+      },
+      "quantization": {
+        "available_formats": [
+          "BITSANDBYTES",
+          "INT4"
+        ]
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "togethercomputer/StripedHyena-Hessian-7B",
+      "org": "togethercomputer",
+      "registry": {
+        "family": "StripedHyena-Hessian",
+        "variant": "7B",
+        "tier": "tier2",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "togethercomputer/StripedHyena-Hessian-7B",
+        "org": "togethercomputer",
+        "release_date": "2023-11-21",
+        "license": "apache-2.0",
+        "downloads": 374,
+        "likes": 66
+      },
+      "architecture": {
+        "num_params": 7646024704,
+        "num_layers": 32,
+        "hidden_size": 4096,
+        "ffn_size": null,
+        "num_heads": 32,
+        "num_kv_heads": null,
+        "head_dim": 128,
+        "norm_type": null,
+        "activation": null,
+        "positional_scheme": "rope",
+        "max_context": null,
+        "sliding_window": null,
+        "vocab_size": 32000,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": 2,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {
+          "state_size": 2
+        }
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": "LlamaTokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "togethercomputer/StripedHyena-Nous-7B",
+      "org": "togethercomputer",
+      "registry": {
+        "family": "StripedHyena-Nous",
+        "variant": "7B",
+        "tier": "tier2",
+        "paradigm": "hybrid",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "togethercomputer/StripedHyena-Nous-7B",
+        "org": "togethercomputer",
+        "release_date": "2023-12-04",
+        "license": "apache-2.0",
+        "downloads": 56,
+        "likes": 143
+      },
+      "architecture": {
+        "num_params": 7646024704,
+        "num_layers": 32,
+        "hidden_size": 4096,
+        "ffn_size": null,
+        "num_heads": 32,
+        "num_kv_heads": null,
+        "head_dim": 128,
+        "norm_type": null,
+        "activation": null,
+        "positional_scheme": "rope",
+        "max_context": null,
+        "sliding_window": null,
+        "vocab_size": 32000,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": 2,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {
+          "state_size": 2
+        }
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": "LlamaTokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "CohereForAI/aya-expanse-32b",
+      "org": "CohereForAI",
+      "registry": {
+        "family": "aya-expanse",
+        "variant": "32b",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "CohereForAI/aya-expanse-32b",
+        "org": "CohereForAI",
+        "release_date": "2024-10-23",
+        "license": "cc-by-nc-4.0",
+        "downloads": 5533,
+        "likes": 288
+      },
+      "architecture": {
+        "num_params": 32296476672,
+        "num_layers": null,
+        "hidden_size": null,
+        "ffn_size": null,
+        "num_heads": null,
+        "num_kv_heads": null,
+        "head_dim": null,
+        "norm_type": null,
+        "activation": null,
+        "positional_scheme": null,
+        "max_context": null,
+        "sliding_window": null,
+        "vocab_size": null,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": null
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": null,
+        "tokenizer_config_json": null,
+        "model_card": "README.md",
+        "safetensors_index": null
+      },
+      "errors": [
+        "config.json: 403 Client Error. (Request ID: Root=1-699423b0-39b6d458624161ec048a5e01;3106b52e-ce2e-4b7a-8029-2abf65fff2b6)\n\nCannot access gated repo for url https://huggingface.co/CohereForAI/aya-expanse-32b/resolve/main/config.json.\nAccess to model CohereLabs/aya-expanse-32b is restricted and you are not in the authorized list. Visit https://huggingface.co/CohereLabs/aya-expanse-32b to ask for access.",
+        "tokenizer_config.json: 403 Client Error. (Request ID: Root=1-699423b0-2af82ee961e8ad3f4f603e8d;dabc99f3-13a7-476c-bc74-9a86b2d12cc5)\n\nCannot access gated repo for url https://huggingface.co/CohereForAI/aya-expanse-32b/resolve/main/tokenizer_config.json.\nAccess to model CohereLabs/aya-expanse-32b is restricted and you are not in the authorized list. Visit https://huggingface.co/CohereLabs/aya-expanse-32b to ask for access.",
+        "model.safetensors.index.json: 403 Client Error. (Request ID: Root=1-699423b0-5ecb9cc96c2a288c417a12c1;bc638f7d-bd0c-48d8-baec-80f54592c35b)\n\nCannot access gated repo for url https://huggingface.co/CohereForAI/aya-expanse-32b/resolve/main/model.safetensors.index.json.\nAccess to model CohereLabs/aya-expanse-32b is restricted and you are not in the authorized list. Visit https://huggingface.co/CohereLabs/aya-expanse-32b to ask for access."
+      ]
+    },
+    {
+      "model_id": "CohereForAI/c4ai-command-r-08-2024",
+      "org": "CohereForAI",
+      "registry": {
+        "family": "c4ai",
+        "variant": "command-r-08-2024",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "CohereForAI/c4ai-command-r-08-2024",
+        "org": "CohereForAI",
+        "release_date": "2024-08-19",
+        "license": "cc-by-nc-4.0",
+        "downloads": 2143,
+        "likes": 169
+      },
+      "architecture": {
+        "num_params": 32296495316,
+        "num_layers": null,
+        "hidden_size": null,
+        "ffn_size": null,
+        "num_heads": null,
+        "num_kv_heads": null,
+        "head_dim": null,
+        "norm_type": null,
+        "activation": null,
+        "positional_scheme": null,
+        "max_context": null,
+        "sliding_window": null,
+        "vocab_size": null,
+        "num_params_source": "repo_safetensors_file_sizes"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 23,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": null
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": null,
+        "tokenizer_config_json": null,
+        "model_card": "README.md",
+        "safetensors_index": null
+      },
+      "errors": [
+        "config.json: 403 Client Error. (Request ID: Root=1-699423b0-26b409ab18c22e5b0d1b58f1;2273a647-26ba-4e72-9a21-5ded262bcd07)\n\nCannot access gated repo for url https://huggingface.co/CohereForAI/c4ai-command-r-08-2024/resolve/main/config.json.\nAccess to model CohereLabs/c4ai-command-r-08-2024 is restricted and you are not in the authorized list. Visit https://huggingface.co/CohereLabs/c4ai-command-r-08-2024 to ask for access.",
+        "tokenizer_config.json: 403 Client Error. (Request ID: Root=1-699423b0-51d95dae03c44b9d00f4b974;dc44a8a2-9101-4b1d-8454-6993e03b2f97)\n\nCannot access gated repo for url https://huggingface.co/CohereForAI/c4ai-command-r-08-2024/resolve/main/tokenizer_config.json.\nAccess to model CohereLabs/c4ai-command-r-08-2024 is restricted and you are not in the authorized list. Visit https://huggingface.co/CohereLabs/c4ai-command-r-08-2024 to ask for access.",
+        "model.safetensors.index.json: 403 Client Error. (Request ID: Root=1-699423b0-11b2afe366f4c06157e161d9;c0465efb-22f3-40aa-905c-a4b665b0b070)\n\nCannot access gated repo for url https://huggingface.co/CohereForAI/c4ai-command-r-08-2024/resolve/main/model.safetensors.index.json.\nAccess to model CohereLabs/c4ai-command-r-08-2024 is restricted and you are not in the authorized list. Visit https://huggingface.co/CohereLabs/c4ai-command-r-08-2024 to ask for access."
+      ]
+    },
+    {
+      "model_id": "Qwen/QwQ-32B",
+      "org": "Qwen",
+      "registry": {
+        "family": "QwQ",
+        "variant": "32B",
+        "tier": "tier3",
+        "paradigm": "reasoning",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "Qwen/QwQ-32B",
+        "org": "Qwen",
+        "release_date": "2025-03-05",
+        "license": "apache-2.0",
+        "downloads": 67446,
+        "likes": 2884
+      },
+      "architecture": {
+        "num_params": 32763876352,
+        "num_layers": 64,
+        "hidden_size": 5120,
+        "ffn_size": 27648,
+        "num_heads": 40,
+        "num_kv_heads": 8,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 131072,
+        "sliding_window": 32768,
+        "vocab_size": 152064,
+        "num_params_source": "safetensors_index.metadata.total_size"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 131072,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "Qwen2Tokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "Qwen/QwQ-32B-Preview",
+      "org": "Qwen",
+      "registry": {
+        "family": "QwQ",
+        "variant": "32B-Preview",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "Qwen/QwQ-32B-Preview",
+        "org": "Qwen",
+        "release_date": "2024-11-27",
+        "license": "apache-2.0",
+        "downloads": 6887,
+        "likes": 1742
+      },
+      "architecture": {
+        "num_params": 32763876352,
+        "num_layers": 64,
+        "hidden_size": 5120,
+        "ffn_size": 27648,
+        "num_heads": 40,
+        "num_kv_heads": 8,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 32768,
+        "sliding_window": 32768,
+        "vocab_size": 152064,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 32768,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "Qwen2Tokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "Qwen/Qwen2.5-14B",
+      "org": "Qwen",
+      "registry": {
+        "family": "Qwen2.5",
+        "variant": "14B",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "Qwen/Qwen2.5-14B",
+        "org": "Qwen",
+        "release_date": "2024-09-15",
+        "license": "apache-2.0",
+        "downloads": 83679,
+        "likes": 142
+      },
+      "architecture": {
+        "num_params": 14770033664,
+        "num_layers": 48,
+        "hidden_size": 5120,
+        "ffn_size": 13824,
+        "num_heads": 40,
+        "num_kv_heads": 8,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 131072,
+        "sliding_window": 131072,
+        "vocab_size": 152064,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 131072,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "Qwen2Tokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "Qwen/Qwen2.5-32B",
+      "org": "Qwen",
+      "registry": {
+        "family": "Qwen2.5",
+        "variant": "32B",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "Qwen/Qwen2.5-32B",
+        "org": "Qwen",
+        "release_date": "2024-09-15",
+        "license": "apache-2.0",
+        "downloads": 105547,
+        "likes": 172
+      },
+      "architecture": {
+        "num_params": 32763876352,
+        "num_layers": 64,
+        "hidden_size": 5120,
+        "ffn_size": 27648,
+        "num_heads": 40,
+        "num_kv_heads": 8,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 131072,
+        "sliding_window": 131072,
+        "vocab_size": 152064,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 131072,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "Qwen2Tokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "Qwen/Qwen2.5-72B",
+      "org": "Qwen",
+      "registry": {
+        "family": "Qwen2.5",
+        "variant": "72B",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "Qwen/Qwen2.5-72B",
+        "org": "Qwen",
+        "release_date": "2024-09-15",
+        "license": "other",
+        "downloads": 27593,
+        "likes": 86
+      },
+      "architecture": {
+        "num_params": 72706203648,
+        "num_layers": 80,
+        "hidden_size": 8192,
+        "ffn_size": 29568,
+        "num_heads": 64,
+        "num_kv_heads": 8,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 131072,
+        "sliding_window": 131072,
+        "vocab_size": 152064,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 131072,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "Qwen2Tokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "Qwen/Qwen2.5-72B-Instruct",
+      "org": "Qwen",
+      "registry": {
+        "family": "Qwen2.5",
+        "variant": "72B-Instruct",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "Qwen/Qwen2.5-72B-Instruct",
+        "org": "Qwen",
+        "release_date": "2024-09-16",
+        "license": "other",
+        "downloads": 347602,
+        "likes": 910
+      },
+      "architecture": {
+        "num_params": 72706203648,
+        "num_layers": 80,
+        "hidden_size": 8192,
+        "ffn_size": 29568,
+        "num_heads": 64,
+        "num_kv_heads": 8,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 131072,
+        "sliding_window": 131072,
+        "vocab_size": 152064,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 131072,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "Qwen2Tokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "org": "Qwen",
+      "registry": {
+        "family": "Qwen2.5-Coder",
+        "variant": "32B-Instruct",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "Qwen/Qwen2.5-Coder-32B-Instruct",
+        "org": "Qwen",
+        "release_date": "2024-11-06",
+        "license": "apache-2.0",
+        "downloads": 724763,
+        "likes": 1994
+      },
+      "architecture": {
+        "num_params": 32763876352,
+        "num_layers": 64,
+        "hidden_size": 5120,
+        "ffn_size": 27648,
+        "num_heads": 40,
+        "num_kv_heads": 8,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 32768,
+        "sliding_window": 131072,
+        "vocab_size": 152064,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 131072,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "Qwen2Tokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
       "model_id": "Qwen/Qwen3-14B",
       "org": "Qwen",
       "registry": {
@@ -2548,7 +5781,7 @@
         "org": "Qwen",
         "release_date": "2025-04-27",
         "license": "apache-2.0",
-        "downloads": 716821,
+        "downloads": 713686,
         "likes": 366
       },
       "architecture": {
@@ -2558,6 +5791,70 @@
         "ffn_size": 17408,
         "num_heads": 40,
         "num_kv_heads": 8,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 131072,
+        "sliding_window": null,
+        "vocab_size": 151936,
+        "num_params_source": "safetensors_index.metadata.total_size"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 131072,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "Qwen2Tokenizer"
+      },
+      "quantization": {
+        "available_formats": [
+          "GGUF"
+        ]
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "Qwen/Qwen3-235B-A22B",
+      "org": "Qwen",
+      "registry": {
+        "family": "Qwen3",
+        "variant": "235B-A22B",
+        "tier": "tier3",
+        "paradigm": "moe",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "Qwen/Qwen3-235B-A22B",
+        "org": "Qwen",
+        "release_date": "2025-04-27",
+        "license": "apache-2.0",
+        "downloads": 480486,
+        "likes": 1075
+      },
+      "architecture": {
+        "num_params": 235093634560,
+        "num_layers": 94,
+        "hidden_size": 4096,
+        "ffn_size": 12288,
+        "num_heads": 64,
+        "num_kv_heads": 4,
         "head_dim": 128,
         "norm_type": "rmsnorm",
         "activation": "silu",
@@ -2612,8 +5909,8 @@
         "org": "Qwen",
         "release_date": "2025-04-27",
         "license": "apache-2.0",
-        "downloads": 1560791,
-        "likes": 654
+        "downloads": 1599995,
+        "likes": 655
       },
       "architecture": {
         "num_params": 32762123264,
@@ -2661,6 +5958,403 @@
       "errors": []
     },
     {
+      "model_id": "RWKV/v6-Finch-14B-HF",
+      "org": "RWKV",
+      "registry": {
+        "family": "v6-Finch",
+        "variant": "14B-HF",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "RWKV/v6-Finch-14B-HF",
+        "org": "RWKV",
+        "release_date": "2024-07-21",
+        "license": "apache-2.0",
+        "downloads": 6884,
+        "likes": 15
+      },
+      "architecture": {
+        "num_params": null,
+        "num_layers": 61,
+        "hidden_size": 4096,
+        "ffn_size": null,
+        "num_heads": 64,
+        "num_kv_heads": null,
+        "head_dim": 64,
+        "norm_type": null,
+        "activation": null,
+        "positional_scheme": null,
+        "max_context": null,
+        "sliding_window": null,
+        "vocab_size": 65536
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": "Rwkv6Tokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": null
+      },
+      "errors": []
+    },
+    {
+      "model_id": "Snowflake/snowflake-arctic-instruct",
+      "org": "Snowflake",
+      "registry": {
+        "family": "snowflake",
+        "variant": "arctic-instruct",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "Snowflake/snowflake-arctic-instruct",
+        "org": "Snowflake",
+        "release_date": "2024-04-21",
+        "license": "apache-2.0",
+        "downloads": 6147,
+        "likes": 360
+      },
+      "architecture": {
+        "num_params": 478584608768,
+        "num_layers": 35,
+        "hidden_size": 7168,
+        "ffn_size": 4864,
+        "num_heads": 56,
+        "num_kv_heads": 8,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 4096,
+        "sliding_window": null,
+        "vocab_size": 32000,
+        "num_params_source": "safetensors_index.metadata.total_size"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": "ArcticTokenizer"
+      },
+      "quantization": {
+        "available_formats": [
+          "FP8"
+        ]
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "ai21labs/AI21-Jamba-1.5-Large",
+      "org": "ai21labs",
+      "registry": {
+        "family": "AI21",
+        "variant": "Jamba-1.5-Large",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "ai21labs/AI21-Jamba-1.5-Large",
+        "org": "ai21labs",
+        "release_date": "2024-08-19",
+        "license": "other",
+        "downloads": 2231,
+        "likes": 218
+      },
+      "architecture": {
+        "num_params": 398555325612,
+        "num_layers": null,
+        "hidden_size": null,
+        "ffn_size": null,
+        "num_heads": null,
+        "num_kv_heads": null,
+        "head_dim": null,
+        "norm_type": null,
+        "activation": null,
+        "positional_scheme": null,
+        "max_context": null,
+        "sliding_window": null,
+        "vocab_size": null,
+        "num_params_source": "repo_safetensors_file_sizes"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 220000,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": null
+      },
+      "quantization": {
+        "available_formats": [
+          "BITSANDBYTES",
+          "INT8",
+          "INT4"
+        ]
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": null,
+        "tokenizer_config_json": null,
+        "model_card": "README.md",
+        "safetensors_index": null
+      },
+      "errors": [
+        "config.json: 403 Client Error. (Request ID: Root=1-699423b1-4541b98d24615b2a2be8f64f;e6c40cc9-ded3-4e0b-9112-370651f66a9c)\n\nCannot access gated repo for url https://huggingface.co/ai21labs/AI21-Jamba-1.5-Large/resolve/main/config.json.\nAccess to model ai21labs/AI21-Jamba-Large-1.5 is restricted and you are not in the authorized list. Visit https://huggingface.co/ai21labs/AI21-Jamba-Large-1.5 to ask for access.",
+        "tokenizer_config.json: 403 Client Error. (Request ID: Root=1-699423b1-1438f2f12faed986778b21c1;de31bc09-5c73-410e-9614-97ec023991a0)\n\nCannot access gated repo for url https://huggingface.co/ai21labs/AI21-Jamba-1.5-Large/resolve/main/tokenizer_config.json.\nAccess to model ai21labs/AI21-Jamba-Large-1.5 is restricted and you are not in the authorized list. Visit https://huggingface.co/ai21labs/AI21-Jamba-Large-1.5 to ask for access.",
+        "model.safetensors.index.json: 403 Client Error. (Request ID: Root=1-699423b1-09d6992308bd85e432549ad1;be081323-89f6-4f4e-bb19-1d4d8c21a7b8)\n\nCannot access gated repo for url https://huggingface.co/ai21labs/AI21-Jamba-1.5-Large/resolve/main/model.safetensors.index.json.\nAccess to model ai21labs/AI21-Jamba-Large-1.5 is restricted and you are not in the authorized list. Visit https://huggingface.co/ai21labs/AI21-Jamba-Large-1.5 to ask for access."
+      ]
+    },
+    {
+      "model_id": "ai21labs/AI21-Jamba-1.5-Mini",
+      "org": "ai21labs",
+      "registry": {
+        "family": "AI21",
+        "variant": "Jamba-1.5-Mini",
+        "tier": "tier3",
+        "paradigm": "hybrid",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "ai21labs/AI21-Jamba-1.5-Mini",
+        "org": "ai21labs",
+        "release_date": "2024-08-19",
+        "license": "other",
+        "downloads": 8021,
+        "likes": 267
+      },
+      "architecture": {
+        "num_params": 51570323328,
+        "num_layers": null,
+        "hidden_size": null,
+        "ffn_size": null,
+        "num_heads": null,
+        "num_kv_heads": null,
+        "head_dim": null,
+        "norm_type": null,
+        "activation": null,
+        "positional_scheme": null,
+        "max_context": null,
+        "sliding_window": null,
+        "vocab_size": null,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 200000,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": null
+      },
+      "quantization": {
+        "available_formats": [
+          "BITSANDBYTES",
+          "INT8",
+          "INT4"
+        ]
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": null,
+        "tokenizer_config_json": null,
+        "model_card": "README.md",
+        "safetensors_index": null
+      },
+      "errors": [
+        "config.json: 403 Client Error. (Request ID: Root=1-699423b1-259d48c668c038523efefdac;3eb28383-04d7-44e2-8af7-57a9242ae003)\n\nCannot access gated repo for url https://huggingface.co/ai21labs/AI21-Jamba-1.5-Mini/resolve/main/config.json.\nAccess to model ai21labs/AI21-Jamba-Mini-1.5 is restricted and you are not in the authorized list. Visit https://huggingface.co/ai21labs/AI21-Jamba-Mini-1.5 to ask for access.",
+        "tokenizer_config.json: 403 Client Error. (Request ID: Root=1-699423b1-2797c931393680e9420912c6;5da5b765-a07d-4b20-96c7-16ab4465a740)\n\nCannot access gated repo for url https://huggingface.co/ai21labs/AI21-Jamba-1.5-Mini/resolve/main/tokenizer_config.json.\nAccess to model ai21labs/AI21-Jamba-Mini-1.5 is restricted and you are not in the authorized list. Visit https://huggingface.co/ai21labs/AI21-Jamba-Mini-1.5 to ask for access.",
+        "model.safetensors.index.json: 403 Client Error. (Request ID: Root=1-699423b1-3f0be24459e188b0649363c3;f59fac55-1af8-4341-8ef2-f211687c0651)\n\nCannot access gated repo for url https://huggingface.co/ai21labs/AI21-Jamba-1.5-Mini/resolve/main/model.safetensors.index.json.\nAccess to model ai21labs/AI21-Jamba-Mini-1.5 is restricted and you are not in the authorized list. Visit https://huggingface.co/ai21labs/AI21-Jamba-Mini-1.5 to ask for access."
+      ]
+    },
+    {
+      "model_id": "ai21labs/Jamba-v0.1",
+      "org": "ai21labs",
+      "registry": {
+        "family": "Jamba",
+        "variant": "v0.1",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "ai21labs/Jamba-v0.1",
+        "org": "ai21labs",
+        "release_date": "2024-03-28",
+        "license": "apache-2.0",
+        "downloads": 915,
+        "likes": 1190
+      },
+      "architecture": {
+        "num_params": 51573993344,
+        "num_layers": 32,
+        "hidden_size": 4096,
+        "ffn_size": 14336,
+        "num_heads": 32,
+        "num_kv_heads": 8,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": null,
+        "max_context": 262144,
+        "sliding_window": null,
+        "vocab_size": 65536,
+        "num_params_source": "safetensors_index.metadata.total_size"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": 16,
+        "ssm_conv_kernel": 4,
+        "ssm_dt_rank": 256,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {
+          "mamba_d_conv": 4,
+          "mamba_d_state": 16,
+          "mamba_dt_rank": 256,
+          "mamba_expand": 2
+        }
+      },
+      "training": {
+        "pretrain_tokens": 140000,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "LlamaTokenizer"
+      },
+      "quantization": {
+        "available_formats": [
+          "BITSANDBYTES",
+          "INT8"
+        ]
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "allenai/OLMo-2-0325-32B-Instruct",
+      "org": "allenai",
+      "registry": {
+        "family": "OLMo-2-0325",
+        "variant": "32B-Instruct",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "allenai/OLMo-2-0325-32B-Instruct",
+        "org": "allenai",
+        "release_date": "2025-03-12",
+        "license": "apache-2.0",
+        "downloads": 1533,
+        "likes": 148
+      },
+      "architecture": {
+        "num_params": 32234279936,
+        "num_layers": 64,
+        "hidden_size": 5120,
+        "ffn_size": 27648,
+        "num_heads": 40,
+        "num_kv_heads": 8,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 4096,
+        "sliding_window": null,
+        "vocab_size": 100352,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": "GPT2Tokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
       "model_id": "allenai/Olmo-3-1125-32B",
       "org": "allenai",
       "registry": {
@@ -2676,7 +6370,7 @@
         "org": "allenai",
         "release_date": "2025-11-04",
         "license": "apache-2.0",
-        "downloads": 6946,
+        "downloads": 6884,
         "likes": 109
       },
       "architecture": {
@@ -2725,6 +6419,196 @@
       "errors": []
     },
     {
+      "model_id": "baichuan-inc/Baichuan-M1-14B-Base",
+      "org": "baichuan-inc",
+      "registry": {
+        "family": "Baichuan-M1",
+        "variant": "14B-Base",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "baichuan-inc/Baichuan-M1-14B-Base",
+        "org": "baichuan-inc",
+        "release_date": "2025-01-23",
+        "license": null,
+        "downloads": 178,
+        "likes": 31
+      },
+      "architecture": {
+        "num_params": 14470764320,
+        "num_layers": 40,
+        "hidden_size": 5120,
+        "ffn_size": 17408,
+        "num_heads": 20,
+        "num_kv_heads": 2,
+        "head_dim": 256,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 32768,
+        "sliding_window": 8192,
+        "vocab_size": 133120,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {
+          "conv_window": 2
+        }
+      },
+      "training": {
+        "pretrain_tokens": 20000000000000,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "BaichuanTokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-R1",
+      "org": "deepseek-ai",
+      "registry": {
+        "family": "DeepSeek",
+        "variant": "R1",
+        "tier": "tier3",
+        "paradigm": "reasoning",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "deepseek-ai/DeepSeek-R1",
+        "org": "deepseek-ai",
+        "release_date": "2025-01-20",
+        "license": "mit",
+        "downloads": 567566,
+        "likes": 13009
+      },
+      "architecture": {
+        "num_params": 684531386000,
+        "num_layers": 61,
+        "hidden_size": 7168,
+        "ffn_size": 18432,
+        "num_heads": 128,
+        "num_kv_heads": 128,
+        "head_dim": 56,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 163840,
+        "sliding_window": null,
+        "vocab_size": 129280,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 32768,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "LlamaTokenizerFast"
+      },
+      "quantization": {
+        "available_formats": [
+          "FP8"
+        ]
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
+      "org": "deepseek-ai",
+      "registry": {
+        "family": "DeepSeek-R1-Distill-Llama",
+        "variant": "70B",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
+        "org": "deepseek-ai",
+        "release_date": "2025-01-20",
+        "license": "mit",
+        "downloads": 261268,
+        "likes": 741
+      },
+      "architecture": {
+        "num_params": 70553706496,
+        "num_layers": 80,
+        "hidden_size": 8192,
+        "ffn_size": 28672,
+        "num_heads": 64,
+        "num_kv_heads": 8,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 131072,
+        "sliding_window": null,
+        "vocab_size": 128256,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 32768,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "LlamaTokenizerFast"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
       "model_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
       "org": "deepseek-ai",
       "registry": {
@@ -2740,7 +6624,7 @@
         "org": "deepseek-ai",
         "release_date": "2025-01-20",
         "license": "mit",
-        "downloads": 419777,
+        "downloads": 443781,
         "likes": 603
       },
       "architecture": {
@@ -2787,6 +6671,266 @@
       "errors": []
     },
     {
+      "model_id": "deepseek-ai/DeepSeek-V2.5",
+      "org": "deepseek-ai",
+      "registry": {
+        "family": "DeepSeek",
+        "variant": "V2.5",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "deepseek-ai/DeepSeek-V2.5",
+        "org": "deepseek-ai",
+        "release_date": "2024-09-05",
+        "license": "other",
+        "downloads": 74482,
+        "likes": 732
+      },
+      "architecture": {
+        "num_params": 235741434880,
+        "num_layers": 60,
+        "hidden_size": 5120,
+        "ffn_size": 12288,
+        "num_heads": 128,
+        "num_kv_heads": 128,
+        "head_dim": 40,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 163840,
+        "sliding_window": null,
+        "vocab_size": 102400,
+        "num_params_source": "safetensors_index.metadata.total_size"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": "LlamaTokenizerFast"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-V3",
+      "org": "deepseek-ai",
+      "registry": {
+        "family": "DeepSeek",
+        "variant": "V3",
+        "tier": "tier3",
+        "paradigm": "moe",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "deepseek-ai/DeepSeek-V3",
+        "org": "deepseek-ai",
+        "release_date": "2024-12-25",
+        "license": null,
+        "downloads": 1295783,
+        "likes": 4024
+      },
+      "architecture": {
+        "num_params": 684531386000,
+        "num_layers": 61,
+        "hidden_size": 7168,
+        "ffn_size": 18432,
+        "num_heads": 128,
+        "num_kv_heads": 128,
+        "head_dim": 56,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 163840,
+        "sliding_window": null,
+        "vocab_size": 129280,
+        "num_params_source": "safetensors_index.metadata.total_size"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 14800000000000,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "LlamaTokenizerFast"
+      },
+      "quantization": {
+        "available_formats": [
+          "FP8",
+          "INT8",
+          "INT4"
+        ]
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "google/gemma-2-27b-it",
+      "org": "google",
+      "registry": {
+        "family": "gemma-2",
+        "variant": "27b-it",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "google/gemma-2-27b-it",
+        "org": "google",
+        "release_date": "2024-06-24",
+        "license": "gemma",
+        "downloads": 391765,
+        "likes": 559
+      },
+      "architecture": {
+        "num_params": 27227128320,
+        "num_layers": 46,
+        "hidden_size": 4608,
+        "ffn_size": 36864,
+        "num_heads": 32,
+        "num_kv_heads": 16,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "gelu_pytorch_tanh",
+        "positional_scheme": "rope",
+        "max_context": 8192,
+        "sliding_window": 4096,
+        "vocab_size": 256000,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 13000000000000,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "GemmaTokenizer"
+      },
+      "quantization": {
+        "available_formats": [
+          "BITSANDBYTES",
+          "INT8",
+          "INT4"
+        ]
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "google/gemma-2-9b-it",
+      "org": "google",
+      "registry": {
+        "family": "gemma-2",
+        "variant": "9b-it",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "google/gemma-2-9b-it",
+        "org": "google",
+        "release_date": "2024-06-24",
+        "license": "gemma",
+        "downloads": 144618,
+        "likes": 768
+      },
+      "architecture": {
+        "num_params": 9241705984,
+        "num_layers": 42,
+        "hidden_size": 3584,
+        "ffn_size": 14336,
+        "num_heads": 16,
+        "num_kv_heads": 8,
+        "head_dim": 256,
+        "norm_type": "rmsnorm",
+        "activation": "gelu_pytorch_tanh",
+        "positional_scheme": "rope",
+        "max_context": 8192,
+        "sliding_window": 4096,
+        "vocab_size": 256000,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 13000000000000,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "GemmaTokenizer"
+      },
+      "quantization": {
+        "available_formats": [
+          "BITSANDBYTES",
+          "INT8",
+          "INT4"
+        ]
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
       "model_id": "google/gemma-3-12b-it",
       "org": "google",
       "registry": {
@@ -2802,7 +6946,7 @@
         "org": "google",
         "release_date": "2025-03-01",
         "license": "gemma",
-        "downloads": 1228958,
+        "downloads": 1235297,
         "likes": 658
       },
       "architecture": {
@@ -2864,7 +7008,7 @@
         "org": "google",
         "release_date": "2025-03-01",
         "license": "gemma",
-        "downloads": 1739533,
+        "downloads": 1764084,
         "likes": 1875
       },
       "architecture": {
@@ -2926,7 +7070,7 @@
         "org": "ibm-granite",
         "release_date": "2025-09-16",
         "license": "apache-2.0",
-        "downloads": 59268,
+        "downloads": 59123,
         "likes": 295
       },
       "architecture": {
@@ -2996,7 +7140,7 @@
         "org": "inclusionAI",
         "release_date": "2025-11-25",
         "license": "apache-2.0",
-        "downloads": 34822,
+        "downloads": 34462,
         "likes": 57
       },
       "architecture": {
@@ -3043,6 +7187,276 @@
       "errors": []
     },
     {
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "org": "meta-llama",
+      "registry": {
+        "family": "Llama-3.3",
+        "variant": "70B-Instruct",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+        "org": "meta-llama",
+        "release_date": "2024-11-26",
+        "license": "llama3.3",
+        "downloads": 776659,
+        "likes": 2657
+      },
+      "architecture": {
+        "num_params": 70553748936,
+        "num_layers": null,
+        "hidden_size": null,
+        "ffn_size": null,
+        "num_heads": null,
+        "num_kv_heads": null,
+        "head_dim": null,
+        "norm_type": null,
+        "activation": null,
+        "positional_scheme": null,
+        "max_context": null,
+        "sliding_window": null,
+        "vocab_size": null,
+        "num_params_source": "repo_safetensors_file_sizes"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 15000000000000,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": null
+      },
+      "quantization": {
+        "available_formats": [
+          "BITSANDBYTES",
+          "INT8",
+          "INT4"
+        ]
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": null,
+        "tokenizer_config_json": null,
+        "model_card": "README.md",
+        "safetensors_index": null
+      },
+      "errors": [
+        "config.json: 403 Client Error. (Request ID: Root=1-699423b1-4d489f9720b20a0f6ee7345f;743ae70a-c4d2-47af-9b1c-fbf8bee736cd)\n\nCannot access gated repo for url https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct/resolve/main/config.json.\nAccess to model meta-llama/Llama-3.3-70B-Instruct is restricted and you are not in the authorized list. Visit https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct to ask for access.",
+        "tokenizer_config.json: 403 Client Error. (Request ID: Root=1-699423b1-4ce7f5fd7ba10f12768bce8c;1bfd2d62-6cf6-4583-a8dc-7726d0e7a17a)\n\nCannot access gated repo for url https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct/resolve/main/tokenizer_config.json.\nAccess to model meta-llama/Llama-3.3-70B-Instruct is restricted and you are not in the authorized list. Visit https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct to ask for access.",
+        "model.safetensors.index.json: 403 Client Error. (Request ID: Root=1-699423b2-1ae627cb5168295f471782e6;c92a9001-f4d5-4e1e-b258-8fecbe0d162a)\n\nCannot access gated repo for url https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct/resolve/main/model.safetensors.index.json.\nAccess to model meta-llama/Llama-3.3-70B-Instruct is restricted and you are not in the authorized list. Visit https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct to ask for access."
+      ]
+    },
+    {
+      "model_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
+      "org": "meta-llama",
+      "registry": {
+        "family": "Llama-4-Maverick",
+        "variant": "17B-128E-Instruct",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
+        "org": "meta-llama",
+        "release_date": "2025-04-01",
+        "license": "other",
+        "downloads": 17506,
+        "likes": 462
+      },
+      "architecture": {
+        "num_params": 401583851660,
+        "num_layers": null,
+        "hidden_size": null,
+        "ffn_size": null,
+        "num_heads": null,
+        "num_kv_heads": null,
+        "head_dim": null,
+        "norm_type": null,
+        "activation": null,
+        "positional_scheme": null,
+        "max_context": null,
+        "sliding_window": null,
+        "vocab_size": null,
+        "num_params_source": "repo_safetensors_file_sizes"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 40000000000000,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": null
+      },
+      "quantization": {
+        "available_formats": [
+          "FP8",
+          "INT4"
+        ]
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": null,
+        "tokenizer_config_json": null,
+        "model_card": "README.md",
+        "safetensors_index": null
+      },
+      "errors": [
+        "config.json: 403 Client Error. (Request ID: Root=1-699423b2-4227262125729dcd3d2b6b4a;60d5c0de-5876-48c0-99d5-edef94a69c17)\n\nCannot access gated repo for url https://huggingface.co/meta-llama/Llama-4-Maverick-17B-128E-Instruct/resolve/main/config.json.\nAccess to model meta-llama/Llama-4-Maverick-17B-128E-Instruct is restricted and you are not in the authorized list. Visit https://huggingface.co/meta-llama/Llama-4-Maverick-17B-128E-Instruct to ask for access.",
+        "tokenizer_config.json: 403 Client Error. (Request ID: Root=1-699423b2-6ac33ed23063d68e27daf728;ae240e2f-04f4-497c-b5a5-acc9151d3fc8)\n\nCannot access gated repo for url https://huggingface.co/meta-llama/Llama-4-Maverick-17B-128E-Instruct/resolve/main/tokenizer_config.json.\nAccess to model meta-llama/Llama-4-Maverick-17B-128E-Instruct is restricted and you are not in the authorized list. Visit https://huggingface.co/meta-llama/Llama-4-Maverick-17B-128E-Instruct to ask for access.",
+        "model.safetensors.index.json: 403 Client Error. (Request ID: Root=1-699423b2-0d8cdda63eb5f9747b83e90c;d8137760-9bb9-4033-8616-26d79fbb007f)\n\nCannot access gated repo for url https://huggingface.co/meta-llama/Llama-4-Maverick-17B-128E-Instruct/resolve/main/model.safetensors.index.json.\nAccess to model meta-llama/Llama-4-Maverick-17B-128E-Instruct is restricted and you are not in the authorized list. Visit https://huggingface.co/meta-llama/Llama-4-Maverick-17B-128E-Instruct to ask for access."
+      ]
+    },
+    {
+      "model_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "org": "meta-llama",
+      "registry": {
+        "family": "Llama-4-Scout",
+        "variant": "17B-16E-Instruct",
+        "tier": "tier3",
+        "paradigm": "moe",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+        "org": "meta-llama",
+        "release_date": "2025-04-02",
+        "license": "other",
+        "downloads": 196630,
+        "likes": 1220
+      },
+      "architecture": {
+        "num_params": 108641869360,
+        "num_layers": null,
+        "hidden_size": null,
+        "ffn_size": null,
+        "num_heads": null,
+        "num_kv_heads": null,
+        "head_dim": null,
+        "norm_type": null,
+        "activation": null,
+        "positional_scheme": null,
+        "max_context": null,
+        "sliding_window": null,
+        "vocab_size": null,
+        "num_params_source": "repo_safetensors_file_sizes"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 40000000000000,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": null
+      },
+      "quantization": {
+        "available_formats": [
+          "FP8",
+          "INT4"
+        ]
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": null,
+        "tokenizer_config_json": null,
+        "model_card": "README.md",
+        "safetensors_index": null
+      },
+      "errors": [
+        "config.json: 403 Client Error. (Request ID: Root=1-699423b2-70569a255a271bc56c11f334;16a1bc75-f1ee-4fd6-91de-095eca6c7d74)\n\nCannot access gated repo for url https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct/resolve/main/config.json.\nAccess to model meta-llama/Llama-4-Scout-17B-16E-Instruct is restricted and you are not in the authorized list. Visit https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct to ask for access.",
+        "tokenizer_config.json: 403 Client Error. (Request ID: Root=1-699423b2-3e86011c7aeecdb027932d1e;42ae953e-7e26-4409-a1ff-3dbaecf3db0b)\n\nCannot access gated repo for url https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct/resolve/main/tokenizer_config.json.\nAccess to model meta-llama/Llama-4-Scout-17B-16E-Instruct is restricted and you are not in the authorized list. Visit https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct to ask for access.",
+        "model.safetensors.index.json: 403 Client Error. (Request ID: Root=1-699423b2-5946a9ed1ea13254493e3b04;e410e453-d5b9-49bd-b35c-fb969fa57c4f)\n\nCannot access gated repo for url https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct/resolve/main/model.safetensors.index.json.\nAccess to model meta-llama/Llama-4-Scout-17B-16E-Instruct is restricted and you are not in the authorized list. Visit https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct to ask for access."
+      ]
+    },
+    {
+      "model_id": "microsoft/Phi-4",
+      "org": "microsoft",
+      "registry": {
+        "family": "Phi-4",
+        "variant": "",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "microsoft/Phi-4",
+        "org": "microsoft",
+        "release_date": "2024-12-11",
+        "license": "mit",
+        "downloads": 577314,
+        "likes": 2220
+      },
+      "architecture": {
+        "num_params": 14659507200,
+        "num_layers": 40,
+        "hidden_size": 5120,
+        "ffn_size": 17920,
+        "num_heads": 40,
+        "num_kv_heads": 10,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 16384,
+        "sliding_window": null,
+        "vocab_size": 100352,
+        "num_params_source": "safetensors_index.metadata.total_size"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 9800000000000,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "GPT2Tokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
       "model_id": "microsoft/Phi-4-reasoning",
       "org": "microsoft",
       "registry": {
@@ -3058,7 +7472,7 @@
         "org": "microsoft",
         "release_date": "2025-04-09",
         "license": "mit",
-        "downloads": 5606,
+        "downloads": 5708,
         "likes": 215
       },
       "architecture": {
@@ -3105,6 +7519,514 @@
       "errors": []
     },
     {
+      "model_id": "microsoft/phi-4-reasoning-plus",
+      "org": "microsoft",
+      "registry": {
+        "family": "phi-4",
+        "variant": "reasoning-plus",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "microsoft/phi-4-reasoning-plus",
+        "org": "microsoft",
+        "release_date": "2025-04-17",
+        "license": "mit",
+        "downloads": 225153,
+        "likes": 334
+      },
+      "architecture": {
+        "num_params": 14659507200,
+        "num_layers": 40,
+        "hidden_size": 5120,
+        "ffn_size": 17920,
+        "num_heads": 40,
+        "num_kv_heads": 10,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 32768,
+        "sliding_window": null,
+        "vocab_size": 100352,
+        "num_params_source": "safetensors_index.metadata.total_size"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 16000000000,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "GPT2Tokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "mistralai/Mistral-Large-Instruct-2411",
+      "org": "mistralai",
+      "registry": {
+        "family": "Mistral",
+        "variant": "Large-Instruct-2411",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "mistralai/Mistral-Large-Instruct-2411",
+        "org": "mistralai",
+        "release_date": "2024-11-14",
+        "license": "other",
+        "downloads": 10588,
+        "likes": 251
+      },
+      "architecture": {
+        "num_params": 122610069504,
+        "num_layers": 88,
+        "hidden_size": 12288,
+        "ffn_size": 28672,
+        "num_heads": 96,
+        "num_kv_heads": 8,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 131072,
+        "sliding_window": null,
+        "vocab_size": 32768,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 80,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "LlamaTokenizer"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "mistralai/Mistral-Small-24B-Instruct-2501",
+      "org": "mistralai",
+      "registry": {
+        "family": "Mistral-Small",
+        "variant": "24B-Instruct-2501",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "mistralai/Mistral-Small-24B-Instruct-2501",
+        "org": "mistralai",
+        "release_date": "2025-01-28",
+        "license": "apache-2.0",
+        "downloads": 763185,
+        "likes": 952
+      },
+      "architecture": {
+        "num_params": 23572403200,
+        "num_layers": 40,
+        "hidden_size": 5120,
+        "ffn_size": 32768,
+        "num_heads": 32,
+        "num_kv_heads": 8,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 32768,
+        "sliding_window": null,
+        "vocab_size": 131072,
+        "num_params_source": "safetensors_index.metadata.total_size"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": "LlamaTokenizer"
+      },
+      "quantization": {
+        "available_formats": [
+          "INT8",
+          "INT4"
+        ]
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+      "org": "mistralai",
+      "registry": {
+        "family": "Mistral-Small-3.1",
+        "variant": "24B-Instruct-2503",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+        "org": "mistralai",
+        "release_date": "2025-03-11",
+        "license": "apache-2.0",
+        "downloads": 93917,
+        "likes": 1349
+      },
+      "architecture": {
+        "num_params": 24011361280,
+        "num_layers": null,
+        "hidden_size": null,
+        "ffn_size": null,
+        "num_heads": null,
+        "num_kv_heads": null,
+        "head_dim": null,
+        "norm_type": null,
+        "activation": null,
+        "positional_scheme": null,
+        "max_context": null,
+        "sliding_window": null,
+        "vocab_size": null,
+        "num_params_source": "safetensors_index.metadata.total_size"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 128000,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "LlamaTokenizerFast"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "mistralai/Mixtral-8x22B-Instruct-v0.1",
+      "org": "mistralai",
+      "registry": {
+        "family": "Mixtral",
+        "variant": "8x22B-Instruct-v0.1",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "mistralai/Mixtral-8x22B-Instruct-v0.1",
+        "org": "mistralai",
+        "release_date": "2024-04-16",
+        "license": "apache-2.0",
+        "downloads": 10736,
+        "likes": 746
+      },
+      "architecture": {
+        "num_params": 140630071296,
+        "num_layers": 56,
+        "hidden_size": 6144,
+        "ffn_size": 16384,
+        "num_heads": 48,
+        "num_kv_heads": 8,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 65536,
+        "sliding_window": null,
+        "vocab_size": 32768,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": "LlamaTokenizer"
+      },
+      "quantization": {
+        "available_formats": [
+          "INT8",
+          "INT4"
+        ]
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "mistralai/Mixtral-8x7B-Instruct-v0.1",
+      "org": "mistralai",
+      "registry": {
+        "family": "Mixtral",
+        "variant": "8x7B-Instruct-v0.1",
+        "tier": "tier3",
+        "paradigm": "moe",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "mistralai/Mixtral-8x7B-Instruct-v0.1",
+        "org": "mistralai",
+        "release_date": "2023-12-10",
+        "license": "apache-2.0",
+        "downloads": 567179,
+        "likes": 4639
+      },
+      "architecture": {
+        "num_params": 46702792704,
+        "num_layers": 32,
+        "hidden_size": 4096,
+        "ffn_size": 14336,
+        "num_heads": 32,
+        "num_kv_heads": 8,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 32768,
+        "sliding_window": null,
+        "vocab_size": 32000,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": "LlamaTokenizer"
+      },
+      "quantization": {
+        "available_formats": [
+          "BITSANDBYTES",
+          "INT8",
+          "INT4"
+        ]
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "nvidia/Llama-3.1-Nemotron-70B-Instruct-HF",
+      "org": "nvidia",
+      "registry": {
+        "family": "Llama-3.1-Nemotron",
+        "variant": "70B-Instruct-HF",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "nvidia/Llama-3.1-Nemotron-70B-Instruct-HF",
+        "org": "nvidia",
+        "release_date": "2024-10-12",
+        "license": "llama3.1",
+        "downloads": 16993,
+        "likes": 2061
+      },
+      "architecture": {
+        "num_params": 70553706496,
+        "num_layers": 80,
+        "hidden_size": 8192,
+        "ffn_size": 28672,
+        "num_heads": 64,
+        "num_kv_heads": 8,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 131072,
+        "sliding_window": null,
+        "vocab_size": 128256,
+        "num_params_source": "safetensors_index.metadata.total_size"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 128000,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "PreTrainedTokenizerFast"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
+      "model_id": "nvidia/Llama-3_1-Nemotron-51B-Instruct",
+      "org": "nvidia",
+      "registry": {
+        "family": "Llama-3_1-Nemotron",
+        "variant": "51B-Instruct",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "nvidia/Llama-3_1-Nemotron-51B-Instruct",
+        "org": "nvidia",
+        "release_date": "2024-09-22",
+        "license": "other",
+        "downloads": 3469,
+        "likes": 208
+      },
+      "architecture": {
+        "num_params": 51501015040,
+        "num_layers": 80,
+        "hidden_size": 8192,
+        "ffn_size": null,
+        "num_heads": 64,
+        "num_kv_heads": null,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 131072,
+        "sliding_window": null,
+        "vocab_size": 128256,
+        "num_params_source": "safetensors_index.metadata.total_size"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 40000000000,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "PreTrainedTokenizerFast"
+      },
+      "quantization": {
+        "available_formats": [
+          "FP8"
+        ]
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
       "model_id": "openai/gpt-oss-20b",
       "org": "openai",
       "registry": {
@@ -3120,7 +8042,7 @@
         "org": "openai",
         "release_date": "2025-08-04",
         "license": "apache-2.0",
-        "downloads": 5509274,
+        "downloads": 5532100,
         "likes": 4371
       },
       "architecture": {
@@ -3169,6 +8091,82 @@
       "errors": []
     },
     {
+      "model_id": "tiiuae/Falcon-H1-34B-Base",
+      "org": "tiiuae",
+      "registry": {
+        "family": "Falcon-H1",
+        "variant": "34B-Base",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "tiiuae/Falcon-H1-34B-Base",
+        "org": "tiiuae",
+        "release_date": "2025-05-01",
+        "license": "other",
+        "downloads": 1453,
+        "likes": 13
+      },
+      "architecture": {
+        "num_params": 33642516224,
+        "num_layers": 72,
+        "hidden_size": 5120,
+        "ffn_size": 21504,
+        "num_heads": 20,
+        "num_kv_heads": 4,
+        "head_dim": 128,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 262144,
+        "sliding_window": null,
+        "vocab_size": 261120,
+        "num_params_source": "hf_api.safetensors.total"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": 256,
+        "ssm_conv_kernel": 4,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {
+          "mamba_chunk_size": 128,
+          "mamba_d_conv": 4,
+          "mamba_d_head": 128,
+          "mamba_d_ssm": 4096,
+          "mamba_d_state": 256,
+          "mamba_expand": 2,
+          "mamba_n_groups": 2,
+          "mamba_n_heads": 32,
+          "ssm_in_multiplier": 0,
+          "ssm_multipliers": 0,
+          "ssm_out_multiplier": 0
+        }
+      },
+      "training": {
+        "pretrain_tokens": null,
+        "pretrain_tokens_source": null,
+        "tokenizer_type": "PreTrainedTokenizer"
+      },
+      "quantization": {
+        "available_formats": [
+          "GGUF"
+        ]
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
       "model_id": "tiiuae/Falcon-H1-34B-Instruct",
       "org": "tiiuae",
       "registry": {
@@ -3184,7 +8182,7 @@
         "org": "tiiuae",
         "release_date": "2025-05-01",
         "license": "other",
-        "downloads": 804,
+        "downloads": 1439,
         "likes": 51
       },
       "architecture": {
@@ -3245,6 +8243,68 @@
       "errors": []
     },
     {
+      "model_id": "tiiuae/Falcon3-10B-Instruct",
+      "org": "tiiuae",
+      "registry": {
+        "family": "Falcon3",
+        "variant": "10B-Instruct",
+        "tier": "tier3",
+        "paradigm": "unassigned",
+        "is_quick_test": false,
+        "is_phase_transition": false
+      },
+      "identity": {
+        "model_id": "tiiuae/Falcon3-10B-Instruct",
+        "org": "tiiuae",
+        "release_date": "2024-12-14",
+        "license": "other",
+        "downloads": 7373,
+        "likes": 117
+      },
+      "architecture": {
+        "num_params": 10305653760,
+        "num_layers": 40,
+        "hidden_size": 3072,
+        "ffn_size": 23040,
+        "num_heads": 12,
+        "num_kv_heads": 4,
+        "head_dim": 256,
+        "norm_type": "rmsnorm",
+        "activation": "silu",
+        "positional_scheme": "rope",
+        "max_context": 32768,
+        "sliding_window": null,
+        "vocab_size": 131072,
+        "num_params_source": "safetensors_index.metadata.total_size"
+      },
+      "paradigm_specific": {
+        "ssm_state_size": null,
+        "ssm_conv_kernel": null,
+        "ssm_dt_rank": null,
+        "num_ssm_layers": null,
+        "num_attention_layers": null,
+        "ssm_layer_ratio": null,
+        "attention_layer_ratio": null,
+        "detected_numeric_fields": {}
+      },
+      "training": {
+        "pretrain_tokens": 1200000,
+        "pretrain_tokens_source": "model_card_text",
+        "tokenizer_type": "PreTrainedTokenizerFast"
+      },
+      "quantization": {
+        "available_formats": []
+      },
+      "sources": {
+        "hf_api": true,
+        "config_json": "config.json",
+        "tokenizer_config_json": "tokenizer_config.json",
+        "model_card": "README.md",
+        "safetensors_index": "model.safetensors.index.json"
+      },
+      "errors": []
+    },
+    {
       "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
       "org": "TinyLlama",
       "registry": {
@@ -3260,7 +8320,7 @@
         "org": "TinyLlama",
         "release_date": "2023-12-30",
         "license": "apache-2.0",
-        "downloads": 1770914,
+        "downloads": 1789018,
         "likes": 1526
       },
       "architecture": {

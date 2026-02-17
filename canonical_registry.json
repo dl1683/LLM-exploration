@@ -1,6 +1,6 @@
 {
   "source_file": "model_registry_2026.py",
-  "generated_at_utc": "2026-02-17T06:20:34+00:00",
+  "generated_at_utc": "2026-02-17T08:15:29+00:00",
   "canonical_table": [
     {
       "model_id": "HuggingFaceTB/SmolLM3-3B",
@@ -43,6 +43,36 @@
       "is_phase_transition": false
     },
     {
+      "model_id": "Qwen/Qwen1.5-MoE-A2.7B",
+      "org": "Qwen",
+      "family": "Qwen1.5",
+      "variant": "MoE-A2.7B",
+      "tier": "tier1",
+      "paradigm": "moe",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "Qwen/Qwen2.5-0.5B",
+      "org": "Qwen",
+      "family": "Qwen2.5",
+      "variant": "0.5B",
+      "tier": "tier1",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "Qwen/Qwen2.5-1.5B",
+      "org": "Qwen",
+      "family": "Qwen2.5",
+      "variant": "1.5B",
+      "tier": "tier1",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
       "model_id": "Qwen/Qwen3-0.6B",
       "org": "Qwen",
       "family": "Qwen3",
@@ -73,12 +103,42 @@
       "is_phase_transition": false
     },
     {
+      "model_id": "RWKV/v6-Finch-1B6-HF",
+      "org": "RWKV",
+      "family": "v6",
+      "variant": "Finch-1B6-HF",
+      "tier": "tier1",
+      "paradigm": "rwkv",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
       "model_id": "Zyphra/Zamba2-1.2B",
       "org": "Zyphra",
       "family": "Zamba2",
       "variant": "1.2B",
       "tier": "tier1",
       "paradigm": "hybrid",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "Zyphra/Zamba2-1.2B-instruct",
+      "org": "Zyphra",
+      "family": "Zamba2",
+      "variant": "1.2B-instruct",
+      "tier": "tier1",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "cartesia-ai/Rene-v0.1-1.3b-pytorch",
+      "org": "cartesia-ai",
+      "family": "Rene-v0.1",
+      "variant": "1.3b-pytorch",
+      "tier": "tier1",
+      "paradigm": "ssm",
       "is_quick_test": false,
       "is_phase_transition": false
     },
@@ -91,6 +151,16 @@
       "paradigm": "reasoning",
       "is_quick_test": true,
       "is_phase_transition": true
+    },
+    {
+      "model_id": "google/gemma-2-2b-it",
+      "org": "google",
+      "family": "gemma-2",
+      "variant": "2b-it",
+      "tier": "tier1",
+      "paradigm": "transformer",
+      "is_quick_test": false,
+      "is_phase_transition": false
     },
     {
       "model_id": "google/gemma-3-1b-it",
@@ -143,10 +213,40 @@
       "is_phase_transition": false
     },
     {
+      "model_id": "nvidia/Hymba-1.5B-Base",
+      "org": "nvidia",
+      "family": "Hymba",
+      "variant": "1.5B-Base",
+      "tier": "tier1",
+      "paradigm": "hybrid",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
       "model_id": "state-spaces/mamba-1.4b-hf",
       "org": "state-spaces",
       "family": "mamba",
       "variant": "1.4b-hf",
+      "tier": "tier1",
+      "paradigm": "ssm",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "state-spaces/mamba-130m-hf",
+      "org": "state-spaces",
+      "family": "mamba",
+      "variant": "130m-hf",
+      "tier": "tier1",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "state-spaces/mamba-2.8b-hf",
+      "org": "state-spaces",
+      "family": "mamba",
+      "variant": "2.8b-hf",
       "tier": "tier1",
       "paradigm": "ssm",
       "is_quick_test": false,
@@ -173,6 +273,56 @@
       "is_phase_transition": false
     },
     {
+      "model_id": "state-spaces/mamba2-1.3b",
+      "org": "state-spaces",
+      "family": "mamba2",
+      "variant": "1.3b",
+      "tier": "tier1",
+      "paradigm": "ssm",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "state-spaces/mamba2-130m",
+      "org": "state-spaces",
+      "family": "mamba2",
+      "variant": "130m",
+      "tier": "tier1",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "state-spaces/mamba2-2.7b",
+      "org": "state-spaces",
+      "family": "mamba2",
+      "variant": "2.7b",
+      "tier": "tier1",
+      "paradigm": "ssm",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "state-spaces/mamba2-370m",
+      "org": "state-spaces",
+      "family": "mamba2",
+      "variant": "370m",
+      "tier": "tier1",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "state-spaces/mamba2-780m",
+      "org": "state-spaces",
+      "family": "mamba2",
+      "variant": "780m",
+      "tier": "tier1",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
       "model_id": "tiiuae/Falcon-H1-0.5B-Instruct",
       "org": "tiiuae",
       "family": "Falcon-H1",
@@ -193,6 +343,46 @@
       "is_phase_transition": false
     },
     {
+      "model_id": "tiiuae/Falcon3-1B-Instruct",
+      "org": "tiiuae",
+      "family": "Falcon3",
+      "variant": "1B-Instruct",
+      "tier": "tier1",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "AIDC-AI/Marco-o1",
+      "org": "AIDC-AI",
+      "family": "Marco",
+      "variant": "o1",
+      "tier": "tier2",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "CohereForAI/aya-expanse-8b",
+      "org": "CohereForAI",
+      "family": "aya-expanse",
+      "variant": "8b",
+      "tier": "tier2",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "CohereForAI/c4ai-command-r7b-12-2024",
+      "org": "CohereForAI",
+      "family": "c4ai",
+      "variant": "command-r7b-12-2024",
+      "tier": "tier2",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
       "model_id": "ML-GSAI/LLaDA-8B-Base",
       "org": "ML-GSAI",
       "family": "LLaDA",
@@ -209,6 +399,36 @@
       "variant": "7b",
       "tier": "tier2",
       "paradigm": "xlstm",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "Qwen/Qwen2.5-3B",
+      "org": "Qwen",
+      "family": "Qwen2.5",
+      "variant": "3B",
+      "tier": "tier2",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "Qwen/Qwen2.5-7B",
+      "org": "Qwen",
+      "family": "Qwen2.5",
+      "variant": "7B",
+      "tier": "tier2",
+      "paradigm": "transformer",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "Qwen/Qwen2.5-Coder-7B",
+      "org": "Qwen",
+      "family": "Qwen2.5-Coder",
+      "variant": "7B",
+      "tier": "tier2",
+      "paradigm": "unassigned",
       "is_quick_test": false,
       "is_phase_transition": false
     },
@@ -243,12 +463,62 @@
       "is_phase_transition": false
     },
     {
+      "model_id": "RWKV/v5-Eagle-7B-HF",
+      "org": "RWKV",
+      "family": "v5-Eagle",
+      "variant": "7B-HF",
+      "tier": "tier2",
+      "paradigm": "rwkv",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "RWKV/v6-Finch-3B-HF",
+      "org": "RWKV",
+      "family": "v6-Finch",
+      "variant": "3B-HF",
+      "tier": "tier2",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "RWKV/v6-Finch-7B-HF",
+      "org": "RWKV",
+      "family": "v6-Finch",
+      "variant": "7B-HF",
+      "tier": "tier2",
+      "paradigm": "rwkv",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "Spiral-AI/Spiral-RetNet-3b-base",
+      "org": "Spiral-AI",
+      "family": "Spiral-RetNet",
+      "variant": "3b-base",
+      "tier": "tier2",
+      "paradigm": "retnet",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
       "model_id": "Zyphra/Zamba2-2.7B",
       "org": "Zyphra",
       "family": "Zamba2",
       "variant": "2.7B",
       "tier": "tier2",
       "paradigm": "hybrid",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "Zyphra/Zamba2-2.7B-instruct",
+      "org": "Zyphra",
+      "family": "Zamba2",
+      "variant": "2.7B-instruct",
+      "tier": "tier2",
+      "paradigm": "unassigned",
       "is_quick_test": false,
       "is_phase_transition": false
     },
@@ -263,10 +533,40 @@
       "is_phase_transition": false
     },
     {
+      "model_id": "Zyphra/Zamba2-7B-Instruct",
+      "org": "Zyphra",
+      "family": "Zamba2",
+      "variant": "7B-Instruct",
+      "tier": "tier2",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "allenai/OLMoE-1B-7B-0924",
+      "org": "allenai",
+      "family": "OLMoE",
+      "variant": "1B-7B-0924",
+      "tier": "tier2",
+      "paradigm": "moe",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
       "model_id": "allenai/Olmo-3-7B",
       "org": "allenai",
       "family": "Olmo-3",
       "variant": "7B",
+      "tier": "tier2",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
+      "org": "deepseek-ai",
+      "family": "DeepSeek-R1-Distill-Llama",
+      "variant": "8B",
       "tier": "tier2",
       "paradigm": "unassigned",
       "is_quick_test": false,
@@ -278,7 +578,7 @@
       "family": "DeepSeek-R1-Distill-Qwen",
       "variant": "7B",
       "tier": "tier2",
-      "paradigm": "unassigned",
+      "paradigm": "reasoning",
       "is_quick_test": false,
       "is_phase_transition": false
     },
@@ -287,6 +587,26 @@
       "org": "google",
       "family": "gemma-3",
       "variant": "4b-it",
+      "tier": "tier2",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "ibm-granite/granite-3.1-8b-instruct",
+      "org": "ibm-granite",
+      "family": "granite-3.1",
+      "variant": "8b-instruct",
+      "tier": "tier2",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "ibm-granite/granite-3.2-8b-instruct",
+      "org": "ibm-granite",
+      "family": "granite-3.2",
+      "variant": "8b-instruct",
       "tier": "tier2",
       "paradigm": "unassigned",
       "is_quick_test": false,
@@ -323,6 +643,46 @@
       "is_phase_transition": false
     },
     {
+      "model_id": "internlm/internlm2_5-7b-chat",
+      "org": "internlm",
+      "family": "internlm2_5",
+      "variant": "7b-chat",
+      "tier": "tier2",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "internlm/internlm3-8b-instruct",
+      "org": "internlm",
+      "family": "internlm3",
+      "variant": "8b-instruct",
+      "tier": "tier2",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+      "org": "meta-llama",
+      "family": "Llama-3.1",
+      "variant": "8B-Instruct",
+      "tier": "tier2",
+      "paradigm": "transformer",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "meta-llama/Llama-3.2-3B-Instruct",
+      "org": "meta-llama",
+      "family": "Llama-3.2",
+      "variant": "3B-Instruct",
+      "tier": "tier2",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
       "model_id": "microsoft/Phi-4-mini-instruct",
       "org": "microsoft",
       "family": "Phi-4",
@@ -339,6 +699,16 @@
       "variant": "mini-reasoning",
       "tier": "tier2",
       "paradigm": "reasoning",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "mistralai/Ministral-8B-Instruct-2410",
+      "org": "mistralai",
+      "family": "Ministral",
+      "variant": "8B-Instruct-2410",
+      "tier": "tier2",
+      "paradigm": "unassigned",
       "is_quick_test": false,
       "is_phase_transition": false
     },
@@ -368,7 +738,27 @@
       "family": "Falcon-H1",
       "variant": "7B-Instruct",
       "tier": "tier2",
+      "paradigm": "hybrid",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "tiiuae/Falcon3-3B-Instruct",
+      "org": "tiiuae",
+      "family": "Falcon3",
+      "variant": "3B-Instruct",
+      "tier": "tier2",
       "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "tiiuae/Falcon3-7B-Instruct",
+      "org": "tiiuae",
+      "family": "Falcon3",
+      "variant": "7B-Instruct",
+      "tier": "tier2",
+      "paradigm": "transformer",
       "is_quick_test": false,
       "is_phase_transition": false
     },
@@ -383,6 +773,126 @@
       "is_phase_transition": false
     },
     {
+      "model_id": "tiiuae/falcon-mamba-7b-instruct",
+      "org": "tiiuae",
+      "family": "falcon-mamba",
+      "variant": "7b-instruct",
+      "tier": "tier2",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "togethercomputer/StripedHyena-Hessian-7B",
+      "org": "togethercomputer",
+      "family": "StripedHyena-Hessian",
+      "variant": "7B",
+      "tier": "tier2",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "togethercomputer/StripedHyena-Nous-7B",
+      "org": "togethercomputer",
+      "family": "StripedHyena-Nous",
+      "variant": "7B",
+      "tier": "tier2",
+      "paradigm": "hybrid",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "CohereForAI/aya-expanse-32b",
+      "org": "CohereForAI",
+      "family": "aya-expanse",
+      "variant": "32b",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "CohereForAI/c4ai-command-r-08-2024",
+      "org": "CohereForAI",
+      "family": "c4ai",
+      "variant": "command-r-08-2024",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "Qwen/QwQ-32B",
+      "org": "Qwen",
+      "family": "QwQ",
+      "variant": "32B",
+      "tier": "tier3",
+      "paradigm": "reasoning",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "Qwen/QwQ-32B-Preview",
+      "org": "Qwen",
+      "family": "QwQ",
+      "variant": "32B-Preview",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "Qwen/Qwen2.5-14B",
+      "org": "Qwen",
+      "family": "Qwen2.5",
+      "variant": "14B",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "Qwen/Qwen2.5-32B",
+      "org": "Qwen",
+      "family": "Qwen2.5",
+      "variant": "32B",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "Qwen/Qwen2.5-72B",
+      "org": "Qwen",
+      "family": "Qwen2.5",
+      "variant": "72B",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "Qwen/Qwen2.5-72B-Instruct",
+      "org": "Qwen",
+      "family": "Qwen2.5",
+      "variant": "72B-Instruct",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "org": "Qwen",
+      "family": "Qwen2.5-Coder",
+      "variant": "32B-Instruct",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
       "model_id": "Qwen/Qwen3-14B",
       "org": "Qwen",
       "family": "Qwen3",
@@ -393,10 +903,80 @@
       "is_phase_transition": false
     },
     {
+      "model_id": "Qwen/Qwen3-235B-A22B",
+      "org": "Qwen",
+      "family": "Qwen3",
+      "variant": "235B-A22B",
+      "tier": "tier3",
+      "paradigm": "moe",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
       "model_id": "Qwen/Qwen3-32B",
       "org": "Qwen",
       "family": "Qwen3",
       "variant": "32B",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "RWKV/v6-Finch-14B-HF",
+      "org": "RWKV",
+      "family": "v6-Finch",
+      "variant": "14B-HF",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "Snowflake/snowflake-arctic-instruct",
+      "org": "Snowflake",
+      "family": "snowflake",
+      "variant": "arctic-instruct",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "ai21labs/AI21-Jamba-1.5-Large",
+      "org": "ai21labs",
+      "family": "AI21",
+      "variant": "Jamba-1.5-Large",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "ai21labs/AI21-Jamba-1.5-Mini",
+      "org": "ai21labs",
+      "family": "AI21",
+      "variant": "Jamba-1.5-Mini",
+      "tier": "tier3",
+      "paradigm": "hybrid",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "ai21labs/Jamba-v0.1",
+      "org": "ai21labs",
+      "family": "Jamba",
+      "variant": "v0.1",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "allenai/OLMo-2-0325-32B-Instruct",
+      "org": "allenai",
+      "family": "OLMo-2-0325",
+      "variant": "32B-Instruct",
       "tier": "tier3",
       "paradigm": "unassigned",
       "is_quick_test": false,
@@ -413,10 +993,80 @@
       "is_phase_transition": false
     },
     {
+      "model_id": "baichuan-inc/Baichuan-M1-14B-Base",
+      "org": "baichuan-inc",
+      "family": "Baichuan-M1",
+      "variant": "14B-Base",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-R1",
+      "org": "deepseek-ai",
+      "family": "DeepSeek",
+      "variant": "R1",
+      "tier": "tier3",
+      "paradigm": "reasoning",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
+      "org": "deepseek-ai",
+      "family": "DeepSeek-R1-Distill-Llama",
+      "variant": "70B",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
       "model_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
       "org": "deepseek-ai",
       "family": "DeepSeek-R1-Distill-Qwen",
       "variant": "14B",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-V2.5",
+      "org": "deepseek-ai",
+      "family": "DeepSeek",
+      "variant": "V2.5",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-V3",
+      "org": "deepseek-ai",
+      "family": "DeepSeek",
+      "variant": "V3",
+      "tier": "tier3",
+      "paradigm": "moe",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "google/gemma-2-27b-it",
+      "org": "google",
+      "family": "gemma-2",
+      "variant": "27b-it",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "google/gemma-2-9b-it",
+      "org": "google",
+      "family": "gemma-2",
+      "variant": "9b-it",
       "tier": "tier3",
       "paradigm": "unassigned",
       "is_quick_test": false,
@@ -463,10 +1113,130 @@
       "is_phase_transition": false
     },
     {
+      "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "org": "meta-llama",
+      "family": "Llama-3.3",
+      "variant": "70B-Instruct",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
+      "org": "meta-llama",
+      "family": "Llama-4-Maverick",
+      "variant": "17B-128E-Instruct",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "org": "meta-llama",
+      "family": "Llama-4-Scout",
+      "variant": "17B-16E-Instruct",
+      "tier": "tier3",
+      "paradigm": "moe",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "microsoft/Phi-4",
+      "org": "microsoft",
+      "family": "Phi-4",
+      "variant": "",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
       "model_id": "microsoft/Phi-4-reasoning",
       "org": "microsoft",
       "family": "Phi-4",
       "variant": "reasoning",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "microsoft/phi-4-reasoning-plus",
+      "org": "microsoft",
+      "family": "phi-4",
+      "variant": "reasoning-plus",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "mistralai/Mistral-Large-Instruct-2411",
+      "org": "mistralai",
+      "family": "Mistral",
+      "variant": "Large-Instruct-2411",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "mistralai/Mistral-Small-24B-Instruct-2501",
+      "org": "mistralai",
+      "family": "Mistral-Small",
+      "variant": "24B-Instruct-2501",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+      "org": "mistralai",
+      "family": "Mistral-Small-3.1",
+      "variant": "24B-Instruct-2503",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "mistralai/Mixtral-8x22B-Instruct-v0.1",
+      "org": "mistralai",
+      "family": "Mixtral",
+      "variant": "8x22B-Instruct-v0.1",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "mistralai/Mixtral-8x7B-Instruct-v0.1",
+      "org": "mistralai",
+      "family": "Mixtral",
+      "variant": "8x7B-Instruct-v0.1",
+      "tier": "tier3",
+      "paradigm": "moe",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "nvidia/Llama-3.1-Nemotron-70B-Instruct-HF",
+      "org": "nvidia",
+      "family": "Llama-3.1-Nemotron",
+      "variant": "70B-Instruct-HF",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "nvidia/Llama-3_1-Nemotron-51B-Instruct",
+      "org": "nvidia",
+      "family": "Llama-3_1-Nemotron",
+      "variant": "51B-Instruct",
       "tier": "tier3",
       "paradigm": "unassigned",
       "is_quick_test": false,
@@ -483,10 +1253,30 @@
       "is_phase_transition": false
     },
     {
+      "model_id": "tiiuae/Falcon-H1-34B-Base",
+      "org": "tiiuae",
+      "family": "Falcon-H1",
+      "variant": "34B-Base",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
       "model_id": "tiiuae/Falcon-H1-34B-Instruct",
       "org": "tiiuae",
       "family": "Falcon-H1",
       "variant": "34B-Instruct",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "tiiuae/Falcon3-10B-Instruct",
+      "org": "tiiuae",
+      "family": "Falcon3",
+      "variant": "10B-Instruct",
       "tier": "tier3",
       "paradigm": "unassigned",
       "is_quick_test": false,
@@ -505,21 +1295,52 @@
   ],
   "integrity_checks": {
     "missing_from_paradigms": [
+      "AIDC-AI/Marco-o1",
+      "CohereForAI/aya-expanse-32b",
+      "CohereForAI/aya-expanse-8b",
+      "CohereForAI/c4ai-command-r-08-2024",
+      "CohereForAI/c4ai-command-r7b-12-2024",
       "HuggingFaceTB/SmolLM3-3B",
       "ML-GSAI/LLaDA-8B-Base",
+      "Qwen/QwQ-32B-Preview",
+      "Qwen/Qwen2.5-0.5B",
+      "Qwen/Qwen2.5-1.5B",
+      "Qwen/Qwen2.5-14B",
+      "Qwen/Qwen2.5-32B",
+      "Qwen/Qwen2.5-3B",
+      "Qwen/Qwen2.5-72B",
+      "Qwen/Qwen2.5-72B-Instruct",
+      "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "Qwen/Qwen2.5-Coder-7B",
       "Qwen/Qwen3-14B",
       "Qwen/Qwen3-32B",
       "Qwen/Qwen3-4B",
       "Qwen/Qwen3-8B",
       "RWKV-Red-Team/ARWKV-R1-7B",
+      "RWKV/v6-Finch-14B-HF",
+      "RWKV/v6-Finch-3B-HF",
+      "Snowflake/snowflake-arctic-instruct",
+      "Zyphra/Zamba2-1.2B-instruct",
+      "Zyphra/Zamba2-2.7B-instruct",
       "Zyphra/Zamba2-7B",
+      "Zyphra/Zamba2-7B-Instruct",
+      "ai21labs/AI21-Jamba-1.5-Large",
+      "ai21labs/Jamba-v0.1",
+      "allenai/OLMo-2-0325-32B-Instruct",
       "allenai/Olmo-3-1125-32B",
       "allenai/Olmo-3-7B",
+      "baichuan-inc/Baichuan-M1-14B-Base",
+      "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
+      "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
       "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
-      "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+      "deepseek-ai/DeepSeek-V2.5",
+      "google/gemma-2-27b-it",
+      "google/gemma-2-9b-it",
       "google/gemma-3-12b-it",
       "google/gemma-3-27b-it",
       "google/gemma-3-4b-it",
+      "ibm-granite/granite-3.1-8b-instruct",
+      "ibm-granite/granite-3.2-8b-instruct",
       "ibm-granite/granite-4.0-350m",
       "ibm-granite/granite-4.0-h-350m",
       "ibm-granite/granite-4.0-h-small",
@@ -527,13 +1348,36 @@
       "ibm-granite/granite-4.0-micro",
       "ibm-granite/granite-4.0-tiny-preview",
       "inclusionAI/LLaDA2.0-mini",
+      "internlm/internlm2_5-7b-chat",
+      "internlm/internlm3-8b-instruct",
+      "meta-llama/Llama-3.2-3B-Instruct",
+      "meta-llama/Llama-3.3-70B-Instruct",
+      "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
+      "microsoft/Phi-4",
       "microsoft/Phi-4-mini-instruct",
       "microsoft/Phi-4-reasoning",
+      "microsoft/phi-4-reasoning-plus",
+      "mistralai/Ministral-8B-Instruct-2410",
+      "mistralai/Mistral-Large-Instruct-2411",
+      "mistralai/Mistral-Small-24B-Instruct-2501",
+      "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+      "mistralai/Mixtral-8x22B-Instruct-v0.1",
+      "nvidia/Llama-3.1-Nemotron-70B-Instruct-HF",
+      "nvidia/Llama-3_1-Nemotron-51B-Instruct",
       "nvidia/Nemotron-H-4B-Instruct-128K",
       "openai/gpt-oss-20b",
+      "state-spaces/mamba-130m-hf",
+      "state-spaces/mamba2-130m",
+      "state-spaces/mamba2-370m",
+      "state-spaces/mamba2-780m",
+      "tiiuae/Falcon-H1-34B-Base",
       "tiiuae/Falcon-H1-34B-Instruct",
       "tiiuae/Falcon-H1-3B-Instruct",
-      "tiiuae/Falcon-H1-7B-Instruct"
+      "tiiuae/Falcon3-10B-Instruct",
+      "tiiuae/Falcon3-1B-Instruct",
+      "tiiuae/Falcon3-3B-Instruct",
+      "tiiuae/falcon-mamba-7b-instruct",
+      "togethercomputer/StripedHyena-Hessian-7B"
     ],
     "duplicates": {
       "within_tiers": {},
@@ -545,25 +1389,29 @@
     },
     "paradigm_imbalance": {
       "counts": {
-        "hybrid": 5,
+        "hybrid": 9,
         "liquid": 3,
-        "reasoning": 2,
-        "rwkv": 1,
-        "ssm": 4,
-        "transformer": 4,
+        "moe": 6,
+        "reasoning": 5,
+        "retnet": 1,
+        "rwkv": 4,
+        "ssm": 8,
+        "transformer": 8,
         "xlstm": 1
       },
-      "total_models": 20,
-      "mean_count": 2.8571,
+      "total_models": 45,
+      "mean_count": 5.0,
       "min_count": 1,
-      "max_count": 5,
-      "max_to_min_ratio": 5.0,
+      "max_count": 9,
+      "max_to_min_ratio": 9.0,
       "underrepresented": [
-        "rwkv",
+        "retnet",
         "xlstm"
       ],
       "overrepresented": [
-        "hybrid"
+        "hybrid",
+        "ssm",
+        "transformer"
       ],
       "thresholds": {
         "underrepresented_below_mean_factor": 0.5,
