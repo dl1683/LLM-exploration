@@ -1,0 +1,20 @@
+models_total: 129
+models_with_measured_tax: 129
+tax_xlstm: 0.9250 (n=1)
+tax_diffusion: 0.7250 (n=2)
+tax_rwkv: 0.7250 (n=7)
+tax_ssm: 0.5518 (n=14)
+tax_liquid: 0.4750 (n=3)
+tax_hybrid: 0.4240 (n=25)
+tax_transformer: 0.1034 (n=67)
+tax_reasoning: 0.0325 (n=10)
+strongest_partial_corr: measured_tax (-0.6163, n=116)
+stage1_hybrid_coef: -1.6976 (R²=0.1875)
+stage2_hybrid_coef: -0.6997 (R²=0.3937)
+SIGN_FLIP: NO
+final_stage_r2: 0.4255
+mediation_indirect: -0.9979
+mediation_ci95: [-1.4680, -0.6020]
+mediation_p: 0.0000
+proportion_mediated: 0.5878
+permutation_p: 0.0161 (n=116)
