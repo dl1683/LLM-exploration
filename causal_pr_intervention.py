@@ -91,20 +91,20 @@ class PRExpander:
 
         batch, seq_len, d_model = hidden.shape
         noise = torch.randn(seq_len, self.n_components, generator=rng,
-                            device=hidden.device, dtype=hidden.dtype)
+                            device=hidden.device, dtype=torch.float32)
 
-        # Random orthogonal directions
+        # Random orthogonal directions (all in float32)
         Q = torch.randn(self.n_components, d_model, generator=rng,
-                         device=hidden.device, dtype=hidden.dtype)
+                         device=hidden.device, dtype=torch.float32)
         Q, _ = torch.linalg.qr(Q.T)
-        Q = Q[:, :self.n_components].T  # (n_components, d_model)
+        Q = Q[:, :self.n_components].T  # (n_components, d_model), float32
 
         # Project noise into these directions and add to hidden states
-        perturbation = noise @ Q  # (seq_len, d_model)
-        scale = hidden.norm(dim=-1, keepdim=True).mean() * self.strength
+        perturbation = (noise @ Q)  # (seq_len, d_model), float32
+        scale = hidden.float().norm(dim=-1, keepdim=True).mean() * self.strength
         perturbation = perturbation * scale / perturbation.norm(dim=-1, keepdim=True).clamp(min=1e-6)
 
-        hidden = hidden + perturbation.unsqueeze(0)
+        hidden = hidden + perturbation.unsqueeze(0).to(hidden.dtype)
 
         if isinstance(output, tuple):
             return (hidden,) + output[1:]
@@ -135,8 +135,9 @@ class PRCompressor:
 
         batch, seq_len, d_model = hidden.shape
 
-        # Center and compute SVD
-        h = hidden[0]  # (seq_len, d_model)
+        # Center and compute SVD (cast to float32 for SVD)
+        orig_dtype = hidden.dtype
+        h = hidden[0].float()  # (seq_len, d_model)
         mean = h.mean(dim=0, keepdim=True)
         h_centered = h - mean
 
@@ -144,7 +145,7 @@ class PRCompressor:
         U, S, Vh = torch.linalg.svd(h_centered, full_matrices=False)
         k = min(self.keep_components, len(S))
         projected = U[:, :k] @ torch.diag(S[:k]) @ Vh[:k, :]
-        hidden = (projected + mean).unsqueeze(0)
+        hidden = (projected + mean).unsqueeze(0).to(orig_dtype)
 
         if isinstance(output, tuple):
             return (hidden,) + output[1:]
