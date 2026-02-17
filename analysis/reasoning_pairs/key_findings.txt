@@ -1,0 +1,14 @@
+pairs_analyzed: 6
+training_methods: strong-to-weak-distill, sft-distill-r1, sft-distill-r1-5M, multi-stage-rl, sft-apo-midtrain
+arch_families: qwen3, qwen2.5, lfm-hybrid, smollm
+mean_pr_delta: -0.211 (neg = compression)
+median_pr_delta: -0.249
+pairs_with_compression: 6/6
+wilcoxon_p: 0.0156
+mean_core_cka: 0.9613
+Qwen3-0.6B-R_vs_Qwen3-0.6B-Base: PR_delta=-0.03, CKA=0.9884, method=strong-to-weak-distill
+Qwen3-1.7B-R_vs_Qwen3-1.7B-Base: PR_delta=-0.20, CKA=0.9919, method=strong-to-weak-distill
+DSR1-1.5B_vs_Qwen2.5-Math-1.5B: PR_delta=-0.34, CKA=0.9542, method=sft-distill-r1
+Nemotron-1.5B-R_vs_Qwen2.5-1.5B: PR_delta=-0.30, CKA=0.9080, method=sft-distill-r1-5M
+LFM2.5-Think_vs_LFM2.5-Instruct: PR_delta=-0.36, CKA=0.9385, method=multi-stage-rl
+SmolLM3-3B-R_vs_SmolLM3-3B-Base: PR_delta=-0.03, CKA=0.9865, method=sft-apo-midtrain
