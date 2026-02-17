@@ -1,0 +1,22 @@
+models_total: 129
+models_with_arch_mapping: 129 (100.0%)
+timeline_entries_total: 194
+timeline_dates_filled: 194
+valid_support_events: 194
+mid_sample_support_events: 164
+stacked_event_rows: 2001
+stacked_events_used: 34
+pooled_did_full_spec: coef=+0.1461, t=+1.58, n=2001, r2=0.900
+event_weighted_did_coef: +1.4665
+event_weighted_did_raw: +0.1093
+event_pretrend_pass_rate: 100.0%
+event_study_lead_bins: 3
+event_study_lead_mean_abs_coef: nan
+event_study_lead_share_significant: 0.0%
+placebo_random_mean: -0.2214
+placebo_random_std: 0.1693
+placebo_p_vs_real_abs: 0.8024
+iv_2sls_support_effect: +0.1232 (t=+0.11)
+iv_first_stage_f: 23.27
+iv_weak_instrument_flag: NO
+top_natural_experiment: qwen_moe (did_shrunk=+0.5446, n_treated=2)

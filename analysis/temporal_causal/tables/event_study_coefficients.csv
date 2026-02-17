@@ -1,0 +1,9 @@
+bin,midpoint_months,coef,std_err,t_value,ci_low,ci_high,is_pre,is_reference
+lead_18_plus,-21.0,,,,,,True,False
+lead_18_12,-15.0,,,,,,True,False
+lead_12_6,-9.0,,,,,,True,False
+lead_6_0,-3.0,0.0,,,0.0,0.0,True,True
+lag_0_6,3.0,0.0697085419279252,0.14812305063854977,0.47061238360549396,-0.22061263732363234,0.36002972117948273,False,False
+lag_6_12,9.0,,,,,,False,False
+lag_12_18,15.0,,,,,,False,False
+lag_18_plus,21.0,,,,,,False,False

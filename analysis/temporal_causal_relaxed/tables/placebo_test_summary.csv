@@ -1,0 +1,5 @@
+scenario,mean_raw_did,std_raw_did,events_used,p_vs_real_abs
+real,0.10928884946391544,0.7235394629978584,34,
+placebo_minus_12m,,,0,
+placebo_plus_12m,-0.933407824878592,0.14077060027836288,9,
+placebo_random_distribution,-0.22138048727229642,0.1692760949335953,194,0.8023952095808383
