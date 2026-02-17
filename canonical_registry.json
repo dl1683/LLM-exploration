@@ -1,0 +1,577 @@
+{
+  "source_file": "model_registry_2026.py",
+  "generated_at_utc": "2026-02-17T06:20:34+00:00",
+  "canonical_table": [
+    {
+      "model_id": "HuggingFaceTB/SmolLM3-3B",
+      "org": "HuggingFaceTB",
+      "family": "SmolLM3",
+      "variant": "3B",
+      "tier": "tier1",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "LiquidAI/LFM2-1.2B-Exp",
+      "org": "LiquidAI",
+      "family": "LFM2",
+      "variant": "1.2B-Exp",
+      "tier": "tier1",
+      "paradigm": "liquid",
+      "is_quick_test": true,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "LiquidAI/LFM2-2.6B-Exp",
+      "org": "LiquidAI",
+      "family": "LFM2",
+      "variant": "2.6B-Exp",
+      "tier": "tier1",
+      "paradigm": "liquid",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "LiquidAI/LFM2-350M-Exp",
+      "org": "LiquidAI",
+      "family": "LFM2",
+      "variant": "350M-Exp",
+      "tier": "tier1",
+      "paradigm": "liquid",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "Qwen/Qwen3-0.6B",
+      "org": "Qwen",
+      "family": "Qwen3",
+      "variant": "0.6B",
+      "tier": "tier1",
+      "paradigm": "transformer",
+      "is_quick_test": true,
+      "is_phase_transition": true
+    },
+    {
+      "model_id": "Qwen/Qwen3-1.7B",
+      "org": "Qwen",
+      "family": "Qwen3",
+      "variant": "1.7B",
+      "tier": "tier1",
+      "paradigm": "transformer",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "RWKV/RWKV7-Goose-World3-1.5B-HF",
+      "org": "RWKV",
+      "family": "RWKV7-Goose-World3",
+      "variant": "1.5B-HF",
+      "tier": "tier1",
+      "paradigm": "rwkv",
+      "is_quick_test": true,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "Zyphra/Zamba2-1.2B",
+      "org": "Zyphra",
+      "family": "Zamba2",
+      "variant": "1.2B",
+      "tier": "tier1",
+      "paradigm": "hybrid",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+      "org": "deepseek-ai",
+      "family": "DeepSeek-R1-Distill-Qwen",
+      "variant": "1.5B",
+      "tier": "tier1",
+      "paradigm": "reasoning",
+      "is_quick_test": true,
+      "is_phase_transition": true
+    },
+    {
+      "model_id": "google/gemma-3-1b-it",
+      "org": "google",
+      "family": "gemma-3",
+      "variant": "1b-it",
+      "tier": "tier1",
+      "paradigm": "transformer",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "ibm-granite/granite-4.0-1b",
+      "org": "ibm-granite",
+      "family": "granite-4.0",
+      "variant": "1b",
+      "tier": "tier1",
+      "paradigm": "transformer",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "ibm-granite/granite-4.0-350m",
+      "org": "ibm-granite",
+      "family": "granite-4.0",
+      "variant": "350m",
+      "tier": "tier1",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "ibm-granite/granite-4.0-h-1b",
+      "org": "ibm-granite",
+      "family": "granite-4.0-h",
+      "variant": "1b",
+      "tier": "tier1",
+      "paradigm": "hybrid",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "ibm-granite/granite-4.0-h-350m",
+      "org": "ibm-granite",
+      "family": "granite-4.0-h",
+      "variant": "350m",
+      "tier": "tier1",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "state-spaces/mamba-1.4b-hf",
+      "org": "state-spaces",
+      "family": "mamba",
+      "variant": "1.4b-hf",
+      "tier": "tier1",
+      "paradigm": "ssm",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "state-spaces/mamba-370m-hf",
+      "org": "state-spaces",
+      "family": "mamba",
+      "variant": "370m-hf",
+      "tier": "tier1",
+      "paradigm": "ssm",
+      "is_quick_test": true,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "state-spaces/mamba-790m-hf",
+      "org": "state-spaces",
+      "family": "mamba",
+      "variant": "790m-hf",
+      "tier": "tier1",
+      "paradigm": "ssm",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "tiiuae/Falcon-H1-0.5B-Instruct",
+      "org": "tiiuae",
+      "family": "Falcon-H1",
+      "variant": "0.5B-Instruct",
+      "tier": "tier1",
+      "paradigm": "hybrid",
+      "is_quick_test": true,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "tiiuae/Falcon-H1-1.5B-Instruct",
+      "org": "tiiuae",
+      "family": "Falcon-H1",
+      "variant": "1.5B-Instruct",
+      "tier": "tier1",
+      "paradigm": "hybrid",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "ML-GSAI/LLaDA-8B-Base",
+      "org": "ML-GSAI",
+      "family": "LLaDA",
+      "variant": "8B-Base",
+      "tier": "tier2",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "NX-AI/xLSTM-7b",
+      "org": "NX-AI",
+      "family": "xLSTM",
+      "variant": "7b",
+      "tier": "tier2",
+      "paradigm": "xlstm",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "Qwen/Qwen3-4B",
+      "org": "Qwen",
+      "family": "Qwen3",
+      "variant": "4B",
+      "tier": "tier2",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "Qwen/Qwen3-8B",
+      "org": "Qwen",
+      "family": "Qwen3",
+      "variant": "8B",
+      "tier": "tier2",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "RWKV-Red-Team/ARWKV-R1-7B",
+      "org": "RWKV-Red-Team",
+      "family": "ARWKV-R1",
+      "variant": "7B",
+      "tier": "tier2",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "Zyphra/Zamba2-2.7B",
+      "org": "Zyphra",
+      "family": "Zamba2",
+      "variant": "2.7B",
+      "tier": "tier2",
+      "paradigm": "hybrid",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "Zyphra/Zamba2-7B",
+      "org": "Zyphra",
+      "family": "Zamba2",
+      "variant": "7B",
+      "tier": "tier2",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "allenai/Olmo-3-7B",
+      "org": "allenai",
+      "family": "Olmo-3",
+      "variant": "7B",
+      "tier": "tier2",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+      "org": "deepseek-ai",
+      "family": "DeepSeek-R1-Distill-Qwen",
+      "variant": "7B",
+      "tier": "tier2",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "google/gemma-3-4b-it",
+      "org": "google",
+      "family": "gemma-3",
+      "variant": "4b-it",
+      "tier": "tier2",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "ibm-granite/granite-4.0-h-tiny",
+      "org": "ibm-granite",
+      "family": "granite-4.0",
+      "variant": "h-tiny",
+      "tier": "tier2",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "ibm-granite/granite-4.0-micro",
+      "org": "ibm-granite",
+      "family": "granite-4.0",
+      "variant": "micro",
+      "tier": "tier2",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "ibm-granite/granite-4.0-tiny-preview",
+      "org": "ibm-granite",
+      "family": "granite-4.0",
+      "variant": "tiny-preview",
+      "tier": "tier2",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "microsoft/Phi-4-mini-instruct",
+      "org": "microsoft",
+      "family": "Phi-4",
+      "variant": "mini-instruct",
+      "tier": "tier2",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "microsoft/Phi-4-mini-reasoning",
+      "org": "microsoft",
+      "family": "Phi-4",
+      "variant": "mini-reasoning",
+      "tier": "tier2",
+      "paradigm": "reasoning",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "nvidia/Nemotron-H-4B-Instruct-128K",
+      "org": "nvidia",
+      "family": "Nemotron-H",
+      "variant": "4B-Instruct-128K",
+      "tier": "tier2",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "tiiuae/Falcon-H1-3B-Instruct",
+      "org": "tiiuae",
+      "family": "Falcon-H1",
+      "variant": "3B-Instruct",
+      "tier": "tier2",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "tiiuae/Falcon-H1-7B-Instruct",
+      "org": "tiiuae",
+      "family": "Falcon-H1",
+      "variant": "7B-Instruct",
+      "tier": "tier2",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "tiiuae/falcon-mamba-7b",
+      "org": "tiiuae",
+      "family": "falcon-mamba",
+      "variant": "7b",
+      "tier": "tier2",
+      "paradigm": "ssm",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "Qwen/Qwen3-14B",
+      "org": "Qwen",
+      "family": "Qwen3",
+      "variant": "14B",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "Qwen/Qwen3-32B",
+      "org": "Qwen",
+      "family": "Qwen3",
+      "variant": "32B",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "allenai/Olmo-3-1125-32B",
+      "org": "allenai",
+      "family": "Olmo-3-1125",
+      "variant": "32B",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
+      "org": "deepseek-ai",
+      "family": "DeepSeek-R1-Distill-Qwen",
+      "variant": "14B",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "google/gemma-3-12b-it",
+      "org": "google",
+      "family": "gemma-3",
+      "variant": "12b-it",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "google/gemma-3-27b-it",
+      "org": "google",
+      "family": "gemma-3",
+      "variant": "27b-it",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "ibm-granite/granite-4.0-h-small",
+      "org": "ibm-granite",
+      "family": "granite-4.0",
+      "variant": "h-small",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "inclusionAI/LLaDA2.0-mini",
+      "org": "inclusionAI",
+      "family": "LLaDA2.0",
+      "variant": "mini",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "microsoft/Phi-4-reasoning",
+      "org": "microsoft",
+      "family": "Phi-4",
+      "variant": "reasoning",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "openai/gpt-oss-20b",
+      "org": "openai",
+      "family": "gpt-oss",
+      "variant": "20b",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "tiiuae/Falcon-H1-34B-Instruct",
+      "org": "tiiuae",
+      "family": "Falcon-H1",
+      "variant": "34B-Instruct",
+      "tier": "tier3",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": false
+    },
+    {
+      "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "org": "TinyLlama",
+      "family": "TinyLlama",
+      "variant": "1.1B-Chat-v1.0",
+      "tier": "unassigned",
+      "paradigm": "unassigned",
+      "is_quick_test": false,
+      "is_phase_transition": true
+    }
+  ],
+  "integrity_checks": {
+    "missing_from_paradigms": [
+      "HuggingFaceTB/SmolLM3-3B",
+      "ML-GSAI/LLaDA-8B-Base",
+      "Qwen/Qwen3-14B",
+      "Qwen/Qwen3-32B",
+      "Qwen/Qwen3-4B",
+      "Qwen/Qwen3-8B",
+      "RWKV-Red-Team/ARWKV-R1-7B",
+      "Zyphra/Zamba2-7B",
+      "allenai/Olmo-3-1125-32B",
+      "allenai/Olmo-3-7B",
+      "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
+      "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+      "google/gemma-3-12b-it",
+      "google/gemma-3-27b-it",
+      "google/gemma-3-4b-it",
+      "ibm-granite/granite-4.0-350m",
+      "ibm-granite/granite-4.0-h-350m",
+      "ibm-granite/granite-4.0-h-small",
+      "ibm-granite/granite-4.0-h-tiny",
+      "ibm-granite/granite-4.0-micro",
+      "ibm-granite/granite-4.0-tiny-preview",
+      "inclusionAI/LLaDA2.0-mini",
+      "microsoft/Phi-4-mini-instruct",
+      "microsoft/Phi-4-reasoning",
+      "nvidia/Nemotron-H-4B-Instruct-128K",
+      "openai/gpt-oss-20b",
+      "tiiuae/Falcon-H1-34B-Instruct",
+      "tiiuae/Falcon-H1-3B-Instruct",
+      "tiiuae/Falcon-H1-7B-Instruct"
+    ],
+    "duplicates": {
+      "within_tiers": {},
+      "across_tiers": {},
+      "within_paradigms": {},
+      "across_paradigms": {},
+      "quick_test": {},
+      "phase_transition": {}
+    },
+    "paradigm_imbalance": {
+      "counts": {
+        "hybrid": 5,
+        "liquid": 3,
+        "reasoning": 2,
+        "rwkv": 1,
+        "ssm": 4,
+        "transformer": 4,
+        "xlstm": 1
+      },
+      "total_models": 20,
+      "mean_count": 2.8571,
+      "min_count": 1,
+      "max_count": 5,
+      "max_to_min_ratio": 5.0,
+      "underrepresented": [
+        "rwkv",
+        "xlstm"
+      ],
+      "overrepresented": [
+        "hybrid"
+      ],
+      "thresholds": {
+        "underrepresented_below_mean_factor": 0.5,
+        "overrepresented_above_mean_factor": 1.5,
+        "max_to_min_ratio": 3.0
+      },
+      "is_imbalanced": true
+    },
+    "has_critical_issues": true
+  }
+}
