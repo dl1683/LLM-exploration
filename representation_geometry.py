@@ -124,7 +124,7 @@ def load_model_and_tokenizer(model_id: str, use_4bit: bool = True):
 
     load_kwargs: Dict[str, Any] = {
         "trust_remote_code": True,
-        "torch_dtype": torch.bfloat16,
+        "dtype": torch.bfloat16,
         "device_map": "auto",
     }
 
@@ -444,10 +444,11 @@ def save_paradigm_summary_plot(summary_df: pd.DataFrame, out_dir: Path):
         data = summary_df[summary_df["paradigm"].isin(paradigm_order)].copy()
         if data.empty or metric not in data.columns:
             continue
+        plot_order = [p for p in paradigm_order if p in data["paradigm"].values]
         sns.barplot(
-            data=data, x="paradigm", y=metric,
-            order=[p for p in paradigm_order if p in data["paradigm"].values],
-            palette=palette, ax=ax,
+            data=data, x="paradigm", y=metric, hue="paradigm",
+            order=plot_order, hue_order=plot_order,
+            palette=palette, ax=ax, legend=False,
         )
         ax.set_title(metric.replace("_", " ").title())
         ax.set_xlabel("")
