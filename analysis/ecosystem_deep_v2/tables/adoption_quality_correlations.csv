@@ -1,0 +1,10 @@
+metric,metric_label,n_raw,raw_corr_log_downloads,partial_corr_log_downloads,n_partial
+hybridization_score,Hybridization Score,125,-0.41080410367687603,-0.47053395415451016,116
+has_ssm_signals_f,Has SSM Signals,125,-0.31616851219099257,-0.38478884494906684,116
+log_context_efficiency,Log Context Efficiency,88,0.09996139381155618,0.2761468054639739,88
+is_long_context_128k_f,Long Context (>=128k),125,0.3692013113848892,0.2752246565260497,116
+convergence_score,Convergence Score,125,0.35524687613332373,0.22440674791054885,116
+architecture_quality_index,Architecture Quality Index,125,0.18555484250762452,0.13271393791401614,116
+kv_compression,KV Compression,86,0.07928959059635221,0.092931013745377,86
+ffn_balance,FFN Balance,94,-0.05332758972147614,-0.049647676323546844,94
+has_quant_f,Has Quantized Variant,125,0.14216227921728092,0.0377393495937972,116

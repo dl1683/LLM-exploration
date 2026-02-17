@@ -1,0 +1,4 @@
+model_id,inferred_paradigm,param_b,max_context
+ibm-granite/granite-4.0-h-350m,hybrid,0.340352432,32768.0
+Qwen/Qwen2.5-0.5B,transformer,0.494032768,131072.0
+microsoft/Phi-4-mini-reasoning,reasoning,3.83602176,6261309.0

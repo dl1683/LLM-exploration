@@ -1,0 +1,12 @@
+models_total: 129
+hidden_hybrid_candidates: 16 (12.4%)
+strict_hidden_hybrids: 16
+convergence_index_start: 0.2338
+convergence_index_end: 0.4932
+convergence_index_change: +0.2594
+top_convergence_drivers: norm:+0.000,premium=-0.483; activation:+0.000,premium=-0.514; position:+0.000,premium=+0.600
+strongest_partial_corr_metric: hybridization_score (-0.471, n=116)
+incremental_architecture_r2: 0.4206
+peak_hidden_hybrid_month: 2023-11-01 (100.0%)
+changepoints_detected: 35
+top_changepoints: 2025-09-01:hidden_hybrid_share(up,+2.89); 2023-12-01:hidden_hybrid_share(down,-2.66); 2024-04-01:median_context_k(down,-2.48)

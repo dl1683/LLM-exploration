@@ -1,0 +1,13 @@
+models_total: 129
+registry_unassigned: 84 (65.1%)
+unassigned_but_inferred_non_transformer: 31
+models_with_ssm_signals: 31 (24.0%)
+ssm_signals_inside_unassigned: 17
+context_known: 89
+context_ge_128k: 50 (56.2% of known)
+gqa_known: 86
+gqa_ratio_gt_1: 76 (88.4% of known)
+pretrain_tokens_known: 74
+pretrain_tokens_suspect: 41 (55.4% of known)
+quantized_models: 37
+gguf_models: 14

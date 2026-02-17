@@ -1,0 +1,10 @@
+registry_paradigm,transformer,ssm,hybrid,liquid,xlstm,rwkv,reasoning,diffusion,unassigned
+transformer,7,0,1,0,0,0,0,0,0
+ssm,0,8,0,0,0,0,0,0,0
+hybrid,0,0,9,0,0,0,0,0,0
+liquid,0,0,0,3,0,0,0,0,0
+xlstm,0,0,0,0,1,0,0,0,0
+rwkv,0,0,0,0,0,4,0,0,0
+reasoning,0,0,0,0,0,0,5,0,0
+diffusion,0,0,0,0,0,0,0,0,0
+unassigned,53,6,15,0,0,3,5,2,0
