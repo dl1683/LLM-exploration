@@ -1,0 +1,18 @@
+models_analyzed: 11
+cross_cka_pairs: 55
+transformer_mean_intrinsic_dim: 2.75
+transformer_mean_anisotropy: 0.9352
+transformer_self_cka_block_ratio: 1.079
+ssm_mean_intrinsic_dim: 11.18
+ssm_mean_anisotropy: 0.6069
+ssm_self_cka_block_ratio: 1.164
+hybrid_mean_intrinsic_dim: 5.96
+hybrid_mean_anisotropy: 0.8466
+hybrid_self_cka_block_ratio: 1.171
+reasoning_mean_intrinsic_dim: 1.99
+reasoning_mean_anisotropy: 0.9408
+reasoning_self_cka_block_ratio: 1.009
+within_paradigm_mean_cka: 0.7663
+cross_paradigm_mean_cka: 0.5393
+cka_gap: 0.2271
+best_cross_paradigm_pair: Qwen3-1.7B_vs_DSR1-1.5B (max_cka=0.9889)
