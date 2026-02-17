@@ -12,3 +12,11 @@ DSR1-1.5B_vs_Qwen2.5-Math-1.5B: PR_delta=-0.34, CKA=0.9542, method=sft-distill-r
 Nemotron-1.5B-R_vs_Qwen2.5-1.5B: PR_delta=-0.30, CKA=0.9080, method=sft-distill-r1-5M
 LFM2.5-Think_vs_LFM2.5-Instruct: PR_delta=-0.36, CKA=0.9385, method=multi-stage-rl
 SmolLM3-3B-R_vs_SmolLM3-3B-Base: PR_delta=-0.03, CKA=0.9865, method=sft-apo-midtrain
+
+PERMUTATION NULL TEST (n=10000):
+null_mean_delta: -0.006 +/- 2.150
+observed_mean_delta: -0.211
+p_mean_le_observed: 0.4617
+p_all_six_negative: 0.0158
+interpretation: unanimity_not_magnitude_is_significant
+wilcoxon_agreement: p=0.0156 (matches permutation p=0.0158)
