@@ -1,0 +1,9 @@
+paradigm,count
+transformer,16
+hybrid,16
+ssm,5
+reasoning,5
+liquid,3
+rwkv,2
+diffusion,2
+xlstm,1

@@ -1,0 +1,4 @@
+model_id,inferred_paradigm,param_b,downloads
+ibm-granite/granite-4.0-h-350m,hybrid,0.340352432,4054.0
+ibm-granite/granite-4.0-350m,hybrid,0.352393112,9406.0
+Qwen/Qwen3-0.6B,transformer,0.751632384,10082918.0

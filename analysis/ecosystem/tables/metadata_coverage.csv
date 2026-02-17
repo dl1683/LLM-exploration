@@ -1,0 +1,17 @@
+field,coverage_rate
+release_date,0.92
+license,0.86
+downloads,0.92
+likes,0.92
+num_params,0.92
+num_layers,0.82
+hidden_size,0.82
+ffn_size,0.82
+num_heads,0.74
+num_kv_heads,0.72
+head_dim,0.76
+max_context,0.74
+sliding_window,0.18
+vocab_size,0.84
+pretrain_tokens,0.56
+tokenizer_type,0.9
