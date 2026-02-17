@@ -1,0 +1,16 @@
+models_compared: 7
+primary_pair: DSR1-1.5B vs Qwen3-1.7B
+primary_mean_cka: 0.9488
+primary_max_rdi: 0.2528
+primary_max_divergence_layer: 2
+primary_max_divergence_frac: 0.071
+DSR1-1.5B vs Qwen3-1.7B_mean_cka: 0.9488
+DSR1-1.5B vs Qwen3-0.6B_mean_cka: 0.9470
+DSR1-1.5B vs Gemma3-1B_mean_cka: 0.8237
+DSR1-1.5B vs Gemma2-2B_mean_cka: 0.9120
+DSR1-1.5B vs FalconH1-1.5B_mean_cka: 0.6841
+DSR1-1.5B vs Mamba-1.4B_mean_cka: 0.3624
+DSR1_factual_PR: 1.01
+DSR1_reasoning_PR: 1.04
+DSR1_code_PR: 1.06
+DSR1_narrative_PR: 1.19
