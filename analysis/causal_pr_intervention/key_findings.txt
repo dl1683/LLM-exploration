@@ -1,0 +1,9 @@
+models_tested: 4
+Qwen3-0.6B_expand_effect: baseline=0.625, max_expand=0.062 (strength=0.50)
+Qwen3-0.6B_compress_k1: baseline=0.625, k1=0.125
+Qwen3-0.6B-Base_expand_effect: baseline=1.000, max_expand=0.062 (strength=0.50)
+Qwen3-0.6B-Base_compress_k1: baseline=1.000, k1=0.062
+DSR1-1.5B_expand_effect: baseline=0.375, max_expand=0.000 (strength=0.50)
+DSR1-1.5B_compress_k1: baseline=0.375, k1=0.000
+Qwen2.5-Math-1.5B_expand_effect: baseline=0.562, max_expand=0.000 (strength=0.50)
+Qwen2.5-Math-1.5B_compress_k1: baseline=0.562, k1=0.188
