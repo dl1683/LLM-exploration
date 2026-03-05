@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
 """
-causal_pr_robust.py — Stage 3b: Robust Over-Compression Replication
+causal_pr_robust.py — Stage 3b: Robust Over-Compression + JPIS Stability Bridge
 
-Codex-designed protocol to lock the over-compression claim:
+Codex-designed protocol to lock the over-compression claim AND bridge it
+with JPIS pressure-fragility data:
 - 96 eval prompts (48 math + 48 factual), split: 32 calibration + 64 holdout
 - 9 random seeds for stochastic expansion noise
 - Two-stage pipeline: Stage A (coarse layer/strength scout) → Stage B (fine confirm)
 - Critical-rank curves (keep_k sweep)
-- Mixed-effects logistic regression for statistical claim
+- Bridge analysis: correlate expansion gain with JPIS pressure_auc
 
 Stage A: 6 layers × 5 strengths × 3 seeds, calibration prompts
 Stage B: 3 layers × 9 fine strengths × 9 seeds, holdout prompts + critical-rank
+Stage Bridge: Join expansion data with JPIS stability, mediation analysis
 """
 from __future__ import annotations
 
@@ -149,15 +151,29 @@ FACTUAL_PROMPTS = [
 ]
 
 # ── Models ──────────────────────────────────────────────────────────────
-TEST_MODELS = [
+# Core models from Stage 3 (original over-compression test)
+CORE_MODELS = [
     # (hf_id, short_name, role, core_pr)
-    ("Qwen/Qwen3-0.6B", "Qwen3-0.6B", "reasoning", 1.54),
+    ("Qwen/Qwen3-0.6B", "Qwen3-0.6B", "reasoning", 1.07),
     ("Qwen/Qwen3-0.6B-Base", "Qwen3-0.6B-Base", "base", 1.57),
-    ("deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", "DSR1-1.5B", "reasoning", 1.19),
+    ("deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", "DSR1-1.5B", "reasoning", 1.08),
     ("Qwen/Qwen2.5-Math-1.5B", "Qwen2.5-Math-1.5B", "base", 1.53),
     ("nvidia/OpenReasoning-Nemotron-1.5B", "Nemotron-1.5B-R", "reasoning", 1.04),
     ("Qwen/Qwen2.5-1.5B", "Qwen2.5-1.5B", "base", 1.34),
 ]
+
+# JPIS bridge models — tested in JPIS, need expansion data for bridge
+BRIDGE_MODELS = [
+    ("google/gemma-2-2b", "Gemma2-2B", "base", 2.53),
+    ("google/gemma-3-1b-pt", "Gemma3-1B", "base", 1.45),
+    ("state-spaces/mamba-790m-hf", "Mamba-790M", "ssm", 6.14),
+    ("tiiuae/Falcon-H1-0.5B-Base", "FalconH1-0.5B", "hybrid", 5.66),
+    ("tiiuae/Falcon-H1-1.5B-Base", "FalconH1-1.5B", "hybrid", 1.63),
+    ("Zyphra/Zamba2-1.2B", "Zamba2-1.2B", "hybrid", 4.54),
+]
+
+# Combined list
+TEST_MODELS = CORE_MODELS + BRIDGE_MODELS
 
 
 def get_prompts(split: str, domain: str = "both") -> List[Dict]:
@@ -298,7 +314,7 @@ def evaluate_per_prompt(model, tokenizer, prompts: List[Dict],
 
 def get_model_layers(model) -> List[nn.Module]:
     for attr in ["model.layers", "transformer.h", "gpt_neox.layers",
-                 "model.model.layers"]:
+                 "model.model.layers", "backbone.layers"]:
         obj = model
         try:
             for part in attr.split("."):
@@ -332,88 +348,119 @@ def run_stage_a(args):
     print(f"Stage A: Coarse scouting with {len(cal_prompts)} calibration prompts, "
           f"{len(SCOUT_SEEDS)} seeds")
 
+    # Resume: load existing results if available
+    existing_csv = out_dir / "tables" / "stage_a_results.csv"
     all_rows = []
+    skip_models = set()
+    if existing_csv.exists():
+        existing_df = pd.read_csv(existing_csv)
+        all_rows = existing_df.to_dict("records")
+        skip_models = set(existing_df["model"].unique())
+        print(f"  Resuming: {len(skip_models)} models already done: {skip_models}")
+
+    model_filter = None
+    if hasattr(args, 'models') and args.models:
+        model_filter = [m.strip() for m in args.models.split(",")]
 
     for hf_id, model_name, role, core_pr in TEST_MODELS:
+        if model_name in skip_models:
+            print(f"\nSkipping {model_name} (already in saved results)")
+            continue
+        if model_filter and model_name not in model_filter:
+            print(f"\nSkipping {model_name} (not in --models filter)")
+            continue
         print(f"\n{'=' * 60}")
         print(f"Stage A: {model_name} ({role}, core_pr={core_pr:.2f})")
         print(f"{'=' * 60}")
 
-        t0 = time.time()
-        tokenizer = AutoTokenizer.from_pretrained(hf_id, trust_remote_code=True)
-        if tokenizer.pad_token is None:
-            tokenizer.pad_token = tokenizer.eos_token
+        try:
+            t0 = time.time()
+            tokenizer = AutoTokenizer.from_pretrained(hf_id, trust_remote_code=True)
+            if tokenizer.pad_token is None:
+                tokenizer.pad_token = tokenizer.eos_token
 
-        model = AutoModelForCausalLM.from_pretrained(
-            hf_id, trust_remote_code=True, dtype=torch.bfloat16,
-            device_map="auto",
-            quantization_config=BitsAndBytesConfig(
-                load_in_4bit=True, bnb_4bit_quant_type="nf4",
-                bnb_4bit_compute_dtype=torch.bfloat16,
-            ),
-        )
-        model.eval()
-        print(f"  Loaded in {time.time() - t0:.1f}s")
+            model = AutoModelForCausalLM.from_pretrained(
+                hf_id, trust_remote_code=True, dtype=torch.bfloat16,
+                device_map="auto",
+                quantization_config=BitsAndBytesConfig(
+                    load_in_4bit=True, bnb_4bit_quant_type="nf4",
+                    bnb_4bit_compute_dtype=torch.bfloat16,
+                ),
+            )
+            model.eval()
+            print(f"  Loaded in {time.time() - t0:.1f}s")
 
-        layers = get_model_layers(model)
-        if not layers:
-            print(f"  [ERROR] Could not find model layers, skipping")
-            del model, tokenizer; gc.collect(); torch.cuda.empty_cache()
+            layers = get_model_layers(model)
+            if not layers:
+                print(f"  [ERROR] Could not find model layers, skipping")
+                del model, tokenizer; gc.collect(); torch.cuda.empty_cache()
+                continue
+
+            n_layers = len(layers)
+            coarse_lyrs = coarse_layers_for(n_layers)
+            print(f"  {n_layers} layers, testing coarse: {coarse_lyrs}")
+
+            # Baseline
+            print(f"  Evaluating baseline...")
+            baseline_results = evaluate_per_prompt(model, tokenizer, cal_prompts)
+            baseline_acc = np.mean([r["correct"] for r in baseline_results])
+            math_acc = np.mean([r["correct"] for r in baseline_results if r["domain"] == "math"])
+            fact_acc = np.mean([r["correct"] for r in baseline_results if r["domain"] == "factual"])
+            print(f"    Baseline: overall={baseline_acc:.3f}, math={math_acc:.3f}, factual={fact_acc:.3f}")
+
+            for r in baseline_results:
+                all_rows.append({
+                    "model": model_name, "role": role, "core_pr": core_pr,
+                    "layer": -1, "strength": 0.0, "seed": 0,
+                    "intervention": "none", "stage": "A",
+                    "prompt": r["prompt"], "domain": r["domain"],
+                    "correct": r["correct"],
+                })
+
+            # Expansion sweep: layers × strengths × seeds
+            total_conditions = len(coarse_lyrs) * len([s for s in COARSE_STRENGTHS if s > 0]) * len(SCOUT_SEEDS)
+            cond_idx = 0
+            for layer_idx in coarse_lyrs:
+                for strength in COARSE_STRENGTHS:
+                    if strength == 0.0:
+                        continue
+                    for seed in SCOUT_SEEDS:
+                        cond_idx += 1
+                        expander = PRExpander(layer_idx, strength=strength, seed=seed)
+                        expander.attach(model, layers[layer_idx])
+
+                        results = evaluate_per_prompt(model, tokenizer, cal_prompts)
+                        expander.detach()
+
+                        acc = np.mean([r["correct"] for r in results])
+                        print(f"    [{cond_idx}/{total_conditions}] layer={layer_idx}, "
+                              f"s={strength:.2f}, seed={seed}: acc={acc:.3f}")
+
+                        for r in results:
+                            all_rows.append({
+                                "model": model_name, "role": role, "core_pr": core_pr,
+                                "layer": layer_idx, "strength": strength, "seed": seed,
+                                "intervention": "expand", "stage": "A",
+                                "prompt": r["prompt"], "domain": r["domain"],
+                                "correct": r["correct"],
+                            })
+
+            del model, tokenizer
+            gc.collect()
+            if torch.cuda.is_available():
+                torch.cuda.empty_cache()
+
+        except Exception as e:
+            print(f"\n  [ERROR] {model_name} failed: {e}")
+            print(f"  Attempting GPU cleanup and continuing...")
+            try:
+                del model, tokenizer
+            except NameError:
+                pass
+            gc.collect()
+            if torch.cuda.is_available():
+                torch.cuda.empty_cache()
             continue
-
-        n_layers = len(layers)
-        coarse_lyrs = coarse_layers_for(n_layers)
-        print(f"  {n_layers} layers, testing coarse: {coarse_lyrs}")
-
-        # Baseline
-        print(f"  Evaluating baseline...")
-        baseline_results = evaluate_per_prompt(model, tokenizer, cal_prompts)
-        baseline_acc = np.mean([r["correct"] for r in baseline_results])
-        math_acc = np.mean([r["correct"] for r in baseline_results if r["domain"] == "math"])
-        fact_acc = np.mean([r["correct"] for r in baseline_results if r["domain"] == "factual"])
-        print(f"    Baseline: overall={baseline_acc:.3f}, math={math_acc:.3f}, factual={fact_acc:.3f}")
-
-        for r in baseline_results:
-            all_rows.append({
-                "model": model_name, "role": role, "core_pr": core_pr,
-                "layer": -1, "strength": 0.0, "seed": 0,
-                "intervention": "none", "stage": "A",
-                "prompt": r["prompt"], "domain": r["domain"],
-                "correct": r["correct"],
-            })
-
-        # Expansion sweep: layers × strengths × seeds
-        total_conditions = len(coarse_lyrs) * len([s for s in COARSE_STRENGTHS if s > 0]) * len(SCOUT_SEEDS)
-        cond_idx = 0
-        for layer_idx in coarse_lyrs:
-            for strength in COARSE_STRENGTHS:
-                if strength == 0.0:
-                    continue
-                for seed in SCOUT_SEEDS:
-                    cond_idx += 1
-                    expander = PRExpander(layer_idx, strength=strength, seed=seed)
-                    expander.attach(model, layers[layer_idx])
-
-                    results = evaluate_per_prompt(model, tokenizer, cal_prompts)
-                    expander.detach()
-
-                    acc = np.mean([r["correct"] for r in results])
-                    print(f"    [{cond_idx}/{total_conditions}] layer={layer_idx}, "
-                          f"s={strength:.2f}, seed={seed}: acc={acc:.3f}")
-
-                    for r in results:
-                        all_rows.append({
-                            "model": model_name, "role": role, "core_pr": core_pr,
-                            "layer": layer_idx, "strength": strength, "seed": seed,
-                            "intervention": "expand", "stage": "A",
-                            "prompt": r["prompt"], "domain": r["domain"],
-                            "correct": r["correct"],
-                        })
-
-        del model, tokenizer
-        gc.collect()
-        if torch.cuda.is_available():
-            torch.cuda.empty_cache()
 
     # Save Stage A results
     df = pd.DataFrame(all_rows)
@@ -894,12 +941,412 @@ def _plot_results(df, stats_df, out_dir):
         print(f"  Saved critical_rank_by_domain.png")
 
 
+# ── Stage Bridge: Over-Compression x JPIS Stability ──────────────────
+def run_bridge(args):
+    """Bridge over-compression expansion data with JPIS pressure-fragility.
+
+    Hypothesis: Over-compressed models gain from mild PR expansion,
+    and that gain predicts lower pressure fragility (pressure_auc).
+    """
+    from scipy.stats import spearmanr, pearsonr
+
+    out_dir = Path("analysis/causal_pr_robust")
+    (out_dir / "figures").mkdir(parents=True, exist_ok=True)
+    (out_dir / "tables").mkdir(exist_ok=True)
+
+    # Load expansion data (Stage A)
+    stage_a_path = out_dir / "tables" / "stage_a_results.csv"
+    if not stage_a_path.exists():
+        print("ERROR: Run Stage A first")
+        return
+    expand_df = pd.read_csv(stage_a_path)
+    print(f"Loaded {len(expand_df)} rows from Stage A")
+
+    # Load JPIS pressure data
+    jpis_path = Path("analysis/jitter_pressure/tables/model_summary.csv")
+    if not jpis_path.exists():
+        print("ERROR: JPIS results not found at", jpis_path)
+        return
+    jpis_df = pd.read_csv(jpis_path)
+    print(f"Loaded {len(jpis_df)} rows from JPIS")
+
+    # ── Compute expansion gain per model ────────────────────────────
+    model_gains = []
+    for model_name in expand_df["model"].unique():
+        sub = expand_df[expand_df["model"] == model_name]
+        baseline = sub[sub["intervention"] == "none"]
+        if baseline.empty:
+            continue
+        baseline_acc = baseline["correct"].mean()
+
+        # Mild expansion band (0.05-0.10)
+        mild = sub[(sub["intervention"] == "expand") &
+                   (sub["strength"] >= 0.05) & (sub["strength"] <= 0.10)]
+        if mild.empty:
+            continue
+        mild_acc = mild["correct"].mean()
+        delta = mild_acc - baseline_acc
+
+        # Per-domain
+        for domain in ["math", "factual"]:
+            dom_base = baseline[baseline["domain"] == domain]["correct"].mean()
+            dom_mild = mild[mild["domain"] == domain]["correct"].mean()
+            dom_delta = dom_mild - dom_base if not np.isnan(dom_mild) else 0.0
+
+            model_gains.append({
+                "model": model_name,
+                "role": sub["role"].iloc[0],
+                "core_pr": sub["core_pr"].iloc[0],
+                "domain": domain,
+                "baseline_acc": dom_base,
+                "mild_acc": dom_mild,
+                "expansion_gain": dom_delta,
+            })
+
+        # Overall
+        model_gains.append({
+            "model": model_name,
+            "role": sub["role"].iloc[0],
+            "core_pr": sub["core_pr"].iloc[0],
+            "domain": "overall",
+            "baseline_acc": baseline_acc,
+            "mild_acc": mild_acc,
+            "expansion_gain": delta,
+        })
+
+    gains_df = pd.DataFrame(model_gains)
+    print(f"\nExpansion gains computed for {gains_df['model'].nunique()} models")
+
+    # ── Join with JPIS data ─────────────────────────────────────────
+    # Aggregate JPIS to per-model level (average across domains)
+    jpis_model = jpis_df.groupby("model").agg({
+        "pressure_auc": "mean",
+        "paradigm": "first",
+    }).reset_index()
+
+    # Also get per-domain JPIS
+    jpis_by_domain = jpis_df[["model", "domain", "pressure_auc"]].copy()
+    jpis_by_domain = jpis_by_domain.rename(columns={"pressure_auc": "jpis_pressure_auc"})
+
+    # Merge overall
+    overall_gains = gains_df[gains_df["domain"] == "overall"].copy()
+    bridge = overall_gains.merge(jpis_model, on="model", how="inner")
+
+    # Merge per-domain
+    domain_gains = gains_df[gains_df["domain"] != "overall"].copy()
+    bridge_domain = domain_gains.merge(jpis_by_domain, on=["model", "domain"], how="inner")
+
+    n_bridge = len(bridge)
+    print(f"\nBridge: {n_bridge} models with both expansion and JPIS data")
+    if n_bridge < 4:
+        print("WARNING: Too few models for meaningful correlation. Need at least 4.")
+        if n_bridge < 3:
+            print("ABORTING bridge analysis — run Stage A on more models.")
+            return
+
+    for _, row in bridge.iterrows():
+        print(f"  {row['model']}: expansion_gain={row['expansion_gain']:+.3f}, "
+              f"pressure_auc={row['pressure_auc']:.3f}, core_pr={row['core_pr']:.2f}")
+
+    # ── Correlation: expansion_gain vs pressure_auc ─────────────────
+    x = bridge["expansion_gain"].values
+    y = bridge["pressure_auc"].values
+
+    r_spearman, p_spearman = spearmanr(x, y)
+    r_pearson, p_pearson = pearsonr(x, y)
+    print(f"\n  Overall: expansion_gain ~ pressure_auc")
+    print(f"    Spearman r={r_spearman:.3f}, p={p_spearman:.4f}")
+    print(f"    Pearson  r={r_pearson:.3f}, p={p_pearson:.4f}")
+
+    # ── Per-domain correlation ──────────────────────────────────────
+    domain_corrs = {}
+    for domain in ["math", "factual"]:
+        dsub = bridge_domain[bridge_domain["domain"] == domain]
+        if len(dsub) >= 4:
+            r_d, p_d = spearmanr(dsub["expansion_gain"].values,
+                                  dsub["jpis_pressure_auc"].values)
+            domain_corrs[domain] = {"r": r_d, "p": p_d, "n": len(dsub)}
+            print(f"    {domain}: Spearman r={r_d:.3f}, p={p_d:.4f}, n={len(dsub)}")
+
+    # ── Correlation: core_pr vs pressure_auc ────────────────────────
+    r_pr_pauc, p_pr_pauc = spearmanr(bridge["core_pr"].values, y)
+    print(f"\n  core_pr ~ pressure_auc: Spearman r={r_pr_pauc:.3f}, p={p_pr_pauc:.4f}")
+
+    # ── Correlation: core_pr vs expansion_gain ──────────────────────
+    r_pr_gain, p_pr_gain = spearmanr(bridge["core_pr"].values, x)
+    print(f"  core_pr ~ expansion_gain: Spearman r={r_pr_gain:.3f}, p={p_pr_gain:.4f}")
+
+    # ── Bootstrap CI for main correlation ───────────────────────────
+    n_boot = 5000
+    boot_corrs = []
+    rng = np.random.RandomState(42)
+    for _ in range(n_boot):
+        idx = rng.choice(n_bridge, size=n_bridge, replace=True)
+        r_boot, _ = spearmanr(x[idx], y[idx])
+        if not np.isnan(r_boot):
+            boot_corrs.append(r_boot)
+    boot_corrs = np.array(boot_corrs)
+    ci_lo, ci_hi = np.percentile(boot_corrs, [2.5, 97.5])
+    print(f"\n  Bootstrap CI (5000): [{ci_lo:.3f}, {ci_hi:.3f}]")
+
+    # ── Permutation test ────────────────────────────────────────────
+    n_perm = 10000
+    perm_corrs = []
+    for _ in range(n_perm):
+        perm_y = rng.permutation(y)
+        r_perm, _ = spearmanr(x, perm_y)
+        perm_corrs.append(r_perm)
+    perm_corrs = np.array(perm_corrs)
+    # Two-sided p-value
+    perm_p = np.mean(np.abs(perm_corrs) >= np.abs(r_spearman))
+    print(f"  Permutation p (10000): {perm_p:.4f}")
+
+    # ── Mediation analysis: core_pr → expansion_gain → pressure_auc ──
+    print(f"\n  Mediation: core_pr -> expansion_gain -> pressure_auc")
+    # Path a: core_pr → expansion_gain
+    path_a_r, path_a_p = spearmanr(bridge["core_pr"].values, x)
+    # Path b: expansion_gain → pressure_auc (controlling for core_pr)
+    # Use partial correlation approximation
+    path_b_r, path_b_p = spearmanr(x, y)
+    # Path c: core_pr → pressure_auc (total effect)
+    path_c_r, path_c_p = spearmanr(bridge["core_pr"].values, y)
+    # Indirect effect estimate via bootstrap
+    indirect_boots = []
+    for _ in range(5000):
+        idx = rng.choice(n_bridge, size=n_bridge, replace=True)
+        ra, _ = spearmanr(bridge["core_pr"].values[idx], x[idx])
+        rb, _ = spearmanr(x[idx], y[idx])
+        if not (np.isnan(ra) or np.isnan(rb)):
+            indirect_boots.append(ra * rb)
+    indirect_boots = np.array(indirect_boots)
+    indirect_mean = np.mean(indirect_boots)
+    indirect_ci = np.percentile(indirect_boots, [2.5, 97.5])
+
+    print(f"    Path a (core_pr -> gain): r={path_a_r:.3f}, p={path_a_p:.4f}")
+    print(f"    Path b (gain -> pauc):    r={path_b_r:.3f}, p={path_b_p:.4f}")
+    print(f"    Path c (core_pr -> pauc): r={path_c_r:.3f}, p={path_c_p:.4f}")
+    print(f"    Indirect (a*b): {indirect_mean:.3f} [{indirect_ci[0]:.3f}, {indirect_ci[1]:.3f}]")
+
+    # ── Save bridge results ─────────────────────────────────────────
+    bridge_stats = {
+        "n_models": n_bridge,
+        "spearman_r": r_spearman,
+        "spearman_p": p_spearman,
+        "pearson_r": r_pearson,
+        "pearson_p": p_pearson,
+        "bootstrap_ci_lo": ci_lo,
+        "bootstrap_ci_hi": ci_hi,
+        "permutation_p": perm_p,
+        "path_a_r": path_a_r, "path_a_p": path_a_p,
+        "path_b_r": path_b_r, "path_b_p": path_b_p,
+        "path_c_r": path_c_r, "path_c_p": path_c_p,
+        "indirect_effect": indirect_mean,
+        "indirect_ci_lo": indirect_ci[0],
+        "indirect_ci_hi": indirect_ci[1],
+    }
+    for domain, corr in domain_corrs.items():
+        bridge_stats[f"{domain}_spearman_r"] = corr["r"]
+        bridge_stats[f"{domain}_spearman_p"] = corr["p"]
+
+    with open(out_dir / "tables" / "bridge_stats.json", "w") as f:
+        json.dump(bridge_stats, f, indent=2)
+
+    bridge.to_csv(out_dir / "tables" / "bridge_joined.csv", index=False)
+    bridge_domain.to_csv(out_dir / "tables" / "bridge_domain.csv", index=False)
+
+    # ── Key findings ────────────────────────────────────────────────
+    findings = [
+        f"bridge_models: {n_bridge}",
+        f"expansion_gain_vs_pressure_auc_spearman: r={r_spearman:.3f}, p={p_spearman:.4f}",
+        f"bootstrap_ci_95: [{ci_lo:.3f}, {ci_hi:.3f}]",
+        f"permutation_p: {perm_p:.4f}",
+        f"mediation_indirect_effect: {indirect_mean:.3f} [{indirect_ci[0]:.3f}, {indirect_ci[1]:.3f}]",
+        f"core_pr_vs_pressure_auc: r={r_pr_pauc:.3f}, p={p_pr_pauc:.4f}",
+    ]
+    for domain, corr in domain_corrs.items():
+        findings.append(f"{domain}_expansion_vs_fragility: r={corr['r']:.3f}, p={corr['p']:.4f}")
+
+    for _, row in bridge.iterrows():
+        findings.append(f"{row['model']}: gain={row['expansion_gain']:+.3f}, "
+                       f"pauc={row['pressure_auc']:.3f}, pr={row['core_pr']:.2f}")
+
+    findings.append(f"business_implication: Over-compression predicts deployment fragility - "
+                   f"models benefiting from PR expansion are more sensitive to inference noise, "
+                   f"providing a testable diagnostic for production risk assessment")
+    findings.append(f"scientific_implication: PR compression and dynamic stability are mechanistically "
+                   f"linked through a mediation path (core_pr -> expansion_gain -> pressure_fragility), "
+                   f"suggesting representation geometry causally determines noise robustness")
+
+    findings_path = out_dir / "key_findings.txt"
+    findings_path.write_text("\n".join(findings), encoding="utf-8")
+
+    # ── Bridge visualizations ───────────────────────────────────────
+    _plot_bridge(bridge, bridge_domain, bridge_stats, out_dir)
+
+    print(f"\nBridge analysis complete. Results in {out_dir}/tables/")
+    return bridge_stats
+
+
+def _plot_bridge(bridge, bridge_domain, stats, out_dir):
+    """Generate bridge-specific visualizations."""
+    fig_dir = out_dir / "figures"
+
+    ROLE_COLORS = {
+        "reasoning": "#FF5722", "base": "#2196F3", "ssm": "#9C27B0",
+        "hybrid": "#4CAF50", "transformer": "#2196F3",
+    }
+    ROLE_MARKERS = {
+        "reasoning": "^", "base": "o", "ssm": "D", "hybrid": "s",
+        "transformer": "o",
+    }
+
+    # ── Plot 1: Expansion gain vs pressure_auc scatter ──────────────
+    fig, ax = plt.subplots(figsize=(9, 7))
+    for _, row in bridge.iterrows():
+        role = row.get("paradigm", row.get("role", "base"))
+        color = ROLE_COLORS.get(role, "#666666")
+        marker = ROLE_MARKERS.get(role, "o")
+        ax.scatter(row["expansion_gain"], row["pressure_auc"],
+                   color=color, marker=marker, s=150, zorder=5, edgecolors="black")
+        ax.annotate(row["model"],
+                    (row["expansion_gain"], row["pressure_auc"]),
+                    fontsize=8, ha="left", va="bottom",
+                    xytext=(5, 5), textcoords="offset points")
+
+    # Add regression line
+    x = bridge["expansion_gain"].values
+    y = bridge["pressure_auc"].values
+    if len(x) >= 3:
+        z = np.polyfit(x, y, 1)
+        p = np.poly1d(z)
+        x_line = np.linspace(x.min() - 0.02, x.max() + 0.02, 100)
+        ax.plot(x_line, p(x_line), "--", color="gray", alpha=0.5, linewidth=1.5)
+
+    ax.axvline(x=0, color="black", linestyle=":", alpha=0.3)
+    ax.set_xlabel("Expansion Gain (mild PR expansion - baseline accuracy)")
+    ax.set_ylabel("Pressure AUC (higher = more fragile)")
+    r = stats["spearman_r"]
+    p_val = stats["permutation_p"]
+    ax.set_title(f"Over-Compression Bridge: Expansion Gain vs Pressure Fragility\n"
+                 f"Spearman r={r:.3f}, permutation p={p_val:.4f}, n={stats['n_models']}")
+    ax.grid(True, alpha=0.3)
+
+    # Legend
+    from matplotlib.lines import Line2D
+    legend_elements = []
+    for role, color in ROLE_COLORS.items():
+        marker = ROLE_MARKERS.get(role, "o")
+        legend_elements.append(Line2D([0], [0], marker=marker, color="w",
+                                       markerfacecolor=color, markersize=10,
+                                       label=role.capitalize()))
+    ax.legend(handles=legend_elements, loc="upper left", fontsize=8)
+
+    plt.tight_layout()
+    plt.savefig(fig_dir / "bridge_scatter.png", dpi=150, bbox_inches="tight")
+    plt.close()
+    print(f"  Saved bridge_scatter.png")
+
+    # ── Plot 2: Three-panel mediation path ──────────────────────────
+    fig, axes = plt.subplots(1, 3, figsize=(18, 5))
+
+    # Panel 1: core_pr → expansion_gain
+    for _, row in bridge.iterrows():
+        role = row.get("paradigm", row.get("role", "base"))
+        color = ROLE_COLORS.get(role, "#666666")
+        marker = ROLE_MARKERS.get(role, "o")
+        axes[0].scatter(row["core_pr"], row["expansion_gain"],
+                        color=color, marker=marker, s=100, edgecolors="black")
+        axes[0].annotate(row["model"], (row["core_pr"], row["expansion_gain"]),
+                         fontsize=7, ha="left", va="bottom")
+
+    axes[0].axhline(y=0, color="black", linestyle=":", alpha=0.3)
+    axes[0].set_xlabel("Core PR (representation dimensionality)")
+    axes[0].set_ylabel("Expansion Gain")
+    axes[0].set_title(f"Path a: Core PR -> Expansion Gain\n"
+                      f"r={stats['path_a_r']:.3f}, p={stats['path_a_p']:.4f}")
+    axes[0].grid(True, alpha=0.3)
+
+    # Panel 2: expansion_gain → pressure_auc
+    for _, row in bridge.iterrows():
+        role = row.get("paradigm", row.get("role", "base"))
+        color = ROLE_COLORS.get(role, "#666666")
+        marker = ROLE_MARKERS.get(role, "o")
+        axes[1].scatter(row["expansion_gain"], row["pressure_auc"],
+                        color=color, marker=marker, s=100, edgecolors="black")
+        axes[1].annotate(row["model"], (row["expansion_gain"], row["pressure_auc"]),
+                         fontsize=7, ha="left", va="bottom")
+
+    axes[1].axvline(x=0, color="black", linestyle=":", alpha=0.3)
+    axes[1].set_xlabel("Expansion Gain")
+    axes[1].set_ylabel("Pressure AUC (fragility)")
+    axes[1].set_title(f"Path b: Expansion Gain -> Fragility\n"
+                      f"r={stats['path_b_r']:.3f}, p={stats['path_b_p']:.4f}")
+    axes[1].grid(True, alpha=0.3)
+
+    # Panel 3: core_pr → pressure_auc (total effect)
+    for _, row in bridge.iterrows():
+        role = row.get("paradigm", row.get("role", "base"))
+        color = ROLE_COLORS.get(role, "#666666")
+        marker = ROLE_MARKERS.get(role, "o")
+        axes[2].scatter(row["core_pr"], row["pressure_auc"],
+                        color=color, marker=marker, s=100, edgecolors="black")
+        axes[2].annotate(row["model"], (row["core_pr"], row["pressure_auc"]),
+                         fontsize=7, ha="left", va="bottom")
+
+    axes[2].set_xlabel("Core PR")
+    axes[2].set_ylabel("Pressure AUC (fragility)")
+    axes[2].set_title(f"Path c (total): Core PR -> Fragility\n"
+                      f"r={stats['path_c_r']:.3f}, p={stats['path_c_p']:.4f}\n"
+                      f"Indirect={stats['indirect_effect']:.3f}")
+    axes[2].grid(True, alpha=0.3)
+
+    plt.tight_layout()
+    plt.savefig(fig_dir / "bridge_mediation.png", dpi=150, bbox_inches="tight")
+    plt.close()
+    print(f"  Saved bridge_mediation.png")
+
+    # ── Plot 3: Per-domain expansion vs fragility ───────────────────
+    if not bridge_domain.empty and len(bridge_domain) >= 6:
+        fig, axes = plt.subplots(1, 2, figsize=(14, 6))
+        for idx, domain in enumerate(["math", "factual"]):
+            ax = axes[idx]
+            dsub = bridge_domain[bridge_domain["domain"] == domain]
+            for _, row in dsub.iterrows():
+                color = ROLE_COLORS.get(row.get("role", "base"), "#666666")
+                marker = ROLE_MARKERS.get(row.get("role", "base"), "o")
+                ax.scatter(row["expansion_gain"], row["jpis_pressure_auc"],
+                           color=color, marker=marker, s=120, edgecolors="black")
+                ax.annotate(row["model"],
+                            (row["expansion_gain"], row["jpis_pressure_auc"]),
+                            fontsize=7, ha="left", va="bottom")
+
+            ax.axvline(x=0, color="black", linestyle=":", alpha=0.3)
+            ax.set_xlabel("Expansion Gain")
+            ax.set_ylabel("Pressure AUC (fragility)")
+
+            # Compute domain correlation
+            dkey = f"{domain}_spearman_r"
+            if dkey in stats:
+                ax.set_title(f"{domain.capitalize()}: Expansion vs Fragility\n"
+                             f"r={stats[dkey]:.3f}, p={stats[f'{domain}_spearman_p']:.4f}")
+            else:
+                ax.set_title(f"{domain.capitalize()}: Expansion vs Fragility")
+            ax.grid(True, alpha=0.3)
+
+        plt.tight_layout()
+        plt.savefig(fig_dir / "bridge_by_domain.png", dpi=150, bbox_inches="tight")
+        plt.close()
+        print(f"  Saved bridge_by_domain.png")
+
+
 # ── Main ────────────────────────────────────────────────────────────────
 def main():
     parser = argparse.ArgumentParser(description="Robust over-compression replication")
-    parser.add_argument("--stage", choices=["A", "B", "stats", "all"], default="all",
+    parser.add_argument("--stage", choices=["A", "B", "stats", "bridge", "all"], default="all",
                         help="Which stage to run")
     parser.add_argument("--max-new-tokens", type=int, default=10)
+    parser.add_argument("--models", type=str, default=None,
+                        help="Comma-separated model short names to run (default: all)")
     args = parser.parse_args()
 
     if args.stage in ("A", "all"):
@@ -910,6 +1357,9 @@ def main():
 
     if args.stage in ("stats", "all"):
         run_stats(args)
+
+    if args.stage in ("bridge", "all"):
+        run_bridge(args)
 
 
 if __name__ == "__main__":

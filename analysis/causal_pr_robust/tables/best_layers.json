@@ -1,0 +1,10 @@
+{
+  "Qwen3-0.6B": 24,
+  "DSR1-1.5B": 24,
+  "Gemma2-2B": 11,
+  "Gemma3-1B": 22,
+  "Mamba-790M": 20,
+  "FalconH1-0.5B": 25,
+  "FalconH1-1.5B": 20,
+  "Zamba2-1.2B": 5
+}

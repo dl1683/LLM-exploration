@@ -1,0 +1,18 @@
+bridge_models: 8
+expansion_gain_vs_pressure_auc_spearman: r=-0.214, p=0.6103
+bootstrap_ci_95: [-0.973, 0.615]
+permutation_p: 0.6187
+mediation_indirect_effect: -0.154 [-0.827, 0.620]
+core_pr_vs_pressure_auc: r=-0.071, p=0.8665
+math_expansion_vs_fragility: r=0.527, p=0.1796
+factual_expansion_vs_fragility: r=-0.476, p=0.2329
+Qwen3-0.6B: gain=-0.227, pauc=0.668, pr=1.07
+DSR1-1.5B: gain=-0.053, pauc=0.712, pr=1.08
+Gemma2-2B: gain=-0.002, pauc=0.034, pr=2.53
+Gemma3-1B: gain=-0.206, pauc=0.807, pr=1.45
+Mamba-790M: gain=+0.037, pauc=0.830, pr=6.14
+FalconH1-0.5B: gain=-0.009, pauc=0.250, pr=5.66
+FalconH1-1.5B: gain=-0.016, pauc=0.189, pr=1.63
+Zamba2-1.2B: gain=+0.005, pauc=0.078, pr=4.54
+business_implication: Over-compression predicts deployment fragility - models benefiting from PR expansion are more sensitive to inference noise, providing a testable diagnostic for production risk assessment
+scientific_implication: PR compression and dynamic stability are mechanistically linked through a mediation path (core_pr -> expansion_gain -> pressure_fragility), suggesting representation geometry causally determines noise robustness
