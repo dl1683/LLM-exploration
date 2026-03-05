@@ -1,0 +1,3 @@
+test,statistic,p_value,groups,n
+kruskal_wallis_paradigm_pressure_auc,5.97058823529413,0.11304997245052899,"['transformer', 'ssm', 'hybrid', 'reasoning']",16
+wilcoxon_math_vs_factual_pressure_auc,0.0,0.0078125,math vs factual,8

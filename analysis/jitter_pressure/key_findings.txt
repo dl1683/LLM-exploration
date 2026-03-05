@@ -1,0 +1,16 @@
+models_tested: 8
+paradigms: transformer, ssm, hybrid, reasoning
+total_trials: 20160
+strengths: [0.01, 0.02, 0.05, 0.1, 0.2, 0.5]
+most_robust_model: Gemma2-2B (pressure_auc=0.0176)
+least_robust_model: Mamba-790M (pressure_auc=1.0000)
+paradigm_mean_pressure_auc_hybrid: 0.1725
+paradigm_mean_pressure_auc_reasoning: 0.7124
+paradigm_mean_pressure_auc_ssm: 0.8299
+paradigm_mean_pressure_auc_transformer: 0.5029
+domain_mean_pressure_auc_factual: 0.3252
+domain_mean_pressure_auc_math: 0.5669
+kruskal_wallis_paradigm_pressure_auc: stat=5.9706, p=0.113050, n=16
+wilcoxon_math_vs_factual_pressure_auc: stat=0.0000, p=0.007812, n=8
+business_implication: Pressure sensitivity reveals deployment risk — models appearing equivalent on benchmarks may have vastly different robustness to inference-time noise (quantization drift, temperature, stochastic decoding)
+scientific_implication: Dynamic stability under perturbation is a new axis orthogonal to representation geometry — 'compressed but stable' vs 'compact but hypersensitive' cannot be predicted from PR alone

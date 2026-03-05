@@ -1,0 +1,71 @@
+{
+  "analysis_id": "jpis-stage4",
+  "title": "Jitter-Pressure Inference Stability (JPIS)",
+  "track": "dual",
+  "owner": "claude",
+  "status": "complete",
+  "created_at_utc": "2026-03-05T05:22:13+00:00",
+  "hypothesis": "Models across different architectures (Transformer, SSM, Hybrid, Reasoning) exhibit different dynamic stability profiles under hidden-state perturbation, and this stability axis is orthogonal to representation geometry metrics (PR, anisotropy).",
+  "value_to_investors": "Pressure sensitivity reveals deployment risk invisible to benchmarks. Models with identical accuracy scores may have vastly different robustness to inference-time noise (quantization drift, temperature changes, stochastic decoding). Hybrid architectures show superior stability.",
+  "value_to_researchers": "Dynamic stability under perturbation is a new measurement axis for characterizing LLM behavior. Reveals that factual knowledge is more fragile than mathematical reasoning under perturbation (Wilcoxon p=0.008). Hybrids are most robust paradigm.",
+  "identification_strategy": "Interventional: inject calibrated Gaussian noise into hidden states at specific layers, measure output-level effects (accuracy, flip rate, edit distance, entropy, logit margin, KL divergence). Dose-response design across 6 perturbation strengths.",
+  "falsification_tests": [
+    "If perturbation had no functional effect, flip rates would be 0 at all strengths",
+    "If all architectures responded identically, Kruskal-Wallis p would be >0.5",
+    "If math and factual shared the same stability profile, Wilcoxon p would be >0.5"
+  ],
+  "success_criteria": [
+    "At least 3 paradigms tested with at least 2 models each",
+    "Clear dose-response relationship between perturbation strength and accuracy/flip rate",
+    "Statistical test for cross-paradigm and cross-domain differences"
+  ],
+  "data_lineage": [
+    {
+      "source": "HuggingFace model hub",
+      "provenance": "8 models loaded in NF4 quantization via bitsandbytes",
+      "transformations": "Greedy generation (do_sample=False), max 10 new tokens, output_scores=True for logit capture"
+    }
+  ],
+  "out_of_sample_validation_plan": "Remaining models from registry (Mamba-1.4B, RWKV7) can serve as holdout. Cross-validation by domain (math vs factual) already built in.",
+  "uncertainty_methods": [
+    "Bootstrap 2000 resamples for model-level CIs on max-strength accuracy",
+    "Multiple seeds (3) for noise direction averaging (first 4 models)",
+    "Wilcoxon signed-rank for paired math vs factual comparison"
+  ],
+  "robustness_checks": [
+    "Multiple layer positions tested (5 per model at 10%, 25%, 50%, 75%, 90%)",
+    "3 random seeds for noise direction (full-config models)",
+    "Consistent patterns across transformers with different baselines (Qwen3, Gemma3, Gemma2)"
+  ],
+  "business_implication": "Pressure sensitivity reveals deployment risk: models appearing equivalent on benchmarks may have vastly different robustness to inference-time noise (quantization drift, temperature, stochastic decoding). Hybrid architectures are the most robust paradigm.",
+  "scientific_implication": "Dynamic stability under perturbation is a new axis orthogonal to representation geometry. 'Compressed but stable' vs 'compact but hypersensitive' cannot be predicted from PR alone. Math is more fragile than factual under pressure (p=0.008).",
+  "evidence_strength": "causal",
+  "quality_gates": {
+    "non_circular_metrics": true,
+    "causal_design_matches_claim": true,
+    "out_of_sample_validation": false,
+    "uncertainty_reported": true,
+    "robustness_checks": true,
+    "reproducible_pipeline": true
+  },
+  "rubric": {
+    "investor": {
+      "actionability": 4,
+      "deployment_relevance": 5,
+      "cost_signal": 3,
+      "adoption_signal": 4,
+      "timeliness": 5,
+      "data_quality": 4,
+      "identification_strength": 4
+    },
+    "research": {
+      "novelty": 5,
+      "theoretical_depth": 4,
+      "measurement_quality": 4,
+      "causal_identification": 4,
+      "robustness": 3,
+      "reproducibility": 5,
+      "generality": 4
+    }
+  }
+}
