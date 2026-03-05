@@ -2,6 +2,17 @@
 
 Reverse chronological order. Only Codex-validated conclusions are listed.
 
+## exp-011: Over-Compression + JPIS Stability Bridge — Stage 3b
+**Status:** Complete
+**Date:** 2026-03-05
+**Commit:** `d15b372`
+**Script:** `causal_pr_robust.py`
+**Output:** `analysis/causal_pr_robust/`
+**Config:** 8 models, Stage A coarse sweep (6 layers x 4 strengths x 3 seeds), bridge with JPIS
+**What we learned:** Core PR strongly predicts expansion resilience (r=0.905, p=0.002) — high-PR models are immune to dimensional perturbation. BUT expansion gain does NOT predict noise fragility (r=-0.214, p=0.61). These are genuinely orthogonal measurement axes. Mediation path falsified (indirect CI spans zero). This refutes the simple "compression causes fragility" model and supports multi-axis characterization.
+
+---
+
 ## exp-010: Jitter-Pressure Inference Stability (JPIS) — Stage 4
 **Status:** Complete
 **Date:** 2026-03-05
