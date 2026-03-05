@@ -5,7 +5,7 @@ Reverse chronological order. Only Codex-validated conclusions are listed.
 ## exp-012: Mechanistic Orthogonality Decomposition
 **Status:** Complete
 **Date:** 2026-03-05
-**Commit:** `pending`
+**Commit:** `0164ae8`
 **Script:** `mechanistic_orthogonality_decomposition.py`
 **Output:** `analysis/orthogonality_decomposition_012/`
 **Config:** 15 models (Hymba failed), 2×2 factorial (PR surgery × jitter stress), 32 prompts, 3 seeds, 5,760 trials
