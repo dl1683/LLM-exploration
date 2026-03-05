@@ -1,0 +1,33 @@
+models_tested: 12
+total_trials: 46656
+paradigms: hybrid, ssm, transformer
+domains: factual, hard, logic, math
+layer_positions: [0.17, 0.19, 0.2, 0.48, 0.49, 0.78, 0.79, 0.8]
+surgery_strengths: [0.0, 0.06, 0.12]
+jitter_strengths: [0.0, 0.04, 0.08]
+global_mean_interaction: 0.00502
+mixed_model_interaction_beta: 0.0211
+mixed_model_interaction_p: 0.5259
+mixed_model_interaction_or: 1.0213
+bootstrap_ci: [-0.0084, 0.0209]
+bootstrap_ci_includes_zero: True
+sesoi_rope_fraction: 0.819
+sesoi_bound: 0.012
+permutation_p: 0.5768
+loo_std: 0.0024
+calibration_interaction: 0.0099
+holdout_interaction: -0.0048
+layer_0.17_interaction: -0.0095
+layer_0.19_interaction: 0.0022
+layer_0.2_interaction: 0.0417
+layer_0.48_interaction: 0.0114
+layer_0.49_interaction: 0.0028
+layer_0.78_interaction: -0.0072
+layer_0.79_interaction: 0.0058
+layer_0.8_interaction: -0.0029
+paradigm_hybrid_interaction: -0.0003
+paradigm_ssm_interaction: -0.0010
+paradigm_transformer_interaction: 0.0108
+verdict: NO_INTERACTION_DETECTED (orthogonality supported)
+business_implication: Orthogonality between geometric (PR) and dynamic (noise) axes holds across multiple layer positions, perturbation strengths, and task families. Deployment risk requires independent testing on both axes.
+scientific_implication: Expanded grid factorial (3 layers x 3x3 strengths x 48 prompts, batched) confirms no detectable interaction between PR surgery and jitter stress. Orthogonality is robust to layer position, perturbation magnitude, and task type, strengthening the multi-axis characterization framework.

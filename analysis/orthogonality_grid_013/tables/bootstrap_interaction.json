@@ -1,0 +1,9 @@
+{
+  "mean_interaction": 0.005015432098765424,
+  "ci_lo": -0.008391203703703711,
+  "ci_hi": 0.020930989583333316,
+  "ci_includes_zero": true,
+  "sesoi_rope_fraction": 0.8194,
+  "sesoi_bound": 0.012,
+  "n_boot": 5000
+}

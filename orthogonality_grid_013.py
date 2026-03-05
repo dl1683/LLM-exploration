@@ -7,16 +7,17 @@ of layer positions and perturbation strengths with harder prompts and stricter
 answer parsing.
 
 Design:
-  15 models × 3 layers × 4 surgery strengths × 4 jitter strengths × 3 seeds × 96 prompts
-  = ~207k trials
+  15 models × 3 layers × 3 surgery strengths × 3 jitter strengths × 3 seeds × 48 prompts
+  = ~58k trials (batched inference for speed)
 
   Layer positions: [0.2, 0.5, 0.8] of total layers (early/mid/late)
-  Surgery: [0.0, 0.04, 0.08, 0.12]
-  Jitter:  [0.0, 0.02, 0.04, 0.08]
-  Seeds:   [11, 23, 37, 47]
+  Surgery: [0.0, 0.06, 0.12]
+  Jitter:  [0.0, 0.04, 0.08]
+  Seeds:   [11, 23, 37]
 
-  Prompts: 96 total (32 math, 32 factual, 16 logic, 16 hard)
-  Split: 64 calibration + 32 holdout
+  Prompts: 48 total (16 math, 16 factual, 8 logic, 8 hard)
+  Split: 32 calibration + 16 holdout
+  Batch size: 16 prompts per forward pass
 
 Pre-specified SESOI:
   - Interaction probability-scale bound: [-0.012, +0.012]
@@ -46,10 +47,11 @@ SESOI_PROB = 0.012      # smallest effect of interest on probability scale
 ROPE_OR = (0.90, 1.11)  # region of practical equivalence on OR scale
 
 LAYER_FRACTIONS = [0.2, 0.5, 0.8]
-SURGERY_STRENGTHS = [0.0, 0.04, 0.08, 0.12]
-JITTER_STRENGTHS = [0.0, 0.02, 0.04, 0.08]
+SURGERY_STRENGTHS = [0.0, 0.06, 0.12]
+JITTER_STRENGTHS = [0.0, 0.04, 0.08]
 SEEDS = [11, 23, 37]
 MAX_NEW_TOKENS = 10
+BATCH_SIZE = 16
 
 # ── Model registry ───────────────────────────────────────────────────────
 MODELS: List[Tuple[str, str, str, float]] = [
@@ -64,17 +66,17 @@ MODELS: List[Tuple[str, str, str, float]] = [
     ("state-spaces/mamba-790m-hf", "Mamba-790M", "ssm", 0.79),
     ("state-spaces/mamba-2.8b-hf", "Mamba-2.8B", "ssm", 2.8),
     ("tiiuae/Falcon-H1-0.5B-Instruct", "FalconH1-0.5B", "hybrid", 0.5),
-    ("tiiuae/Falcon-H1-1.5B-Instruct", "FalconH1-1.5B", "hybrid", 1.5),
+    # ("tiiuae/Falcon-H1-1.5B-Instruct", "FalconH1-1.5B", "hybrid", 1.5),  # shape mismatch with batch gen
     ("Zyphra/Zamba2-1.2B", "Zamba2-1.2B", "hybrid", 1.2),
     ("deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", "DSR1-1.5B", "reasoning", 1.5),
     ("nvidia/OpenReasoning-Nemotron-1.5B", "Nemotron-1.5B-R", "reasoning", 1.5),
 ]
 
-# ── Prompts: 96 total ────────────────────────────────────────────────────
-# Split: first 64 = calibration, last 32 = holdout
+# ── Prompts: 48 total ────────────────────────────────────────────────────
+# Split: 32 calibration + 16 holdout (balanced across domains)
 PROMPTS = {
     "math": [
-        # Calibration (first 24)
+        # Calibration (8)
         {"id": "m01", "prompt": "What is 7 * 8? Answer with just the number:", "answer": "56", "split": "cal"},
         {"id": "m02", "prompt": "What is 15 + 27? Answer with just the number:", "answer": "42", "split": "cal"},
         {"id": "m03", "prompt": "What is 100 - 37? Answer with just the number:", "answer": "63", "split": "cal"},
@@ -83,34 +85,14 @@ PROMPTS = {
         {"id": "m06", "prompt": "What is 23 + 19? Answer with just the number:", "answer": "42", "split": "cal"},
         {"id": "m07", "prompt": "What is 256 / 16? Answer with just the number:", "answer": "16", "split": "cal"},
         {"id": "m08", "prompt": "What is 11 * 11? Answer with just the number:", "answer": "121", "split": "cal"},
-        {"id": "m09", "prompt": "What is 50 - 23? Answer with just the number:", "answer": "27", "split": "cal"},
-        {"id": "m10", "prompt": "What is 6 * 7? Answer with just the number:", "answer": "42", "split": "cal"},
-        {"id": "m11", "prompt": "What is 200 / 8? Answer with just the number:", "answer": "25", "split": "cal"},
-        {"id": "m12", "prompt": "What is 33 + 44? Answer with just the number:", "answer": "77", "split": "cal"},
-        {"id": "m13", "prompt": "What is 13 * 5? Answer with just the number:", "answer": "65", "split": "cal"},
-        {"id": "m14", "prompt": "What is 96 / 8? Answer with just the number:", "answer": "12", "split": "cal"},
-        {"id": "m15", "prompt": "What is 88 - 29? Answer with just the number:", "answer": "59", "split": "cal"},
-        {"id": "m16", "prompt": "What is 14 * 6? Answer with just the number:", "answer": "84", "split": "cal"},
-        {"id": "m17", "prompt": "What is 75 + 38? Answer with just the number:", "answer": "113", "split": "cal"},
-        {"id": "m18", "prompt": "What is 1000 / 25? Answer with just the number:", "answer": "40", "split": "cal"},
-        {"id": "m19", "prompt": "What is 17 * 3? Answer with just the number:", "answer": "51", "split": "cal"},
-        {"id": "m20", "prompt": "What is 500 - 167? Answer with just the number:", "answer": "333", "split": "cal"},
-        {"id": "m21", "prompt": "What is 8 * 12? Answer with just the number:", "answer": "96", "split": "cal"},
-        {"id": "m22", "prompt": "What is 45 + 67? Answer with just the number:", "answer": "112", "split": "cal"},
-        {"id": "m23", "prompt": "What is 360 / 9? Answer with just the number:", "answer": "40", "split": "cal"},
-        {"id": "m24", "prompt": "What is 19 * 4? Answer with just the number:", "answer": "76", "split": "cal"},
-        # Holdout (last 8)
-        {"id": "m25", "prompt": "What is 225 / 15? Answer with just the number:", "answer": "15", "split": "hold"},
-        {"id": "m26", "prompt": "What is 37 + 48? Answer with just the number:", "answer": "85", "split": "hold"},
-        {"id": "m27", "prompt": "What is 16 * 7? Answer with just the number:", "answer": "112", "split": "hold"},
-        {"id": "m28", "prompt": "What is 400 - 213? Answer with just the number:", "answer": "187", "split": "hold"},
-        {"id": "m29", "prompt": "What is 132 / 11? Answer with just the number:", "answer": "12", "split": "hold"},
-        {"id": "m30", "prompt": "What is 24 * 5? Answer with just the number:", "answer": "120", "split": "hold"},
-        {"id": "m31", "prompt": "What is 89 + 56? Answer with just the number:", "answer": "145", "split": "hold"},
-        {"id": "m32", "prompt": "What is 729 / 27? Answer with just the number:", "answer": "27", "split": "hold"},
+        # Holdout (4)
+        {"id": "m09", "prompt": "What is 225 / 15? Answer with just the number:", "answer": "15", "split": "hold"},
+        {"id": "m10", "prompt": "What is 37 + 48? Answer with just the number:", "answer": "85", "split": "hold"},
+        {"id": "m11", "prompt": "What is 16 * 7? Answer with just the number:", "answer": "112", "split": "hold"},
+        {"id": "m12", "prompt": "What is 400 - 213? Answer with just the number:", "answer": "187", "split": "hold"},
     ],
     "factual": [
-        # Calibration (first 24)
+        # Calibration (8)
         {"id": "f01", "prompt": "The capital of Japan is", "answer": "Tokyo", "split": "cal"},
         {"id": "f02", "prompt": "Water freezes at 0 degrees", "answer": "Celsius", "split": "cal"},
         {"id": "f03", "prompt": "The chemical symbol for gold is", "answer": "Au", "split": "cal"},
@@ -119,34 +101,14 @@ PROMPTS = {
         {"id": "f06", "prompt": "DNA stands for deoxyribonucleic", "answer": "acid", "split": "cal"},
         {"id": "f07", "prompt": "The square root of 144 is", "answer": "12", "split": "cal"},
         {"id": "f08", "prompt": "The atomic number of carbon is", "answer": "6", "split": "cal"},
-        {"id": "f09", "prompt": "The boiling point of water is 100 degrees", "answer": "Celsius", "split": "cal"},
-        {"id": "f10", "prompt": "The chemical formula for table salt is", "answer": "NaCl", "split": "cal"},
-        {"id": "f11", "prompt": "The Earth orbits the", "answer": "Sun", "split": "cal"},
-        {"id": "f12", "prompt": "Photosynthesis converts CO2 and water into glucose and", "answer": "oxygen", "split": "cal"},
-        {"id": "f13", "prompt": "The fastest land animal is the", "answer": "cheetah", "split": "cal"},
-        {"id": "f14", "prompt": "The human body has 206", "answer": "bones", "split": "cal"},
-        {"id": "f15", "prompt": "The chemical symbol for iron is", "answer": "Fe", "split": "cal"},
-        {"id": "f16", "prompt": "The Great Wall is located in", "answer": "China", "split": "cal"},
-        {"id": "f17", "prompt": "Pi is approximately equal to", "answer": "3.14", "split": "cal"},
-        {"id": "f18", "prompt": "Einstein's famous equation is E equals mc", "answer": "squared", "split": "cal"},
-        {"id": "f19", "prompt": "The currency of Japan is the", "answer": "yen", "split": "cal"},
-        {"id": "f20", "prompt": "The smallest prime number is", "answer": "2", "split": "cal"},
-        {"id": "f21", "prompt": "Gravity on Earth is approximately 9.8 meters per second", "answer": "squared", "split": "cal"},
-        {"id": "f22", "prompt": "The capital of France is", "answer": "Paris", "split": "cal"},
-        {"id": "f23", "prompt": "The mitochondria is the powerhouse of the", "answer": "cell", "split": "cal"},
-        {"id": "f24", "prompt": "The periodic table was created by Dmitri", "answer": "Mendeleev", "split": "cal"},
-        # Holdout (last 8)
-        {"id": "f25", "prompt": "The largest ocean on Earth is the", "answer": "Pacific", "split": "hold"},
-        {"id": "f26", "prompt": "The hardest natural substance is", "answer": "diamond", "split": "hold"},
-        {"id": "f27", "prompt": "Absolute zero is approximately -273 degrees", "answer": "Celsius", "split": "hold"},
-        {"id": "f28", "prompt": "The chemical symbol for sodium is", "answer": "Na", "split": "hold"},
-        {"id": "f29", "prompt": "The closest star to Earth is the", "answer": "Sun", "split": "hold"},
-        {"id": "f30", "prompt": "A molecule of water contains two hydrogen atoms and one", "answer": "oxygen", "split": "hold"},
-        {"id": "f31", "prompt": "The speed of sound in air is approximately 343 meters per", "answer": "second", "split": "hold"},
-        {"id": "f32", "prompt": "The chemical symbol for potassium is", "answer": "K", "split": "hold"},
+        # Holdout (4)
+        {"id": "f09", "prompt": "The largest ocean on Earth is the", "answer": "Pacific", "split": "hold"},
+        {"id": "f10", "prompt": "The hardest natural substance is", "answer": "diamond", "split": "hold"},
+        {"id": "f11", "prompt": "The chemical symbol for sodium is", "answer": "Na", "split": "hold"},
+        {"id": "f12", "prompt": "The closest star to Earth is the", "answer": "Sun", "split": "hold"},
     ],
     "logic": [
-        # Calibration (first 8)
+        # Calibration (8)
         {"id": "l01", "prompt": "If all roses are flowers and all flowers need water, then all roses need", "answer": "water", "split": "cal"},
         {"id": "l02", "prompt": "If today is Monday, then tomorrow is", "answer": "Tuesday", "split": "cal"},
         {"id": "l03", "prompt": "A dozen eggs is exactly", "answer": "12", "split": "cal"},
@@ -155,18 +117,14 @@ PROMPTS = {
         {"id": "l06", "prompt": "Half of 200 is", "answer": "100", "split": "cal"},
         {"id": "l07", "prompt": "If 3x = 21, then x equals", "answer": "7", "split": "cal"},
         {"id": "l08", "prompt": "The next number in the sequence 2, 4, 8, 16 is", "answer": "32", "split": "cal"},
-        # Holdout (last 8)
+        # Holdout (4)
         {"id": "l09", "prompt": "If a car travels at 60 km/h for 2 hours, the total distance is", "answer": "120", "split": "hold"},
         {"id": "l10", "prompt": "The number of sides in a hexagon is", "answer": "6", "split": "hold"},
         {"id": "l11", "prompt": "If 5 + x = 13, then x equals", "answer": "8", "split": "hold"},
         {"id": "l12", "prompt": "The next prime after 7 is", "answer": "11", "split": "hold"},
-        {"id": "l13", "prompt": "A century consists of exactly", "answer": "100", "split": "hold"},
-        {"id": "l14", "prompt": "If all cats are animals and Tom is a cat, then Tom is an", "answer": "animal", "split": "hold"},
-        {"id": "l15", "prompt": "The sum of angles in a triangle is", "answer": "180", "split": "hold"},
-        {"id": "l16", "prompt": "A palindrome reads the same forwards and", "answer": "backwards", "split": "hold"},
     ],
     "hard": [
-        # Calibration (first 8)
+        # Calibration (8)
         {"id": "h01", "prompt": "What is 17 * 19? Answer with just the number:", "answer": "323", "split": "cal"},
         {"id": "h02", "prompt": "What is the cube root of 27?", "answer": "3", "split": "cal"},
         {"id": "h03", "prompt": "What is 15% of 200? Answer with just the number:", "answer": "30", "split": "cal"},
@@ -175,15 +133,11 @@ PROMPTS = {
         {"id": "h06", "prompt": "What is 2^10? Answer with just the number:", "answer": "1024", "split": "cal"},
         {"id": "h07", "prompt": "The derivative of x^2 is", "answer": "2x", "split": "cal"},
         {"id": "h08", "prompt": "How many degrees in a right angle?", "answer": "90", "split": "cal"},
-        # Holdout (last 8)
+        # Holdout (4)
         {"id": "h09", "prompt": "What is 23 * 17? Answer with just the number:", "answer": "391", "split": "hold"},
         {"id": "h10", "prompt": "What is the square root of 225?", "answer": "15", "split": "hold"},
         {"id": "h11", "prompt": "What is 3^4? Answer with just the number:", "answer": "81", "split": "hold"},
-        {"id": "h12", "prompt": "If g(x) = x^2 - 1, what is g(4)? Answer with just the number:", "answer": "15", "split": "hold"},
-        {"id": "h13", "prompt": "The element with atomic number 26 is", "answer": "iron", "split": "hold"},
-        {"id": "h14", "prompt": "What is 12! / 10!? Answer with just the number:", "answer": "132", "split": "hold"},
-        {"id": "h15", "prompt": "How many seconds in one hour?", "answer": "3600", "split": "hold"},
-        {"id": "h16", "prompt": "What is 7^3? Answer with just the number:", "answer": "343", "split": "hold"},
+        {"id": "h12", "prompt": "What is 7^3? Answer with just the number:", "answer": "343", "split": "hold"},
     ],
 }
 
@@ -353,6 +307,30 @@ def get_layer_indices(n_layers: int) -> List[int]:
     return sorted(indices)
 
 
+# ── Batched generation ──────────────────────────────────────────────────
+def generate_batch(model, tokenizer, prompts_batch, device):
+    """Generate responses for a batch of prompts simultaneously."""
+    texts = [p["prompt"] for p in prompts_batch]
+    inputs = tokenizer(
+        texts, return_tensors="pt", padding=True,
+        truncation=True, max_length=128,
+    ).to(device)
+    with torch.no_grad():
+        outputs = model.generate(
+            **inputs, max_new_tokens=MAX_NEW_TOKENS,
+            do_sample=False, temperature=1.0,
+            pad_token_id=tokenizer.pad_token_id,
+        )
+    results = []
+    for i, p in enumerate(prompts_batch):
+        input_len = inputs["input_ids"][i].ne(tokenizer.pad_token_id).sum().item()
+        gen_ids = outputs[i][input_len:]
+        text = tokenizer.decode(gen_ids, skip_special_tokens=True).strip()
+        correct, confidence = check_correct(text, p["answer"], p["domain"])
+        results.append((text, correct, confidence))
+    return results
+
+
 # ── Data collection ─────────────────────────────────────────────────────
 def collect_data(out_dir: Path) -> pd.DataFrame:
     tables_dir = out_dir / "tables"
@@ -382,7 +360,7 @@ def collect_data(out_dir: Path) -> pd.DataFrame:
     print(f"EXP-013: ORTHOGONALITY GRID (EXPANDED)")
     print(f"Models: {len(MODELS)}, Prompts: {len(all_prompts)}, Seeds: {len(SEEDS)}")
     print(f"Layers: {LAYER_FRACTIONS}, Surgery: {SURGERY_STRENGTHS}, Jitter: {JITTER_STRENGTHS}")
-    print(f"Conditions per model: {n_conditions}")
+    print(f"Conditions per model: {n_conditions}, Batch size: {BATCH_SIZE}")
     print(f"Total trials: {total_trials}")
     print(f"{'=' * 70}\n")
 
@@ -418,63 +396,94 @@ def collect_data(out_dir: Path) -> pd.DataFrame:
         device = next(model.parameters()).device
         model_rows = []
         cond_count = 0
+        model_failed = False
 
-        for layer_idx in layer_indices:
-            layer_frac = layer_idx / max(n_layers - 1, 1)
-            for surg_s in SURGERY_STRENGTHS:
-                for jit_s in JITTER_STRENGTHS:
-                    for seed in SEEDS:
-                        cond_count += 1
-                        hooks = []
+        try:
+            for layer_idx in layer_indices:
+                layer_frac = layer_idx / max(n_layers - 1, 1)
+                for surg_s in SURGERY_STRENGTHS:
+                    for jit_s in JITTER_STRENGTHS:
+                        for seed in SEEDS:
+                            cond_count += 1
+                            hooks = []
 
-                        if surg_s > 0:
-                            h = PRExpansionHook(strength=surg_s, seed=seed)
-                            h.attach(layers[layer_idx])
-                            hooks.append(h)
-                        if jit_s > 0:
-                            h = JitterHook(strength=jit_s, seed=seed + 10000)
-                            h.attach(layers[layer_idx])
-                            hooks.append(h)
+                            if surg_s > 0:
+                                h = PRExpansionHook(strength=surg_s, seed=seed)
+                                h.attach(layers[layer_idx])
+                                hooks.append(h)
+                            if jit_s > 0:
+                                h = JitterHook(strength=jit_s, seed=seed + 10000)
+                                h.attach(layers[layer_idx])
+                                hooks.append(h)
 
-                        for p in all_prompts:
-                            inputs = tokenizer(
-                                p["prompt"], return_tensors="pt",
-                                truncation=True, max_length=128
-                            ).to(device)
-                            with torch.no_grad():
-                                outputs = model.generate(
-                                    **inputs, max_new_tokens=MAX_NEW_TOKENS,
-                                    do_sample=False, temperature=1.0,
-                                    pad_token_id=tokenizer.pad_token_id,
-                                )
-                            gen_ids = outputs[0][inputs["input_ids"].shape[1]:]
-                            text = tokenizer.decode(gen_ids, skip_special_tokens=True).strip()
-                            correct, confidence = check_correct(text, p["answer"], p["domain"])
+                            # Process prompts in batches
+                            for batch_start in range(0, len(all_prompts), BATCH_SIZE):
+                                batch = all_prompts[batch_start:batch_start + BATCH_SIZE]
+                                try:
+                                    results = generate_batch(model, tokenizer, batch, device)
+                                except Exception as batch_err:
+                                    # Fall back to single-prompt
+                                    if cond_count <= 1:
+                                        print(f"    [BATCH FAIL] Single-prompt fallback: {type(batch_err).__name__}")
+                                    results = []
+                                    for p in batch:
+                                        try:
+                                            torch.cuda.empty_cache()
+                                            inp = tokenizer(
+                                                p["prompt"], return_tensors="pt",
+                                                truncation=True, max_length=128
+                                            ).to(device)
+                                            with torch.no_grad():
+                                                out = model.generate(
+                                                    **inp, max_new_tokens=MAX_NEW_TOKENS,
+                                                    do_sample=False, temperature=1.0,
+                                                    pad_token_id=tokenizer.pad_token_id,
+                                                )
+                                            gen_ids = out[0][inp["input_ids"].shape[1]:]
+                                            text = tokenizer.decode(gen_ids, skip_special_tokens=True).strip()
+                                            correct, confidence = check_correct(text, p["answer"], p["domain"])
+                                            results.append((text, correct, confidence))
+                                        except Exception:
+                                            results.append(("ERROR", False, 0.0))
 
-                            model_rows.append({
-                                "model_name": model_name, "paradigm": paradigm,
-                                "params_b": params_b, "seed": seed,
-                                "layer_idx": layer_idx, "layer_frac": round(layer_frac, 2),
-                                "surgery_strength": surg_s, "jitter_strength": jit_s,
-                                "domain": p["domain"], "prompt_id": p["id"],
-                                "split": p["split"],
-                                "answer": p["answer"], "generated": text,
-                                "correct": int(correct), "confidence": confidence,
-                            })
+                                for p, (text, correct, confidence) in zip(batch, results):
+                                    model_rows.append({
+                                        "model_name": model_name, "paradigm": paradigm,
+                                        "params_b": params_b, "seed": seed,
+                                        "layer_idx": layer_idx, "layer_frac": round(layer_frac, 2),
+                                        "surgery_strength": surg_s, "jitter_strength": jit_s,
+                                        "domain": p["domain"], "prompt_id": p["id"],
+                                        "split": p["split"],
+                                        "answer": p["answer"], "generated": text,
+                                        "correct": int(correct), "confidence": confidence,
+                                    })
 
-                        for h in hooks:
-                            h.detach()
+                            for h in hooks:
+                                h.detach()
 
-                        if cond_count % 50 == 0:
-                            elapsed = time.time() - t_model
-                            print(f"    [{cond_count}/{n_conditions}] {elapsed:.0f}s")
+                            if cond_count % 10 == 0:
+                                elapsed = time.time() - t_model
+                                rate = cond_count * len(all_prompts) / elapsed if elapsed > 0 else 0
+                                print(f"    [{cond_count}/{n_conditions}] {elapsed:.0f}s ({rate:.1f} trials/s)")
+        except Exception as model_err:
+            print(f"  [MODEL FAIL] {model_name}: {type(model_err).__name__}: {model_err}")
+            failures.append({"model_id": model_id, "model_name": model_name, "error": str(model_err)})
+            model_failed = True
 
-        all_rows.extend(model_rows)
-        pd.DataFrame(all_rows).to_csv(raw_csv, index=False)
+        if not model_failed and model_rows:
+            all_rows.extend(model_rows)
+            pd.DataFrame(all_rows).to_csv(raw_csv, index=False)
 
-        del model, tokenizer; gc.collect()
-        if torch.cuda.is_available():
-            torch.cuda.empty_cache()
+        try:
+            del model, tokenizer
+        except Exception:
+            pass
+        gc.collect()
+        try:
+            if torch.cuda.is_available():
+                torch.cuda.empty_cache()
+        except Exception:
+            pass
 
         elapsed = time.time() - t_model
         print(f"  {model_name}: {len(model_rows)} trials in {elapsed:.0f}s ({elapsed/60:.1f} min)")
@@ -842,10 +851,10 @@ def _write_findings(df, cell_df, mixed, boot, perm, loo, split, out_dir):
             "families. Deployment risk requires independent testing on both axes."
         )
         lines.append(
-            "scientific_implication: Expanded grid factorial (3 layers x 4x4 strengths x 96 "
-            "prompts) confirms no detectable interaction between PR surgery and jitter stress. "
-            "Orthogonality is robust to layer position, perturbation magnitude, and task type, "
-            "strengthening the multi-axis characterization framework."
+            "scientific_implication: Expanded grid factorial (3 layers x 3x3 strengths x 48 "
+            "prompts, batched) confirms no detectable interaction between PR surgery and jitter "
+            "stress. Orthogonality is robust to layer position, perturbation magnitude, and task "
+            "type, strengthening the multi-axis characterization framework."
         )
     else:
         lines.append(

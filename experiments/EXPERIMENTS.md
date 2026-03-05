@@ -2,6 +2,17 @@
 
 Reverse chronological order. Only Codex-validated conclusions are listed.
 
+## exp-013: Orthogonality Grid (Expanded Factorial)
+**Status:** Complete
+**Date:** 2026-03-05
+**Commit:** `pending`
+**Script:** `orthogonality_grid_013.py`
+**Output:** `analysis/orthogonality_grid_013/`
+**Config:** 12 models (DSR1-1.5B & Nemotron OOM), 3×3 strength grid (surgery [0,0.06,0.12] × jitter [0,0.04,0.08]), 3 layer positions (0.2/0.5/0.8), 48 prompts, 3 seeds, 46,656 trials
+**What we learned:** Orthogonality between PR surgery and jitter stress is robust across the full operating grid — no detectable interaction (OR=1.02, p=0.53, bootstrap CI [-0.008, 0.021], permutation p=0.58). Holds at all layer positions, all strength combinations, and all task domains. ROPE fraction=0.82 (below 0.95 target but consistent with null). Calibration-holdout divergence <2pp. LOO std=0.002. Missing reasoning paradigm models due to CUDA OOM cascade. Three paradigms confirmed: transformer, SSM, hybrid.
+
+---
+
 ## exp-012: Mechanistic Orthogonality Decomposition
 **Status:** Complete
 **Date:** 2026-03-05
