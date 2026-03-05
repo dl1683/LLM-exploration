@@ -1,0 +1,10 @@
+{
+  "mean_interaction": 0.014583333333333356,
+  "ci_lo": -0.014583333333333313,
+  "ci_hi": 0.042361111111111134,
+  "ci_includes_zero": true,
+  "median_or": 1.0639301253954194,
+  "rope_fraction": 0.9975,
+  "n_boot": 2000,
+  "n_models": 15
+}

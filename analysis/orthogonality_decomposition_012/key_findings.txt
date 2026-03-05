@@ -1,0 +1,25 @@
+models_tested: 15
+total_trials: 5760
+paradigms: hybrid, reasoning, ssm, transformer
+accuracy_control_off: 0.6458
+accuracy_control_on: 0.6236
+accuracy_expand_off: 0.4868
+accuracy_expand_on: 0.4792
+mean_interaction: 0.0146
+mixed_model_interaction_beta: 0.0918
+mixed_model_interaction_p: 0.1855
+mixed_model_interaction_or: 1.0961
+mixed_model_method: BinomialBayesMixedGLM
+bootstrap_interaction_ci: [-0.0146, 0.0424]
+bootstrap_ci_includes_zero: True
+bootstrap_rope_fraction: 0.998
+permutation_p: 0.5000
+loo_std: 0.0042
+loo_most_influential: DSR1-1.5B
+paradigm_hybrid_interaction: 0.0139
+paradigm_reasoning_interaction: -0.0417
+paradigm_ssm_interaction: 0.0052
+paradigm_transformer_interaction: 0.0399
+verdict: NO_INTERACTION_DETECTED (consistent with orthogonality)
+business_implication: No detectable interaction between PR surgery and noise stress — deployment testing should treat geometric quality and dynamic stability as separate risk axes. Current evidence supports independent testing protocols rather than a single combined assessment.
+scientific_implication: 2×2 factorial data are consistent with weak or no interaction between representation geometry manipulation and dynamic perturbation (interaction OR=1.10, 95% CI includes 1, permutation p=0.50, ROPE fraction=0.998). This does not prove mechanistic independence but provides the strongest evidence to date that these measurement axes are not confounded through a shared latent vulnerability.

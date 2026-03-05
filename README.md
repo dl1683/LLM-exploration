@@ -26,10 +26,10 @@ Models react dramatically differently to hidden-state noise:
 ![Critical Pressure](analysis/jitter_pressure/figures/critical_pressure_by_paradigm.png)
 
 ### 5. Orthogonal Axes of Model Behavior
-PR dimensionality and dynamic stability are **genuinely orthogonal** measurement axes (r=-0.214, p=0.61). Core PR predicts expansion resilience (r=0.905, p=0.002) but NOT noise fragility. This falsifies simple "compression causes fragility" models.
+PR dimensionality and dynamic stability show **no detectable interaction** in a 2×2 factorial design (15 models, 5,760 trials). Interaction OR=1.10, p=0.186, bootstrap ROPE fraction=0.998. Correlation-based evidence (r=-0.214, p=0.61 from exp-011) is now backed by a formal causal factorial test.
 
 ![Bridge Scatter](analysis/causal_pr_robust/figures/bridge_scatter.png)
-![Mediation Path](analysis/causal_pr_robust/figures/bridge_mediation.png)
+![Interaction Forest](analysis/orthogonality_decomposition_012/figures/interaction_forest.png)
 
 ### 6. Ecosystem Convergence
 129-model survey reveals architecture convergence (index doubled from 0.23 to 0.49), with 59% of the hybrid adoption penalty explained by a measured compatibility tax (p<0.001).
@@ -49,6 +49,7 @@ PR dimensionality and dynamic stability are **genuinely orthogonal** measurement
 | exp-009 | 2026-02-25 | Temporal causal analysis | Causal | IV F=23.27, strong instrument |
 | exp-010 | 2026-03-05 | Jitter-Pressure Inference Stability | Causal | Hybrids most robust, math fragile |
 | exp-011 | 2026-03-05 | Over-compression + JPIS bridge | Causal | Orthogonal axes (r=0.905 vs p=0.61) |
+| exp-012 | 2026-03-05 | Mechanistic orthogonality decomposition | Causal | No interaction (OR=1.10, ROPE=0.998) |
 
 Full details: [`experiments/EXPERIMENTS.md`](experiments/EXPERIMENTS.md)
 
@@ -72,6 +73,12 @@ Full details: [`experiments/EXPERIMENTS.md`](experiments/EXPERIMENTS.md)
 | ![Bridge Scatter](analysis/causal_pr_robust/figures/bridge_scatter.png) | ![Mediation](analysis/causal_pr_robust/figures/bridge_mediation.png) |
 | Expansion gain vs pressure fragility | Three-panel mediation path analysis |
 
+### Mechanistic Orthogonality (Exp-012)
+| | |
+|---|---|
+| ![Interaction Forest](analysis/orthogonality_decomposition_012/figures/interaction_forest.png) | ![Condition Effects](analysis/orthogonality_decomposition_012/figures/condition_effects_by_paradigm.png) |
+| Per-model interaction effects (centered on zero) | Accuracy by condition across paradigms |
+
 ### Ecosystem Dynamics
 | | |
 |---|---|
@@ -91,6 +98,7 @@ pandas
 matplotlib
 seaborn
 scikit-learn
+statsmodels
 ```
 
 ### Running Experiments
@@ -103,6 +111,7 @@ python reasoning_pairs_analysis.py         # Stage 2b: Matched pairs
 python causal_pr_intervention.py           # Stage 3: Causal PR intervention
 python causal_pr_robust.py --stage all     # Stage 3b: Over-compression + bridge
 python jitter_pressure_analysis.py         # Stage 4: JPIS stability
+python mechanistic_orthogonality_decomposition.py --stage all  # Exp-012: Factorial
 ```
 
 ### Analysis Standards
@@ -146,6 +155,7 @@ python analysis_standards.py score --analysis-dir analysis/<name> --apply-gate-p
 │   ├── causal_pr_intervention/       # Stage 3: Causal PR intervention
 │   ├── causal_pr_robust/             # Stage 3b: Over-compression + bridge
 │   ├── jitter_pressure/              # Stage 4: JPIS stability
+│   ├── orthogonality_decomposition_012/  # Exp-012: 2×2 factorial
 │   ├── ecosystem/                    # Ecosystem survey (v1)
 │   ├── ecosystem_v2/                 # Ecosystem survey (v2, 129 models)
 │   ├── ecosystem_deep/               # Deep dynamics (v1)

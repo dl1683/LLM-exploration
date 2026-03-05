@@ -1,0 +1,2 @@
+model_id,model_name,error
+nvidia/Hymba-1.5B-Base,Hymba-1.5B,"This modeling file requires the following packages that were not found in your environment: flash_attn, mamba_ssm. Run `pip install flash_attn mamba_ssm`"

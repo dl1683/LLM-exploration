@@ -1,0 +1,20 @@
+{
+  "coef_intercept": 2.005598244836488,
+  "se_intercept": 0.034404736542806236,
+  "coef_surgery_bin": -1.0742824556729555,
+  "se_surgery_bin": 0.04895054260867471,
+  "coef_jitter_bin": -0.1469824307008842,
+  "se_jitter_bin": 0.048628770273770196,
+  "coef_interaction": 0.09177246313812223,
+  "se_interaction": 0.06931348368686525,
+  "coef_domain_bin": -1.5806588555106893,
+  "se_domain_bin": 0.04943742526391977,
+  "coef_log10_params": 1.586086938450864,
+  "se_log10_params": 0.10058708854165102,
+  "interaction_beta": 0.09177246313812223,
+  "interaction_se": 0.06931348368686525,
+  "interaction_z": 1.324020352991043,
+  "interaction_p": 0.18549628530724638,
+  "interaction_or": 1.096115387048636,
+  "method": "BinomialBayesMixedGLM"
+}

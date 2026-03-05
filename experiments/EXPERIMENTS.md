@@ -2,6 +2,17 @@
 
 Reverse chronological order. Only Codex-validated conclusions are listed.
 
+## exp-012: Mechanistic Orthogonality Decomposition
+**Status:** Complete
+**Date:** 2026-03-05
+**Commit:** `pending`
+**Script:** `mechanistic_orthogonality_decomposition.py`
+**Output:** `analysis/orthogonality_decomposition_012/`
+**Config:** 15 models (Hymba failed), 2×2 factorial (PR surgery × jitter stress), 32 prompts, 3 seeds, 5,760 trials
+**What we learned:** No detectable interaction between PR expansion surgery and Gaussian jitter stress (interaction OR=1.10, p=0.186, 95% bootstrap CI includes zero, permutation p=0.50, ROPE fraction=0.998). Data are consistent with the orthogonality hypothesis from exp-011. Key model-level observations: Gemma2-2B and Zamba2-1.2B are immune to both interventions; Nemotron-1.5B-R is devastated by surgery but resistant to jitter; Mamba models are largely insensitive to both. LOO analysis confirms stability (std=0.004).
+
+---
+
 ## exp-011: Over-Compression + JPIS Stability Bridge — Stage 3b
 **Status:** Complete
 **Date:** 2026-03-05

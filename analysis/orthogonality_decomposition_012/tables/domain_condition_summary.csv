@@ -1,0 +1,9 @@
+surgery,jitter,domain,accuracy,n_trials,n_models
+control,off,factual,0.7958333333333333,720,15
+control,off,math,0.49583333333333335,720,15
+control,on,factual,0.7763888888888889,720,15
+control,on,math,0.4708333333333333,720,15
+expand,off,factual,0.5736111111111111,720,15
+expand,off,math,0.4,720,15
+expand,on,factual,0.5652777777777778,720,15
+expand,on,math,0.39305555555555555,720,15
