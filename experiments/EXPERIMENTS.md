@@ -5,7 +5,7 @@ Reverse chronological order. Only Codex-validated conclusions are listed.
 ## exp-010: Jitter-Pressure Inference Stability (JPIS) — Stage 4
 **Status:** Complete
 **Date:** 2026-03-05
-**Commit:** `pending`
+**Commit:** `7788d29`
 **Script:** `jitter_pressure_analysis.py`
 **Output:** `analysis/jitter_pressure/`
 **Config:** 8 models (of 10 attempted), 6 strengths (0.01-0.5), 3 seeds, 5 layer positions, 20,160 total trials
