@@ -5,7 +5,7 @@ Reverse chronological order. Only Codex-validated conclusions are listed.
 ## exp-013: Orthogonality Grid (Expanded Factorial)
 **Status:** Complete
 **Date:** 2026-03-05
-**Commit:** `pending`
+**Commit:** `9352dbb`
 **Script:** `orthogonality_grid_013.py`
 **Output:** `analysis/orthogonality_grid_013/`
 **Config:** 12 models (DSR1-1.5B & Nemotron OOM), 3×3 strength grid (surgery [0,0.06,0.12] × jitter [0,0.04,0.08]), 3 layer positions (0.2/0.5/0.8), 48 prompts, 3 seeds, 46,656 trials
