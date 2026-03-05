@@ -1,0 +1,63 @@
+{
+  "analysis_id": "replace_me_analysis_id",
+  "title": "replace_me_title",
+  "track": "dual",
+  "owner": "replace_me_owner",
+  "status": "draft",
+  "created_at_utc": "replace_me_utc",
+  "hypothesis": "replace_me_hypothesis",
+  "value_to_investors": "replace_me_investor_value",
+  "value_to_researchers": "replace_me_research_value",
+  "identification_strategy": "replace_me_identification_strategy",
+  "falsification_tests": [
+    "replace_me_falsification_test_1"
+  ],
+  "success_criteria": [
+    "replace_me_success_criterion_1"
+  ],
+  "data_lineage": [
+    {
+      "source": "replace_me_source_name",
+      "provenance": "replace_me_provenance",
+      "transformations": "replace_me_transformations"
+    }
+  ],
+  "out_of_sample_validation_plan": "replace_me_oos_validation_plan",
+  "uncertainty_methods": [
+    "replace_me_uncertainty_method_1"
+  ],
+  "robustness_checks": [
+    "replace_me_robustness_check_1"
+  ],
+  "business_implication": "replace_me_business_implication",
+  "scientific_implication": "replace_me_scientific_implication",
+  "evidence_strength": "exploratory",
+  "quality_gates": {
+    "non_circular_metrics": false,
+    "causal_design_matches_claim": false,
+    "out_of_sample_validation": false,
+    "uncertainty_reported": false,
+    "robustness_checks": false,
+    "reproducible_pipeline": false
+  },
+  "rubric": {
+    "investor": {
+      "actionability": 0,
+      "deployment_relevance": 0,
+      "cost_signal": 0,
+      "adoption_signal": 0,
+      "timeliness": 0,
+      "data_quality": 0,
+      "identification_strength": 0
+    },
+    "research": {
+      "novelty": 0,
+      "theoretical_depth": 0,
+      "measurement_quality": 0,
+      "causal_identification": 0,
+      "robustness": 0,
+      "reproducibility": 0,
+      "generality": 0
+    }
+  }
+}

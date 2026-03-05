@@ -1,0 +1,48 @@
+framework,architecture,date_added,version,source_url,notes
+# HuggingFace Transformers Library
+transformers,MambaModel,2024-03-05,4.39.0,https://github.com/huggingface/transformers/releases/tag/v4.39.0,Released March 21 2024
+transformers,Mamba2Model,2024-08-06,4.44.0,https://huggingface.co/docs/transformers/model_doc/mamba2,Released August 6 2024
+transformers,JambaModel,2024-04-18,4.40.0,https://huggingface.co/docs/transformers/en/model_doc/jamba,Recommended 4.40.0+ (4.39.0+ minimum)
+transformers,FalconMambaModel,2024-08-12,4.45.0,https://huggingface.co/docs/transformers/v4.46.3/en/model_doc/falcon_mamba,Released September 25 2024
+transformers,RwkvModel,2023-05-09,4.30.0,https://huggingface.co/docs/transformers/en/model_doc/rwkv,Released June 8 2023
+transformers,Zamba2Model,2025-01-27,4.49.0,https://github.com/huggingface/transformers/releases/tag/v4.49.0,Model released Nov 22 2024
+transformers,StripedHyenaModel,NOT_OFFICIALLY_SUPPORTED,N/A,https://github.com/togethercomputer/stripedhyena,AutoClass support only - requires custom kernels
+
+# vLLM
+vLLM,Mamba,2024-03-08,0.4.0+,https://github.com/ggml-org/llama.cpp/pull/5328,Initial CPU-only support via llama.cpp PR reference
+vLLM,Jamba,2024-04-30,0.4.2+,https://github.com/vllm-project/vllm/pull/4115,PR #4115 merged - ETA May 3 2024
+vLLM,Falcon-Mamba,2024-09-XX,N/A,https://github.com/vllm-project/vllm/pull/9325,PR #9325 added support
+vLLM,Codestral-Mamba,2024-07-XX,0.15.0+,https://github.com/vllm-project/vllm/releases/tag/v0.15.0,Mamba prefix caching in v0.15.0
+vLLM,RWKV,NOT_SUPPORTED,N/A,https://github.com/vllm-project/vllm/issues/3583,Closed as not planned (March 23 2024)
+vLLM,StripedHyena,NOT_SUPPORTED,N/A,https://docs.vllm.ai/en/latest/,No evidence found
+vLLM,Mamba2,2024-10-XX,0.10.2+,https://github.com/vllm-project/vllm/pull/19327,V1 support enabled by default in v0.10.2 (Oct 7 2025)
+vLLM,Zamba2,2024-10-XX,N/A,https://github.com/vllm-project/vllm/issues/9382,Currently supported
+
+# llama.cpp
+llama.cpp,Mamba,2024-03-08,N/A,https://github.com/ggml-org/llama.cpp/pull/5328,PR #5328 merged March 8 2024 (CPU-only)
+llama.cpp,Jamba,2024-05-30,N/A,https://github.com/ggml-org/llama.cpp/pull/7531,PR #7531 by compilade - around May 30 2024
+llama.cpp,Falcon-Mamba,2024-08-18,N/A,https://github.com/ggml-org/llama.cpp/issues/9009,PR #9074 merged late August 2024
+llama.cpp,RWKV-v6,2024-09-01,N/A,https://github.com/ggml-org/llama.cpp/pull/8980,PR #8980 merged September 1 2024
+llama.cpp,StripedHyena,UNKNOWN,N/A,N/A,No evidence found
+llama.cpp,Mamba2,PARTIAL,N/A,https://github.com/ggml-org/llama.cpp/issues/7727,Issue #7727 tracking support
+
+# TGI (Text Generation Inference)
+TGI,Mamba,SUPPORTED,N/A,https://github.com/huggingface/text-generation-inference/blob/main/server/text_generation_server/models/mamba.py,Has mamba.py implementation - no TP support
+TGI,Falcon-Mamba,REQUESTED,N/A,https://github.com/huggingface/text-generation-inference/issues/2736,Issue #2736 - support requested
+TGI,RWKV,UNKNOWN,N/A,N/A,No evidence found
+TGI,StripedHyena,UNKNOWN,N/A,N/A,No evidence found
+TGI,Status,MAINTENANCE_MODE,N/A,https://github.com/huggingface/text-generation-inference,Maintenance mode as of Dec 11 2025
+
+# GPTQModel / AutoGPTQ
+GPTQModel,Mamba,UNKNOWN,N/A,https://github.com/ModelCloud/GPTQModel,No specific Mamba support mentioned
+AutoGPTQ,Mamba,UNKNOWN,N/A,https://github.com/AutoGPTQ/AutoGPTQ,No specific Mamba support mentioned
+GPTQModel,General,ACTIVE,N/A,https://github.com/ModelCloud/GPTQModel,Supplanted AutoGPTQ - broader model support
+
+# Key Timeline Events
+Event,Mamba-1-Release,2023-12-01,N/A,https://huggingface.co/docs/transformers/main/model_doc/mamba,Original Mamba paper released
+Event,Mamba-2-Release,2024-05-31,N/A,https://huggingface.co/docs/transformers/model_doc/mamba2,Mamba 2 paper released
+Event,Jamba-Release,2024-03-28,N/A,https://www.ai21.com/blog/announcing-jamba/,AI21 Jamba released
+Event,Codestral-Mamba-Release,2024-07-16,N/A,https://mistral.ai/news/codestral-mamba,Mistral Codestral Mamba released
+Event,Falcon-Mamba-Release,2024-10-07,N/A,https://huggingface.co/docs/transformers/en/model_doc/falcon_mamba,Falcon Mamba released
+Event,RWKV-4-Paper,2023-05-22,N/A,https://arxiv.org/abs/2305.13048,RWKV-4 paper published
+Event,Zamba2-Release,2024-11-22,N/A,https://huggingface.co/docs/transformers/model_doc/zamba2,Zamba2 released

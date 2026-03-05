@@ -1,0 +1,989 @@
+[
+  {
+    "model_id": "01-ai/Yi-1.5-9B-Chat",
+    "exists": true,
+    "created": "2024-05-10T05:38:24+00:00",
+    "year": 2024,
+    "month": 5,
+    "downloads": 18101,
+    "likes": 148,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "AIDC-AI/Marco-o1",
+    "exists": true,
+    "created": "2024-11-13T02:37:28+00:00",
+    "year": 2024,
+    "month": 11,
+    "downloads": 3304,
+    "likes": 713,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "CohereForAI/aya-expanse-32b",
+    "exists": true,
+    "created": "2024-10-23T06:42:44+00:00",
+    "year": 2024,
+    "month": 10,
+    "downloads": 5533,
+    "likes": 288,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "CohereForAI/aya-expanse-8b",
+    "exists": true,
+    "created": "2024-10-23T06:34:13+00:00",
+    "year": 2024,
+    "month": 10,
+    "downloads": 72348,
+    "likes": 421,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "CohereForAI/c4ai-command-r-08-2024",
+    "exists": true,
+    "created": "2024-08-19T07:40:11+00:00",
+    "year": 2024,
+    "month": 8,
+    "downloads": 2143,
+    "likes": 169,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "CohereForAI/c4ai-command-r7b-12-2024",
+    "exists": true,
+    "created": "2024-12-11T15:55:05+00:00",
+    "year": 2024,
+    "month": 12,
+    "downloads": 11424,
+    "likes": 407,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "Nexusflow/Athene-V2-Chat",
+    "exists": true,
+    "created": "2024-11-12T20:58:12+00:00",
+    "year": 2024,
+    "month": 11,
+    "downloads": 555,
+    "likes": 294,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "Qwen/QwQ-32B",
+    "exists": true,
+    "created": "2025-03-05T14:16:59+00:00",
+    "year": 2025,
+    "month": 3,
+    "downloads": 67446,
+    "likes": 2884,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "Qwen/QwQ-32B-Preview",
+    "exists": true,
+    "created": "2024-11-27T15:50:55+00:00",
+    "year": 2024,
+    "month": 11,
+    "downloads": 6887,
+    "likes": 1742,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "Qwen/Qwen1.5-MoE-A2.7B",
+    "exists": true,
+    "created": "2024-02-29T04:52:16+00:00",
+    "year": 2024,
+    "month": 2,
+    "downloads": 61805,
+    "likes": 219,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "Qwen/Qwen2.5-0.5B",
+    "exists": true,
+    "created": "2024-09-15T12:15:39+00:00",
+    "year": 2024,
+    "month": 9,
+    "downloads": 1085332,
+    "likes": 372,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "Qwen/Qwen2.5-1.5B",
+    "exists": true,
+    "created": "2024-09-15T12:16:50+00:00",
+    "year": 2024,
+    "month": 9,
+    "downloads": 444508,
+    "likes": 165,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "Qwen/Qwen2.5-14B",
+    "exists": true,
+    "created": "2024-09-15T12:18:18+00:00",
+    "year": 2024,
+    "month": 9,
+    "downloads": 83679,
+    "likes": 142,
+    "pipeline_tag": "text-generation",
+    "library": null
+  },
+  {
+    "model_id": "Qwen/Qwen2.5-32B",
+    "exists": true,
+    "created": "2024-09-15T12:18:33+00:00",
+    "year": 2024,
+    "month": 9,
+    "downloads": 105547,
+    "likes": 172,
+    "pipeline_tag": "text-generation",
+    "library": null
+  },
+  {
+    "model_id": "Qwen/Qwen2.5-3B",
+    "exists": true,
+    "created": "2024-09-15T12:17:03+00:00",
+    "year": 2024,
+    "month": 9,
+    "downloads": 247654,
+    "likes": 169,
+    "pipeline_tag": "text-generation",
+    "library": null
+  },
+  {
+    "model_id": "Qwen/Qwen2.5-72B",
+    "exists": true,
+    "created": "2024-09-15T12:18:46+00:00",
+    "year": 2024,
+    "month": 9,
+    "downloads": 27593,
+    "likes": 86,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "Qwen/Qwen2.5-72B-Instruct",
+    "exists": true,
+    "created": "2024-09-16T11:56:31+00:00",
+    "year": 2024,
+    "month": 9,
+    "downloads": 347602,
+    "likes": 910,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "Qwen/Qwen2.5-7B",
+    "exists": true,
+    "created": "2024-09-15T12:17:40+00:00",
+    "year": 2024,
+    "month": 9,
+    "downloads": 1332247,
+    "likes": 263,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "Qwen/Qwen2.5-Coder-32B-Instruct",
+    "exists": true,
+    "created": "2024-11-06T07:49:50+00:00",
+    "year": 2024,
+    "month": 11,
+    "downloads": 724763,
+    "likes": 1994,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "Qwen/Qwen2.5-Coder-7B",
+    "exists": true,
+    "created": "2024-09-16T11:57:24+00:00",
+    "year": 2024,
+    "month": 9,
+    "downloads": 253750,
+    "likes": 134,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "Qwen/Qwen3-235B-A22B",
+    "exists": true,
+    "created": "2025-04-27T03:53:46+00:00",
+    "year": 2025,
+    "month": 4,
+    "downloads": 480486,
+    "likes": 1075,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "RWKV/v5-Eagle-7B-HF",
+    "exists": true,
+    "created": "2024-01-29T10:35:07+00:00",
+    "year": 2024,
+    "month": 1,
+    "downloads": 5904,
+    "likes": 72,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "RWKV/v6-Finch-14B-HF",
+    "exists": true,
+    "created": "2024-07-21T05:31:33+00:00",
+    "year": 2024,
+    "month": 7,
+    "downloads": 6884,
+    "likes": 15,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "RWKV/v6-Finch-1B6-HF",
+    "exists": true,
+    "created": "2024-07-22T00:07:12+00:00",
+    "year": 2024,
+    "month": 7,
+    "downloads": 54,
+    "likes": 6,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "RWKV/v6-Finch-3B-HF",
+    "exists": true,
+    "created": "2024-07-21T18:43:04+00:00",
+    "year": 2024,
+    "month": 7,
+    "downloads": 7,
+    "likes": 2,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "RWKV/v6-Finch-7B-HF",
+    "exists": true,
+    "created": "2024-07-21T18:45:50+00:00",
+    "year": 2024,
+    "month": 7,
+    "downloads": 5221,
+    "likes": 4,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "Snowflake/snowflake-arctic-instruct",
+    "exists": true,
+    "created": "2024-04-21T05:26:08+00:00",
+    "year": 2024,
+    "month": 4,
+    "downloads": 6147,
+    "likes": 360,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "Spiral-AI/Spiral-RetNet-3b-base",
+    "exists": true,
+    "created": "2024-04-30T09:33:26+00:00",
+    "year": 2024,
+    "month": 4,
+    "downloads": 2,
+    "likes": 5,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "Zyphra/Zamba2-1.2B-instruct",
+    "exists": true,
+    "created": "2024-09-19T07:35:00+00:00",
+    "year": 2024,
+    "month": 9,
+    "downloads": 59819,
+    "likes": 30,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "Zyphra/Zamba2-2.7B-instruct",
+    "exists": true,
+    "created": "2024-08-29T20:54:45+00:00",
+    "year": 2024,
+    "month": 8,
+    "downloads": 198,
+    "likes": 82,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "Zyphra/Zamba2-7B-Instruct",
+    "exists": true,
+    "created": "2024-10-10T06:31:04+00:00",
+    "year": 2024,
+    "month": 10,
+    "downloads": 10925,
+    "likes": 92,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "ai21labs/AI21-Jamba-1.5-Large",
+    "exists": true,
+    "created": "2024-08-19T07:05:56+00:00",
+    "year": 2024,
+    "month": 8,
+    "downloads": 2231,
+    "likes": 218,
+    "pipeline_tag": "text-generation",
+    "library": null
+  },
+  {
+    "model_id": "ai21labs/AI21-Jamba-1.5-Mini",
+    "exists": true,
+    "created": "2024-08-19T07:04:45+00:00",
+    "year": 2024,
+    "month": 8,
+    "downloads": 8021,
+    "likes": 267,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "ai21labs/Jamba-v0.1",
+    "exists": true,
+    "created": "2024-03-28T12:32:22+00:00",
+    "year": 2024,
+    "month": 3,
+    "downloads": 915,
+    "likes": 1190,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "allenai/OLMo-2-0325-32B-Instruct",
+    "exists": true,
+    "created": "2025-03-12T20:28:55+00:00",
+    "year": 2025,
+    "month": 3,
+    "downloads": 1533,
+    "likes": 148,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "allenai/OLMoE-1B-7B-0924",
+    "exists": true,
+    "created": "2024-07-20T18:38:51+00:00",
+    "year": 2024,
+    "month": 7,
+    "downloads": 21439,
+    "likes": 141,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "baichuan-inc/Baichuan-M1-14B-Base",
+    "exists": true,
+    "created": "2025-01-23T16:48:20+00:00",
+    "year": 2025,
+    "month": 1,
+    "downloads": 178,
+    "likes": 31,
+    "pipeline_tag": null,
+    "library": null
+  },
+  {
+    "model_id": "cartesia-ai/Rene-v0.1-1.3b-pytorch",
+    "exists": true,
+    "created": "2024-08-25T07:24:21+00:00",
+    "year": 2024,
+    "month": 8,
+    "downloads": 6,
+    "likes": 60,
+    "pipeline_tag": null,
+    "library": "cartesia_pytorch"
+  },
+  {
+    "model_id": "deepseek-ai/DeepSeek-R1",
+    "exists": true,
+    "created": "2025-01-20T03:46:07+00:00",
+    "year": 2025,
+    "month": 1,
+    "downloads": 567566,
+    "likes": 13009,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
+    "exists": true,
+    "created": "2025-01-20T09:13:33+00:00",
+    "year": 2025,
+    "month": 1,
+    "downloads": 261268,
+    "likes": 741,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
+    "exists": true,
+    "created": "2025-01-20T09:09:42+00:00",
+    "year": 2025,
+    "month": 1,
+    "downloads": 493205,
+    "likes": 844,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "deepseek-ai/DeepSeek-V2.5",
+    "exists": true,
+    "created": "2024-09-05T09:30:06+00:00",
+    "year": 2024,
+    "month": 9,
+    "downloads": 74482,
+    "likes": 732,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "deepseek-ai/DeepSeek-V3",
+    "exists": true,
+    "created": "2024-12-25T12:52:23+00:00",
+    "year": 2024,
+    "month": 12,
+    "downloads": 1295783,
+    "likes": 4024,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "google/gemma-2-27b-it",
+    "exists": true,
+    "created": "2024-06-24T08:05:04+00:00",
+    "year": 2024,
+    "month": 6,
+    "downloads": 391765,
+    "likes": 559,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "google/gemma-2-2b-it",
+    "exists": true,
+    "created": "2024-07-16T10:51:39+00:00",
+    "year": 2024,
+    "month": 7,
+    "downloads": 337883,
+    "likes": 1285,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "google/gemma-2-9b-it",
+    "exists": true,
+    "created": "2024-06-24T08:05:41+00:00",
+    "year": 2024,
+    "month": 6,
+    "downloads": 144618,
+    "likes": 768,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "ibm-granite/granite-3.1-8b-instruct",
+    "exists": true,
+    "created": "2024-12-06T19:56:54+00:00",
+    "year": 2024,
+    "month": 12,
+    "downloads": 97035,
+    "likes": 166,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "ibm-granite/granite-3.2-8b-instruct",
+    "exists": true,
+    "created": "2025-02-17T22:52:53+00:00",
+    "year": 2025,
+    "month": 2,
+    "downloads": 10598,
+    "likes": 89,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "internlm/internlm2_5-7b-chat",
+    "exists": true,
+    "created": "2024-06-27T13:01:58+00:00",
+    "year": 2024,
+    "month": 6,
+    "downloads": 26152,
+    "likes": 199,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "internlm/internlm3-8b-instruct",
+    "exists": true,
+    "created": "2025-01-13T12:25:43+00:00",
+    "year": 2025,
+    "month": 1,
+    "downloads": 8816,
+    "likes": 229,
+    "pipeline_tag": "text-generation",
+    "library": null
+  },
+  {
+    "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+    "exists": true,
+    "created": "2024-07-18T08:56:00+00:00",
+    "year": 2024,
+    "month": 7,
+    "downloads": 5837840,
+    "likes": 5463,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "meta-llama/Llama-3.2-3B-Instruct",
+    "exists": true,
+    "created": "2024-09-18T15:19:20+00:00",
+    "year": 2024,
+    "month": 9,
+    "downloads": 2210460,
+    "likes": 1985,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+    "exists": true,
+    "created": "2024-11-26T16:08:47+00:00",
+    "year": 2024,
+    "month": 11,
+    "downloads": 776659,
+    "likes": 2657,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
+    "exists": true,
+    "created": "2025-04-01T22:17:20+00:00",
+    "year": 2025,
+    "month": 4,
+    "downloads": 17506,
+    "likes": 462,
+    "pipeline_tag": "image-text-to-text",
+    "library": "transformers"
+  },
+  {
+    "model_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+    "exists": true,
+    "created": "2025-04-02T13:34:17+00:00",
+    "year": 2025,
+    "month": 4,
+    "downloads": 196630,
+    "likes": 1220,
+    "pipeline_tag": "image-text-to-text",
+    "library": "transformers"
+  },
+  {
+    "model_id": "microsoft/Phi-4",
+    "exists": true,
+    "created": "2024-12-11T11:47:29+00:00",
+    "year": 2024,
+    "month": 12,
+    "downloads": 577314,
+    "likes": 2220,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "microsoft/phi-4-reasoning-plus",
+    "exists": true,
+    "created": "2025-04-17T20:51:32+00:00",
+    "year": 2025,
+    "month": 4,
+    "downloads": 225153,
+    "likes": 334,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "mistralai/Ministral-8B-Instruct-2410",
+    "exists": true,
+    "created": "2024-10-15T09:20:23+00:00",
+    "year": 2024,
+    "month": 10,
+    "downloads": 111051,
+    "likes": 572,
+    "pipeline_tag": null,
+    "library": "vllm"
+  },
+  {
+    "model_id": "mistralai/Mistral-Large-Instruct-2411",
+    "exists": true,
+    "created": "2024-11-14T20:03:52+00:00",
+    "year": 2024,
+    "month": 11,
+    "downloads": 10588,
+    "likes": 251,
+    "pipeline_tag": null,
+    "library": "vllm"
+  },
+  {
+    "model_id": "mistralai/Mistral-Small-24B-Instruct-2501",
+    "exists": true,
+    "created": "2025-01-28T13:30:13+00:00",
+    "year": 2025,
+    "month": 1,
+    "downloads": 763185,
+    "likes": 952,
+    "pipeline_tag": null,
+    "library": "vllm"
+  },
+  {
+    "model_id": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
+    "exists": true,
+    "created": "2025-03-11T17:04:58+00:00",
+    "year": 2025,
+    "month": 3,
+    "downloads": 93917,
+    "likes": 1349,
+    "pipeline_tag": null,
+    "library": "vllm"
+  },
+  {
+    "model_id": "mistralai/Mixtral-8x22B-Instruct-v0.1",
+    "exists": true,
+    "created": "2024-04-16T20:08:01+00:00",
+    "year": 2024,
+    "month": 4,
+    "downloads": 10736,
+    "likes": 746,
+    "pipeline_tag": null,
+    "library": "vllm"
+  },
+  {
+    "model_id": "mistralai/Mixtral-8x7B-Instruct-v0.1",
+    "exists": true,
+    "created": "2023-12-10T18:47:12+00:00",
+    "year": 2023,
+    "month": 12,
+    "downloads": 567179,
+    "likes": 4639,
+    "pipeline_tag": null,
+    "library": "vllm"
+  },
+  {
+    "model_id": "nvidia/Hymba-1.5B-Base",
+    "exists": true,
+    "created": "2024-10-09T20:18:18+00:00",
+    "year": 2024,
+    "month": 10,
+    "downloads": 374,
+    "likes": 157,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "nvidia/Llama-3.1-Nemotron-70B-Instruct-HF",
+    "exists": true,
+    "created": "2024-10-12T02:37:13+00:00",
+    "year": 2024,
+    "month": 10,
+    "downloads": 16993,
+    "likes": 2061,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "nvidia/Llama-3_1-Nemotron-51B-Instruct",
+    "exists": true,
+    "created": "2024-09-22T07:24:59+00:00",
+    "year": 2024,
+    "month": 9,
+    "downloads": 3469,
+    "likes": 208,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "stabilityai/stablelm-2-12b-chat",
+    "exists": true,
+    "created": "2024-04-04T10:31:37+00:00",
+    "year": 2024,
+    "month": 4,
+    "downloads": 186,
+    "likes": 88,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "state-spaces/mamba-130m-hf",
+    "exists": true,
+    "created": "2024-03-06T00:07:35+00:00",
+    "year": 2024,
+    "month": 3,
+    "downloads": 137155,
+    "likes": 68,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "state-spaces/mamba-2.8b-hf",
+    "exists": true,
+    "created": "2024-03-05T23:53:30+00:00",
+    "year": 2024,
+    "month": 3,
+    "downloads": 5470,
+    "likes": 111,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "state-spaces/mamba2-1.3b",
+    "exists": true,
+    "created": "2024-05-28T06:23:10+00:00",
+    "year": 2024,
+    "month": 5,
+    "downloads": 298,
+    "likes": 4,
+    "pipeline_tag": null,
+    "library": "transformers"
+  },
+  {
+    "model_id": "state-spaces/mamba2-130m",
+    "exists": true,
+    "created": "2024-05-28T06:13:39+00:00",
+    "year": 2024,
+    "month": 5,
+    "downloads": 7446,
+    "likes": 11,
+    "pipeline_tag": null,
+    "library": "transformers"
+  },
+  {
+    "model_id": "state-spaces/mamba2-2.7b",
+    "exists": true,
+    "created": "2024-05-28T06:23:28+00:00",
+    "year": 2024,
+    "month": 5,
+    "downloads": 1452,
+    "likes": 19,
+    "pipeline_tag": null,
+    "library": "transformers"
+  },
+  {
+    "model_id": "state-spaces/mamba2-370m",
+    "exists": true,
+    "created": "2024-05-28T06:19:16+00:00",
+    "year": 2024,
+    "month": 5,
+    "downloads": 484,
+    "likes": 6,
+    "pipeline_tag": null,
+    "library": "transformers"
+  },
+  {
+    "model_id": "state-spaces/mamba2-780m",
+    "exists": true,
+    "created": "2024-05-28T06:19:43+00:00",
+    "year": 2024,
+    "month": 5,
+    "downloads": 465,
+    "likes": 1,
+    "pipeline_tag": null,
+    "library": "transformers"
+  },
+  {
+    "model_id": "tiiuae/Falcon-H1-34B-Base",
+    "exists": true,
+    "created": "2025-05-01T05:10:32+00:00",
+    "year": 2025,
+    "month": 5,
+    "downloads": 1453,
+    "likes": 13,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "tiiuae/Falcon3-10B-Instruct",
+    "exists": true,
+    "created": "2024-12-14T05:17:25+00:00",
+    "year": 2024,
+    "month": 12,
+    "downloads": 7373,
+    "likes": 117,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "tiiuae/Falcon3-1B-Instruct",
+    "exists": true,
+    "created": "2024-12-14T05:43:18+00:00",
+    "year": 2024,
+    "month": 12,
+    "downloads": 8033,
+    "likes": 44,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "tiiuae/Falcon3-3B-Instruct",
+    "exists": true,
+    "created": "2024-12-14T06:03:53+00:00",
+    "year": 2024,
+    "month": 12,
+    "downloads": 5876,
+    "likes": 28,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "tiiuae/Falcon3-7B-Instruct",
+    "exists": true,
+    "created": "2024-11-29T10:12:15+00:00",
+    "year": 2024,
+    "month": 11,
+    "downloads": 13474,
+    "likes": 76,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "tiiuae/falcon-mamba-7b-instruct",
+    "exists": true,
+    "created": "2024-07-30T08:21:17+00:00",
+    "year": 2024,
+    "month": 7,
+    "downloads": 6617,
+    "likes": 70,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "togethercomputer/StripedHyena-Hessian-7B",
+    "exists": true,
+    "created": "2023-11-21T15:43:25+00:00",
+    "year": 2023,
+    "month": 11,
+    "downloads": 374,
+    "likes": 66,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "togethercomputer/StripedHyena-Nous-7B",
+    "exists": true,
+    "created": "2023-12-04T19:56:49+00:00",
+    "year": 2023,
+    "month": 12,
+    "downloads": 56,
+    "likes": 143,
+    "pipeline_tag": "text-generation",
+    "library": "transformers"
+  },
+  {
+    "model_id": "ML-GSAI/LLaDA-8B-Instruct",
+    "exists": false,
+    "error": "404 Client Error. (Request ID: Root=1-699422d5-29ebbd335f6f9e324bddee59;e8a13cd6-ef75-4275-a8e2-fa65"
+  },
+  {
+    "model_id": "NX-AI/xLSTM-1b",
+    "exists": false,
+    "error": "404 Client Error. (Request ID: Root=1-699422d5-0abe64f06fa97b7c4135ff58;80c7cb16-f1e2-437f-a7fa-aa9b"
+  },
+  {
+    "model_id": "NX-AI/xLSTM-2.9b",
+    "exists": false,
+    "error": "404 Client Error. (Request ID: Root=1-699422d5-719b0c6753c6b0681db2c9cf;c09350a1-13fd-475d-a923-b386"
+  },
+  {
+    "model_id": "RWKV/RWKV7-Goose-World3-3B-HF",
+    "exists": false,
+    "error": "404 Client Error. (Request ID: Root=1-699422d5-1a8b6a7a1e34624c49240e3b;94d60d50-72c0-4c8e-8493-9761"
+  },
+  {
+    "model_id": "RWKV/v7-Goose-3B-HF",
+    "exists": false,
+    "error": "404 Client Error. (Request ID: Root=1-699422d5-0b2b638816485ac929397e09;dade4bda-d154-451c-925c-3f30"
+  },
+  {
+    "model_id": "RWKV/v7-Goose-7B-HF",
+    "exists": false,
+    "error": "404 Client Error. (Request ID: Root=1-699422d5-1f3fbd987fa26cb4065128b4;a1700044-38ac-4f7e-b81f-ae94"
+  },
+  {
+    "model_id": "Writer/Palmyra-X-004",
+    "exists": false,
+    "error": "404 Client Error. (Request ID: Root=1-699422d5-401f5f30187890eb1a220c71;db5c5f78-3e94-4645-84db-b820"
+  },
+  {
+    "model_id": "Writer/Palmyra-X-004-mini",
+    "exists": false,
+    "error": "404 Client Error. (Request ID: Root=1-699422d5-3b72f1e07868fd7f6f6a201d;c77695f9-5fd7-4a3a-9345-5c40"
+  },
+  {
+    "model_id": "Zyphra/Zamba3-Instruct-Mini-3.2B",
+    "exists": false,
+    "error": "404 Client Error. (Request ID: Root=1-699422d5-408bedb568c26ce4662dbb2f;4e72a379-f798-4dc5-b924-757e"
+  },
+  {
+    "model_id": "Zyphra/Zamba3-Instruct-Nano-1.3B",
+    "exists": false,
+    "error": "404 Client Error. (Request ID: Root=1-699422d5-2c0a8cdb3a503bcf76c3c4e7;f3ba62de-89a3-4556-82c3-9cf9"
+  },
+  {
+    "model_id": "databricks/dbrx-instruct",
+    "exists": false,
+    "error": "404 Client Error. (Request ID: Root=1-699422d5-48a0d0cd77ea067b3af9bab8;5ff6d190-6997-49cd-8eb1-0e30"
+  },
+  {
+    "model_id": "inclusionAI/LLaDA2.0-8B",
+    "exists": false,
+    "error": "404 Client Error. (Request ID: Root=1-699422d5-7648492660e099a81f1b3eb9;7e2c47fc-4c12-46c0-911f-ce39"
+  },
+  {
+    "model_id": "microsoft/retnet-3b",
+    "exists": false,
+    "error": "404 Client Error. (Request ID: Root=1-699422d5-757349f94e1e33d20ea9a257;dc2dbd03-5aa4-4ca4-bb4c-66e6"
+  },
+  {
+    "model_id": "mistralai/Codestral-25.01-2501",
+    "exists": false,
+    "error": "404 Client Error. (Request ID: Root=1-699422d5-7fb4e5462ffa215256212084;b8f9050d-e4bf-4d88-8eec-ab0d"
+  },
+  {
+    "model_id": "nvidia/Nemotron-H-47B-Instruct-128K",
+    "exists": false,
+    "error": "404 Client Error. (Request ID: Root=1-699422d5-2fd6b875743f93670b7b7495;f1941380-0b84-4301-9aa5-dd60"
+  },
+  {
+    "model_id": "nvidia/Nemotron-H-56B-Instruct-128K",
+    "exists": false,
+    "error": "404 Client Error. (Request ID: Root=1-699422d5-42804017337247071ebca6b9;1c187dd6-91bc-47fe-8d4f-26e6"
+  },
+  {
+    "model_id": "nvidia/Nemotron-H-8B-Base-128K",
+    "exists": false,
+    "error": "404 Client Error. (Request ID: Root=1-699422d5-6a7aad311098c1c02e21261f;ff133805-e3b2-41c3-a34b-f7ff"
+  }
+]

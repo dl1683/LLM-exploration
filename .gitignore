@@ -1,0 +1,22 @@
+# Python/runtime
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Experiment artifacts (cache / bulky)
+*.npz
+*.log
+analysis/**/activation_cache/
+analysis/**/*.pt
+analysis/**/*.bin
+
+# Build/temp
+outputs/
+*.tmp
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db

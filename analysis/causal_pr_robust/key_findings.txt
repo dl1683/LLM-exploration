@@ -14,5 +14,6 @@ Mamba-790M: gain=+0.037, pauc=0.830, pr=6.14
 FalconH1-0.5B: gain=-0.009, pauc=0.250, pr=5.66
 FalconH1-1.5B: gain=-0.016, pauc=0.189, pr=1.63
 Zamba2-1.2B: gain=+0.005, pauc=0.078, pr=4.54
-business_implication: Over-compression predicts deployment fragility - models benefiting from PR expansion are more sensitive to inference noise, providing a testable diagnostic for production risk assessment
-scientific_implication: PR compression and dynamic stability are mechanistically linked through a mediation path (core_pr -> expansion_gain -> pressure_fragility), suggesting representation geometry causally determines noise robustness
+core_pr_vs_expansion_gain: r=0.905, p=0.0020
+business_implication: Deployment risk requires multi-axis testing - representation geometry (PR) predicts expansion resilience (r=0.905) but NOT noise robustness (p=0.61). A model can be geometrically well-structured yet dynamically fragile, requiring both tests for production risk assessment.
+scientific_implication: PR dimensionality and dynamic stability are genuinely orthogonal axes. Core PR strongly predicts expansion resilience but does NOT predict noise fragility. This falsifies simple compression-causes-fragility models and supports a multi-axis characterization framework for LLM behavior.
