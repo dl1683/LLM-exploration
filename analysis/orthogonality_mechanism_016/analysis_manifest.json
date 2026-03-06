@@ -1,0 +1,82 @@
+{
+  "analysis_id": "orthogonality-mechanism-016",
+  "title": "Layerwise Coupling Mechanism in 7B+ Base vs Reasoning-Tuned Transformers",
+  "track": "dual",
+  "owner": "claude",
+  "status": "in_progress",
+  "created_at_utc": "2026-03-06T03:06:25+00:00",
+  "hypothesis": "The surgery x jitter interaction detected at 7B+ in exp-014/015 is layer-localized in mid/late layers of base transformers, and reasoning training regularizes/compresses this vulnerable band. Local representation geometry (PR, anisotropy) at each layer predicts interaction magnitude.",
+  "value_to_investors": "Determines whether the transformer-specific coupling from exp-015 is a shallow surface effect (layer-specific, geometry-predictable) or a deep architectural property. If layer-localized, deployment testing can target specific layers. If reasoning training eliminates it, reasoning-tuned models need less validation.",
+  "value_to_researchers": "First layerwise decomposition of the surgery-jitter interaction at 7B+ scale. Tests three mechanistic hypotheses (layer localization, training regularization, geometric prediction) with 32,000 factorial trials plus clean activation geometry. Connects causal perturbation effects to representation structure.",
+  "identification_strategy": "Same 2x2 factorial as exp-014/015 (surgery=0.08, jitter=0.08) applied at 5 layer positions [0.20, 0.35, 0.50, 0.65, 0.80]. 5 cached models grouped as base_transformer (3) vs reasoning_tuned (2). Phase 1: 32,000 eval trials. Phase 2: clean geometry pass (128 prompts, compute PR and anisotropy per layer). Interaction computed per model per layer. Group comparison via Wilcoxon signed-rank. Geometry-interaction correlation via Pearson/Spearman + multiple regression.",
+  "falsification_tests": [
+    "If base transformers show uniform interaction across all layers (no localization), H1 is falsified",
+    "If reasoning models show comparable interaction to base at any layer, H2 is falsified",
+    "If PR and anisotropy show no significant correlation with interaction (|r| < 0.3), H3 is falsified",
+    "If calibration-holdout gap > 5pp, prompt-level overfitting is present"
+  ],
+  "success_criteria": [
+    "All 5 models complete (all cached, no downloads needed)",
+    "Clear verdict: TRAINING_REGULARIZATION, GEOMETRIC_BOTTLENECK, or NO_CLEAR_MECHANISM",
+    "At least one hypothesis supported with p < 0.05",
+    "Geometry data collected at all 25 model-layer positions",
+    "Cal-holdout gap < 5pp"
+  ],
+  "data_lineage": [
+    {
+      "source": "HuggingFace Hub models (all pre-cached from exp-014/015)",
+      "provenance": "5 models at 7B+ (3 base transformer, 2 reasoning-tuned transformer), NF4 quantized via bitsandbytes on RTX 5090 Laptop (23.9GB VRAM). All models cached locally from prior experiments.",
+      "transformations": "Phase 1: Forward pass with hook-based hidden-state perturbation at 5 layer positions, greedy decoding (max_new_tokens=10), strict answer parsing. Phase 2: Clean forward pass with activation capture hooks, PR via eigenvalue decomposition, anisotropy via cosine similarity."
+    }
+  ],
+  "out_of_sample_validation_plan": "32 calibration prompts used for analysis tuning; 32 holdout prompts reserved for final validation. Interaction computed on both splits with divergence check.",
+  "uncertainty_methods": [
+    "Bootstrap CIs (5000 resamples) per layer position",
+    "Permutation null distribution (5000 shuffles of surgery/jitter labels within model)",
+    "Leave-one-model-out sensitivity per group",
+    "Cal vs holdout split comparison",
+    "Pearson and Spearman correlations for geometry-interaction link",
+    "Multiple regression (PR + anisotropy + group -> interaction)"
+  ],
+  "robustness_checks": [
+    "Per-model interaction profiles (individual trajectories vs group means)",
+    "LOO by group (base_transformer, reasoning_tuned)",
+    "Main effects (surgery, jitter) by layer position",
+    "H1: t-test comparing mid/late vs early/extreme layers in base transformers",
+    "H2: Wilcoxon signed-rank test on paired layer-level interactions",
+    "H3: Pearson + Spearman correlations, group-separated correlations",
+    "Mixed-effects model with layer x group x interaction terms",
+    "Calibration vs holdout split comparison"
+  ],
+  "business_implication": "pending",
+  "scientific_implication": "pending",
+  "evidence_strength": "causal",
+  "quality_gates": {
+    "non_circular_metrics": true,
+    "causal_design_matches_claim": true,
+    "out_of_sample_validation": true,
+    "uncertainty_reported": true,
+    "robustness_checks": true,
+    "reproducible_pipeline": true
+  },
+  "rubric": {
+    "investor": {
+      "actionability": 5,
+      "deployment_relevance": 5,
+      "cost_signal": 4,
+      "adoption_signal": 3,
+      "timeliness": 4,
+      "data_quality": 5,
+      "identification_strength": 5
+    },
+    "research": {
+      "novelty": 5,
+      "theoretical_depth": 5,
+      "measurement_quality": 5,
+      "causal_identification": 5,
+      "robustness": 5,
+      "reproducibility": 5,
+      "generality": 4
+    }
+  }
+}
