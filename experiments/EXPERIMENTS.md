@@ -5,7 +5,7 @@ Reverse chronological order. Only Codex-validated conclusions are listed.
 ## exp-015: 7B+ Cross-Paradigm Orthogonality Resolution
 **Status:** Complete
 **Date:** 2026-03-06
-**Commit:** `pending`
+**Commit:** `ef33cec`
 **Script:** `orthogonality_cross_paradigm_015.py`
 **Output:** `analysis/orthogonality_cross_paradigm_015/`
 **Config:** 5 models (3 transformer, 2 reasoning; SSM/hybrid downloads all failed), 2×2 factorial at mid-layer, surgery=0.08, jitter=0.08, 5 seeds, 64 prompts, 6,400 trials. Reused exp-014 data for 5 completed models. Completion gate NOT met (missing SSM/hybrid).
