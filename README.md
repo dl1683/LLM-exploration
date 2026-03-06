@@ -25,11 +25,11 @@ Models react dramatically differently to hidden-state noise:
 ![Accuracy vs Pressure](analysis/jitter_pressure/figures/accuracy_vs_pressure_by_model.png)
 ![Critical Pressure](analysis/jitter_pressure/figures/critical_pressure_by_paradigm.png)
 
-### 5. Orthogonal Axes of Model Behavior
-PR dimensionality and dynamic stability show **no detectable interaction** in a 2×2 factorial design (15 models, 5,760 trials). Interaction OR=1.10, p=0.186, bootstrap ROPE fraction=0.998. Correlation-based evidence (r=-0.214, p=0.61 from exp-011) is now backed by a formal causal factorial test.
+### 5. Orthogonal Axes — With a Scale-Dependent Twist
+At sub-3B scale: PR surgery and jitter stress show **no interaction** (exp-012: OR=1.10, ROPE=0.998; exp-013: OR=1.02, 46,656 trials). At **7B+ scale**: interaction emerges (exp-014: OR=0.92, p=0.013) — but it's **transformer-specific** (exp-015: transformers=-0.023, reasoning=0.000). Cochran's Q shows no between-model heterogeneity (I²=0%).
 
-![Bridge Scatter](analysis/causal_pr_robust/figures/bridge_scatter.png)
 ![Interaction Forest](analysis/orthogonality_decomposition_012/figures/interaction_forest.png)
+![Bridge Scatter](analysis/causal_pr_robust/figures/bridge_scatter.png)
 
 ### 6. Ecosystem Convergence
 129-model survey reveals architecture convergence (index doubled from 0.23 to 0.49), with 59% of the hybrid adoption penalty explained by a measured compatibility tax (p<0.001).
@@ -50,6 +50,10 @@ PR dimensionality and dynamic stability show **no detectable interaction** in a 
 | exp-010 | 2026-03-05 | Jitter-Pressure Inference Stability | Causal | Hybrids most robust, math fragile |
 | exp-011 | 2026-03-05 | Over-compression + JPIS bridge | Causal | Orthogonal axes (r=0.905 vs p=0.61) |
 | exp-012 | 2026-03-05 | Mechanistic orthogonality decomposition | Causal | No interaction (OR=1.10, ROPE=0.998) |
+| exp-013 | 2026-03-05 | Expanded 3×3 factorial grid | Causal | Orthogonality robust (OR=1.02, 46,656 trials) |
+| exp-014 | 2026-03-05 | 7B+ scale validation | Causal | **INTERACTION DETECTED** (OR=0.92, p=0.013) |
+| exp-015 | 2026-03-06 | Cross-paradigm resolution | Causal | Transformer-specific coupling (-0.023 vs 0.000) |
+| exp-016 | 2026-03-06 | Layerwise coupling mechanism | Causal | **IN PROGRESS** — 32K trials + geometry |
 
 Full details: [`experiments/EXPERIMENTS.md`](experiments/EXPERIMENTS.md)
 
@@ -112,6 +116,10 @@ python causal_pr_intervention.py           # Stage 3: Causal PR intervention
 python causal_pr_robust.py --stage all     # Stage 3b: Over-compression + bridge
 python jitter_pressure_analysis.py         # Stage 4: JPIS stability
 python mechanistic_orthogonality_decomposition.py --stage all  # Exp-012: Factorial
+python orthogonality_grid_013.py --stage all                  # Exp-013: 3×3 grid
+python orthogonality_scale_014.py --stage all                 # Exp-014: 7B+ scale
+python orthogonality_cross_paradigm_015.py --stage all        # Exp-015: Cross-paradigm
+python orthogonality_mechanism_016.py --stage all             # Exp-016: Layerwise mechanism
 ```
 
 ### Analysis Standards
@@ -134,7 +142,8 @@ python analysis_standards.py score --analysis-dir analysis/<name> --apply-gate-p
 - JPIS paradigm-level claim (Kruskal-Wallis p=0.113) is descriptive, not statistically robust
 - Mamba-1.4B hangs with forward hooks (sequential SSM fallback), RWKV7 requires triton
 - No out-of-sample validation for JPIS or bridge analyses
-- All models are <3B parameters — findings may not generalize to larger scales
+- Sub-3B findings validated at 7B+ for orthogonality (exp-013→014→015→016)
+- SSM/hybrid paradigms at 7B+ could not be tested (HuggingFace download failures)
 
 ## Project Structure
 
@@ -156,6 +165,10 @@ python analysis_standards.py score --analysis-dir analysis/<name> --apply-gate-p
 │   ├── causal_pr_robust/             # Stage 3b: Over-compression + bridge
 │   ├── jitter_pressure/              # Stage 4: JPIS stability
 │   ├── orthogonality_decomposition_012/  # Exp-012: 2×2 factorial
+│   ├── orthogonality_grid_013/       # Exp-013: 3×3 factorial grid
+│   ├── orthogonality_scale_014/      # Exp-014: 7B+ scale validation
+│   ├── orthogonality_cross_paradigm_015/ # Exp-015: Cross-paradigm
+│   ├── orthogonality_mechanism_016/  # Exp-016: Layerwise mechanism
 │   ├── ecosystem/                    # Ecosystem survey (v1)
 │   ├── ecosystem_v2/                 # Ecosystem survey (v2, 129 models)
 │   ├── ecosystem_deep/               # Deep dynamics (v1)
