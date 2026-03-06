@@ -58,26 +58,26 @@ MAX_NEW_TOKENS = 10
 # Batch size by paradigm (conservative for VRAM on RTX 5090 25.7GB)
 BATCH_SIZES = {"transformer": 4, "ssm": 4, "hybrid": 1, "reasoning": 1, "rwkv": 1}
 
-# ── Model registry (Codex-specified 10 primary + 3 fallback) ─────────────
+# ── Model registry (Codex-specified panel, gated models removed) ─────────
 MODELS: List[Tuple[str, str, str, float]] = [
-    # Transformers (4) — 3 cached from exp-014
+    # Transformers (3) — all cached from exp-014
     ("Qwen/Qwen2.5-7B", "Qwen2.5-7B", "transformer", 7.0),
     ("Qwen/Qwen3-8B", "Qwen3-8B", "transformer", 8.0),
     ("allenai/OLMo-2-1124-7B", "OLMo2-7B", "transformer", 7.0),
-    ("meta-llama/Llama-3.1-8B-Instruct", "Llama3.1-8B-I", "transformer", 8.0),
     # Reasoning (2) — cached from exp-014
     ("deepseek-ai/DeepSeek-R1-Distill-Qwen-7B", "DSR1-7B", "reasoning", 7.0),
     ("deepseek-ai/DeepSeek-R1-Distill-Llama-8B", "DSR1-Llama-8B", "reasoning", 8.0),
-    # SSM / recurrent (2)
-    ("tiiuae/falcon-mamba-7b-instruct", "FalconMamba-7B-I", "ssm", 7.0),
+    # SSM / recurrent (3) — need download
+    ("NX-AI/xLSTM-7b", "xLSTM-7B", "ssm", 7.0),
+    ("tiiuae/falcon-mamba-7b", "FalconMamba-7B", "ssm", 7.0),
     ("RWKV/v5-Eagle-7B-HF", "RWKVv5-Eagle-7B", "ssm", 7.0),
-    # Hybrid (2)
+    # Hybrid (2) — need download
     ("togethercomputer/StripedHyena-Nous-7B", "StripedHyena-7B", "hybrid", 7.0),
     ("Zyphra/Zamba2-7B-Instruct", "Zamba2-7B-I", "hybrid", 7.0),
 ]
 
 FALLBACK_MODELS: List[Tuple[str, str, str, float]] = [
-    ("tiiuae/falcon-mamba-7b", "FalconMamba-7B", "ssm", 7.0),
+    ("tiiuae/falcon-mamba-7b-instruct", "FalconMamba-7B-I", "ssm", 7.0),
     ("RWKV/v6-Finch-7B-HF", "RWKVv6-Finch-7B", "ssm", 7.0),
     ("togethercomputer/StripedHyena-Hessian-7B", "StripedHyena-H-7B", "hybrid", 7.0),
 ]
@@ -1029,7 +1029,7 @@ def _heterogeneity_test(model_int_df: pd.DataFrame, tables_dir: Path) -> Dict:
             "mean_interaction": float(mean_int),
             "sd_interaction": float(np.std(interactions, ddof=1)),
         }
-        print(f"  Q={q_direct:.2f}, p={q_p:.4f}, I²={i_squared:.1f}%, τ²={tau_sq:.4f}")
+        print(f"  Q={q_direct:.2f}, p={q_p:.4f}, I^2={i_squared:.1f}%, tau^2={tau_sq:.4f}")
 
     with open(tables_dir / "heterogeneity_test.json", "w") as f:
         json.dump(results, f, indent=2)
@@ -1301,16 +1301,18 @@ def _write_findings(df, model_int_df, mixed, boot, perm, loo, lopo,
             "orthogonality between geometric and dynamic axes holds universally."
         )
     elif verdict == "TRANSFORMER_SPECIFIC_COUPLING (not universal scale law)":
+        paradigms_tested = sorted(df["paradigm"].unique())
         lines.append(
-            "business_implication: The surgery-jitter interaction is transformer-specific, not "
-            "a universal scale law. SSM/hybrid models maintain orthogonality at 7B+. "
-            "Joint testing required only for large transformers; other paradigms can test independently."
+            f"business_implication: The surgery-jitter interaction is concentrated in "
+            f"transformers while {', '.join(p for p in paradigms_tested if p != 'transformer')} "
+            f"models show near-zero interaction. Suggests transformer-specific coupling. "
+            f"{'CAVEAT: completion gate not met, SSM/hybrid untested.' if not gate_pass else ''}"
         )
         lines.append(
-            "scientific_implication: Cross-paradigm resolution reveals architecture-specific "
-            "heterogeneity: large transformers couple geometric and dynamic perturbations, "
-            "while SSM/hybrid/reasoning models maintain independence. This is paradigm-specific "
-            "coupling, not a general scale collapse of orthogonality."
+            f"scientific_implication: Architecture-specific heterogeneity detected: "
+            f"transformers couple geometric and dynamic perturbations at 7B+ scale, "
+            f"while tested non-transformer paradigms maintain independence. "
+            f"{'Completion gate NOT met — SSM/hybrid coverage needed for definitive claim.' if not gate_pass else ''}"
         )
     else:
         lines.append(

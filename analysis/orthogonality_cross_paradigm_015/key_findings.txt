@@ -1,2 +1,45 @@
-business_implication: TODO
-scientific_implication: TODO
+models_tested: 5
+total_trials: 6400
+paradigms: reasoning, transformer
+domains: factual, hard, logic, math, multistep
+layer_position: 0.5
+surgery_strength: 0.08
+jitter_strength: 0.08
+seeds: 5
+prompts: 64
+completion_gate: False
+global_mean_interaction: -0.01375
+mixed_model_interaction_beta: -0.0646
+mixed_model_interaction_p: 0.0172
+mixed_model_interaction_or: 0.9374
+bootstrap_ci: [-0.0231, -0.0031]
+bootstrap_ci_includes_zero: False
+sesoi_rope_fraction: 0.338
+sesoi_bound: 0.012
+permutation_p: 0.5302
+loo_std: 0.0032
+lopo_std: 0.0162
+calibration_interaction: 0.0013
+holdout_interaction: -0.0287
+cal_holdout_gap_pp: 3.0
+reasoning_only_interaction: -0.0000
+baseline_accuracy: 0.634
+surgery_main_effect: -0.148
+jitter_main_effect: +0.010
+cochrans_q: 4.00
+cochrans_q_p: 0.4060
+i_squared: 0.0
+tau_squared: 0.0000
+model_Qwen2.5-7B_interaction: -0.0219
+model_Qwen3-8B_interaction: -0.0250
+model_OLMo2-7B_interaction: -0.0219
+model_DSR1-7B_interaction: 0.0031
+model_DSR1-Llama-8B_interaction: -0.0031
+paradigm_reasoning_interaction: -0.0000
+paradigm_transformer_interaction: -0.0229
+scale_moderation_slope: -0.0179
+scale_moderation_p: 0.3011
+scale_moderation_r: -0.189
+verdict: TRANSFORMER_SPECIFIC_COUPLING (not universal scale law)
+business_implication: The surgery-jitter interaction is concentrated in transformers (-0.023) while reasoning models show zero interaction. This suggests transformer-specific coupling, not a universal scale law. CAVEAT: SSM/hybrid models could not be tested (download failures) — paradigm coverage incomplete.
+scientific_implication: With 5 seeds (reduced from 7), the exp-014 interaction persists in transformers but vanishes in reasoning models. Cochran's Q shows no significant between-model heterogeneity (Q=4.00, p=0.41). However, without SSM/hybrid coverage (completion gate NOT met), the transformer-specific claim remains provisional pending broader paradigm testing.

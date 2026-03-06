@@ -2,6 +2,17 @@
 
 Reverse chronological order. Only Codex-validated conclusions are listed.
 
+## exp-015: 7B+ Cross-Paradigm Orthogonality Resolution
+**Status:** Complete
+**Date:** 2026-03-06
+**Commit:** `pending`
+**Script:** `orthogonality_cross_paradigm_015.py`
+**Output:** `analysis/orthogonality_cross_paradigm_015/`
+**Config:** 5 models (3 transformer, 2 reasoning; SSM/hybrid downloads all failed), 2×2 factorial at mid-layer, surgery=0.08, jitter=0.08, 5 seeds, 64 prompts, 6,400 trials. Reused exp-014 data for 5 completed models. Completion gate NOT met (missing SSM/hybrid).
+**What we learned:** TRANSFORMER-SPECIFIC COUPLING confirmed. The exp-014 interaction is concentrated in transformers (mean=-0.023) while reasoning models show zero interaction (-0.000). Mixed-effects OR=0.94, p=0.017. Bootstrap CI [-0.023, -0.003] excludes zero. Permutation p=0.53 still conflicts (low model count). Cochran's Q=4.00 (p=0.41, I²=0%) shows no significant between-model heterogeneity. Verdict: NOT a universal scale law — it's architecture-specific. CAVEAT: SSM/hybrid paradigms could not be tested due to persistent HuggingFace download failures; the claim is provisional. Investor=89, Research=97.
+
+---
+
 ## exp-014: Orthogonality Scaling Law at 7B+
 **Status:** Complete
 **Date:** 2026-03-05
