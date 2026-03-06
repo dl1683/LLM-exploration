@@ -26,7 +26,7 @@ Models react dramatically differently to hidden-state noise:
 ![Critical Pressure](analysis/jitter_pressure/figures/critical_pressure_by_paradigm.png)
 
 ### 5. Orthogonal Axes — With a Scale-Dependent Twist
-At sub-3B scale: PR surgery and jitter stress show **no interaction** (exp-012: OR=1.10, ROPE=0.998; exp-013: OR=1.02, 46,656 trials). At **7B+ scale**: interaction emerges (exp-014: OR=0.92, p=0.013) — but it's **transformer-specific** (exp-015: transformers=-0.023, reasoning=0.000). Cochran's Q shows no between-model heterogeneity (I²=0%).
+At sub-3B scale: PR surgery and jitter stress show **no interaction** (exp-012: OR=1.10, ROPE=0.998; exp-013: OR=1.02, 46,656 trials). At **7B+ scale**: interaction emerges (exp-014: OR=0.92, p=0.013) — concentrated in **transformers** (exp-015: transformers=-0.023, reasoning=0.000 at mid-layer). Layerwise decomposition (exp-016) finds the coupling is **uniform across depth**, not predicted by local geometry, and not clearly eliminated by reasoning training. The mechanism remains unresolved — it appears to be a deep architectural property.
 
 ![Interaction Forest](analysis/orthogonality_decomposition_012/figures/interaction_forest.png)
 ![Bridge Scatter](analysis/causal_pr_robust/figures/bridge_scatter.png)
