@@ -1,0 +1,84 @@
+{
+  "analysis_id": "orthogonality-cross-paradigm",
+  "title": "7B+ Cross-Paradigm Orthogonality Resolution",
+  "track": "dual",
+  "owner": "claude",
+  "status": "running",
+  "created_at_utc": "2026-03-06T01:17:39+00:00",
+  "hypothesis": "The negative surgery x jitter interaction detected at 7B+ in exp-014 (OR=0.92, p=0.013) is architecture-specific heterogeneity concentrated in large transformers, not a universal scale law. SSM/hybrid/RWKV 7B+ models will show interaction near zero (within SESOI), while transformers will remain negative. The permutation p-value conflict (0.35 vs 0.013) is a low-independent-model-count artifact that resolves with a larger panel.",
+  "value_to_investors": "Determines whether deployment testing at 7B+ scale requires joint geometric-dynamic validation for ALL paradigms (expensive) or only for transformers (targeted). Resolves the exp-014 ambiguity before it propagates into deployment protocols.",
+  "value_to_researchers": "Tests external validity of the exp-014 breakthrough across 4 paradigms. Introduces Cochran's Q heterogeneity test and random-effects analysis. Updates scale-moderation meta-regression with 4 pooled experiments (012-015). Directly challenges or confirms the most significant finding in the project.",
+  "identification_strategy": "Same 2x2 factorial as exp-014 (surgery=0.08, jitter=0.08, mid-layer=0.5) held constant for direct comparability. Panel expanded to 10 models across 4 paradigms. 5 seeds (reduced from 7 to allocate budget to more independent models). Exp-014 data reused for 5 completed models. Interaction tested via clustered logistic regression, bootstrap, permutation, LOO, LOPO, and Cochran's Q heterogeneity.",
+  "falsification_tests": [
+    "If pooled interaction returns to ROPE (fraction >= 0.95), exp-014 was a false positive",
+    "If SSM/hybrid show interaction magnitude comparable to transformers, it IS a universal scale effect",
+    "If permutation p < 0.05 with expanded panel, the p-value conflict was due to low model count",
+    "Calibration-holdout gap > 5pp would indicate prompt-level overfitting"
+  ],
+  "success_criteria": [
+    ">=8 models completed, with >=1 SSM/RWKV and >=1 hybrid",
+    "Clear verdict: ORTHOGONALITY_RESTORED, TRANSFORMER_SPECIFIC, or INTERACTION_CONFIRMED",
+    "Permutation and model-based p-values directionally consistent (conflict resolved)",
+    "Heterogeneity test (Cochran's Q) quantifies between-paradigm variation",
+    "Scale-moderation meta-regression updated with exp-015 data",
+    "Calibration-holdout accuracy gap < 5pp"
+  ],
+  "data_lineage": [
+    {
+      "source": "HuggingFace Hub models + exp-014 reuse",
+      "provenance": "10 models at 7B+ across 4 paradigms (transformer, SSM, hybrid, reasoning), NF4 quantized via bitsandbytes on RTX 5090 Laptop (25.7GB VRAM). 5 completed models imported from exp-014.",
+      "transformations": "Forward pass with hook-based hidden-state perturbation at mid-layer, greedy decoding (max_new_tokens=10), strict answer parsing with numeric extraction"
+    }
+  ],
+  "out_of_sample_validation_plan": "32 calibration prompts used for analysis tuning; 32 holdout prompts reserved for final validation. All statistics computed on both splits with divergence check.",
+  "uncertainty_methods": [
+    "Bootstrap CIs (5000 resamples over model-level means)",
+    "Permutation null distribution (5000 shuffles of surgery/jitter labels within model)",
+    "Leave-one-model-out sensitivity analysis",
+    "Leave-one-paradigm-out stability analysis",
+    "ROPE equivalence testing with pre-specified bounds [0.90, 1.11]",
+    "Scale-moderation meta-regression pooling 4 experiments",
+    "Cochran's Q heterogeneity test with I-squared and tau-squared"
+  ],
+  "robustness_checks": [
+    "Paradigm-specific interaction analysis (transformer vs SSM vs hybrid vs reasoning)",
+    "Reasoning-only interaction estimate",
+    "LOO and LOPO influence analysis",
+    "Calibration vs holdout split comparison",
+    "Scale-moderation meta-regression with prior experiments (012-015)",
+    "Cochran's Q between-model heterogeneity",
+    "Main effects analysis (surgery and jitter independently)",
+    "Completion gate check (>=8 models, >=1 SSM, >=1 hybrid)"
+  ],
+  "business_implication": "pending — depends on verdict",
+  "scientific_implication": "pending — depends on verdict",
+  "evidence_strength": "causal",
+  "quality_gates": {
+    "non_circular_metrics": true,
+    "causal_design_matches_claim": true,
+    "out_of_sample_validation": true,
+    "uncertainty_reported": true,
+    "robustness_checks": true,
+    "reproducible_pipeline": true
+  },
+  "rubric": {
+    "investor": {
+      "actionability": 5,
+      "deployment_relevance": 5,
+      "cost_signal": 4,
+      "adoption_signal": 3,
+      "timeliness": 4,
+      "data_quality": 5,
+      "identification_strength": 5
+    },
+    "research": {
+      "novelty": 4,
+      "theoretical_depth": 5,
+      "measurement_quality": 5,
+      "causal_identification": 5,
+      "robustness": 5,
+      "reproducibility": 5,
+      "generality": 5
+    }
+  }
+}
