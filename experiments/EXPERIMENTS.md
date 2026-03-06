@@ -5,7 +5,7 @@ Reverse chronological order. Only Codex-validated conclusions are listed.
 ## exp-014: Orthogonality Scaling Law at 7B+
 **Status:** Complete
 **Date:** 2026-03-05
-**Commit:** `pending`
+**Commit:** `0f6c68f`
 **Script:** `orthogonality_scale_014.py`
 **Output:** `analysis/orthogonality_scale_014/`
 **Config:** 5 models (3 transformer, 2 reasoning; ARWKV failed deps, Zamba2/FalconMamba stalled download, FalconH1 hung), 2×2 factorial at mid-layer, surgery=0.08, jitter=0.08, 7 seeds, 64 prompts, 8,960 trials
