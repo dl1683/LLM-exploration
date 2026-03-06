@@ -1,0 +1,10 @@
+{
+  "mid_late_mean": -0.019444444444444414,
+  "early_extreme_mean": -0.018229166666666675,
+  "t_stat": -0.2038110967444512,
+  "t_p": 0.42082847774886545,
+  "peak_layer": 0.8,
+  "peak_interaction": -0.026041666666666668,
+  "h1_supported": false,
+  "localization_ratio": 1.066666660815236
+}

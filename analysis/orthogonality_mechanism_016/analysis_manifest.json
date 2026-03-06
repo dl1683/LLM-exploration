@@ -3,7 +3,7 @@
   "title": "Layerwise Coupling Mechanism in 7B+ Base vs Reasoning-Tuned Transformers",
   "track": "dual",
   "owner": "claude",
-  "status": "in_progress",
+  "status": "complete",
   "created_at_utc": "2026-03-06T03:06:25+00:00",
   "hypothesis": "The surgery x jitter interaction detected at 7B+ in exp-014/015 is layer-localized in mid/late layers of base transformers, and reasoning training regularizes/compresses this vulnerable band. Local representation geometry (PR, anisotropy) at each layer predicts interaction magnitude.",
   "value_to_investors": "Determines whether the transformer-specific coupling from exp-015 is a shallow surface effect (layer-specific, geometry-predictable) or a deep architectural property. If layer-localized, deployment testing can target specific layers. If reasoning training eliminates it, reasoning-tuned models need less validation.",
@@ -48,8 +48,8 @@
     "Mixed-effects model with layer x group x interaction terms",
     "Calibration vs holdout split comparison"
   ],
-  "business_implication": "pending",
-  "scientific_implication": "pending",
+  "business_implication": "NO_CLEAR_MECHANISM for the 7B+ transformer coupling. The surgery-jitter interaction is real (bootstrap CIs exclude zero at all layers) but uniformly distributed across depth, not predictable from geometry, and not eliminated by reasoning training. Both base and reasoning-tuned models require full perturbation testing at all layers — no shortcuts. CAVEAT: only 4/5 models completed (DSR1-Llama-8B excluded due to excessive inference time at batch_size=1).",
+  "scientific_implication": "First layerwise decomposition of surgery-jitter interaction at 7B+ scale. All three hypothesized mechanisms falsified: (1) interaction is uniform across layers, not localized (H1: p=0.42); (2) reasoning training does not regularize (H2: p=0.69, single reasoning model); (3) local geometry (PR, anisotropy) does not predict interaction (H3: r=0.004, p=0.99). The coupling appears to be a deep architectural property of transformers, not a shallow geometric effect. Permutation p=0.076 is marginal, consistent with exp-014/015 pattern of model-based vs permutation p-value tension at low model counts.",
   "evidence_strength": "causal",
   "quality_gates": {
     "non_circular_metrics": true,

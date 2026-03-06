@@ -53,7 +53,7 @@ At sub-3B scale: PR surgery and jitter stress show **no interaction** (exp-012: 
 | exp-013 | 2026-03-05 | Expanded 3×3 factorial grid | Causal | Orthogonality robust (OR=1.02, 46,656 trials) |
 | exp-014 | 2026-03-05 | 7B+ scale validation | Causal | **INTERACTION DETECTED** (OR=0.92, p=0.013) |
 | exp-015 | 2026-03-06 | Cross-paradigm resolution | Causal | Transformer-specific coupling (-0.023 vs 0.000) |
-| exp-016 | 2026-03-06 | Layerwise coupling mechanism | Causal | **IN PROGRESS** — 32K trials + geometry |
+| exp-016 | 2026-03-06 | Layerwise coupling mechanism | Causal | NO_CLEAR_MECHANISM — all 3 hypotheses falsified |
 
 Full details: [`experiments/EXPERIMENTS.md`](experiments/EXPERIMENTS.md)
 

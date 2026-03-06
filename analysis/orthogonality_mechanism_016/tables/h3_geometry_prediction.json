@@ -1,0 +1,47 @@
+{
+  "merged_n": 20,
+  "pr_pearson_r": 0.004140131329814896,
+  "pr_pearson_p": 0.9861789256058093,
+  "pr_norm_pearson_r": 0.0332877286758817,
+  "pr_norm_pearson_p": 0.8891975122628273,
+  "anisotropy_pearson_r": -0.21303473333645828,
+  "anisotropy_pearson_p": 0.36716873738328204,
+  "pr_spearman_rho": -0.008289395712336141,
+  "pr_spearman_p": 0.9723311674580106,
+  "anisotropy_spearman_rho": -0.2735500585070927,
+  "anisotropy_spearman_p": 0.24320668392155825,
+  "best_predictor": "anisotropy",
+  "best_r": 0.21303473333645828,
+  "best_p": 0.36716873738328204,
+  "group_correlations": {
+    "base_transformer": {
+      "pr_r": 0.025334559110093066,
+      "pr_p": 0.9285881053581279,
+      "n": 15
+    },
+    "reasoning_tuned": {
+      "pr_r": -0.2661408999682062,
+      "pr_p": 0.665182808103238,
+      "n": 5
+    }
+  },
+  "regression": {
+    "r_squared": 0.05216856439951867,
+    "adj_r_squared": -0.1255498297755715,
+    "f_stat": 0.2935462288057903,
+    "f_p": 0.8294676491620675,
+    "coefficients": {
+      "intercept": -0.0003201013463944107,
+      "pr_normalized": -1.6575136299609063,
+      "anisotropy": -0.03499865239690229,
+      "group_binary": 0.0018985275198226395
+    },
+    "p_values": {
+      "intercept": 0.9916044786278866,
+      "pr_normalized": 0.7833077411612241,
+      "anisotropy": 0.43639364902464184,
+      "group_binary": 0.8120516375203214
+    }
+  },
+  "h3_supported": false
+}

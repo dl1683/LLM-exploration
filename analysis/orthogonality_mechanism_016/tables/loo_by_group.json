@@ -1,0 +1,34 @@
+{
+  "base_transformer": {
+    "full_mean": -0.018958333333333317,
+    "loo_std": 0.0037019490924826777,
+    "models": [
+      {
+        "excluded": "OLMo2-7B",
+        "loo_mean": -0.02093749999999998,
+        "delta": -0.001979166666666664
+      },
+      {
+        "excluded": "Qwen2.5-7B",
+        "loo_mean": -0.021249999999999984,
+        "delta": -0.0022916666666666675
+      },
+      {
+        "excluded": "Qwen3-8B",
+        "loo_mean": -0.014687499999999985,
+        "delta": 0.004270833333333331
+      }
+    ]
+  },
+  "reasoning_tuned": {
+    "full_mean": -0.022500000000000003,
+    "loo_std": 0,
+    "models": [
+      {
+        "excluded": "DSR1-7B",
+        "loo_mean": NaN,
+        "delta": NaN
+      }
+    ]
+  }
+}

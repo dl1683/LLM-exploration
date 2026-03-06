@@ -1,2 +1,53 @@
-business_implication: TODO
-scientific_implication: TODO
+models_tested: 4
+total_trials: 25600
+geometry_measurements: 25
+groups: base_transformer, reasoning_tuned
+domains: factual, hard, logic, math, multistep
+layer_fractions: [0.2, 0.35, 0.5, 0.65, 0.8]
+surgery_strength: 0.08
+jitter_strength: 0.08
+seeds: 5
+prompts: 64
+global_mean_interaction: -0.01984
+group_base_transformer_interaction: -0.01896
+group_reasoning_tuned_interaction: -0.02250
+model_DSR1-7B_mean_interaction: -0.02250
+model_OLMo2-7B_mean_interaction: -0.01500
+model_Qwen2.5-7B_mean_interaction: -0.01437
+model_Qwen3-8B_mean_interaction: -0.02750
+mixed_interaction_beta: -0.3381
+mixed_interaction_p: 0.4619
+mixed_group_x_int_beta: 0.2895
+mixed_group_x_int_p: 0.5962
+mixed_layer_x_int_beta: 0.5974
+mixed_layer_x_int_p: 0.1857
+bootstrap_L0.2_ci: [-0.0266, -0.0078]
+bootstrap_L0.35_ci: [-0.0453, -0.0094]
+bootstrap_L0.5_ci: [-0.0242, -0.0031]
+bootstrap_L0.65_ci: [-0.0258, -0.0047]
+bootstrap_L0.8_ci: [-0.0289, -0.0180]
+permutation_p: 0.0760
+calibration_interaction: -0.0122
+holdout_interaction: -0.0275
+cal_holdout_gap_pp: 1.5
+h1_layer_localization: False
+h1_peak_layer: 0.80
+h1_peak_interaction: -0.0260
+h1_localization_ratio: 1.07
+h2_reasoning_regularization: False
+h2_base_mean: -0.0190
+h2_reasoning_mean: -0.0225
+h2_wilcoxon_p: 0.6875
+h3_geometry_prediction: False
+h3_best_predictor: anisotropy
+h3_best_r: 0.213
+h3_best_p: 0.3672
+h3_regression_r2: 0.0522
+geometry_base_transformer_mean_pr: 8.57
+geometry_base_transformer_mean_anisotropy: 0.4826
+geometry_reasoning_tuned_mean_pr: 7.54
+geometry_reasoning_tuned_mean_anisotropy: 0.4696
+verdict: NO_CLEAR_MECHANISM
+verdict_explanation: Neither layer localization, training regularization, nor geometric prediction clearly explains the coupling difference.
+business_implication: NO_CLEAR_MECHANISM — Base transformers at 7B+ show interaction=-0.0190 while reasoning-tuned show -0.0225. Mechanism unclear; both groups should undergo full testing.
+scientific_implication: Layerwise decomposition at 5 positions reveals no significant layer localization. Geometry does not significantly predict interaction. The base vs reasoning difference is directional but not formally significant.

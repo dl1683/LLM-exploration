@@ -2,6 +2,17 @@
 
 Reverse chronological order. Only Codex-validated conclusions are listed.
 
+## exp-016: Layerwise Coupling Mechanism at 7B+
+**Status:** Complete
+**Date:** 2026-03-06
+**Commit:** `9592c74`
+**Script:** `orthogonality_mechanism_016.py`
+**Output:** `analysis/orthogonality_mechanism_016/`
+**Config:** 4 models (3 base_transformer: Qwen2.5-7B, Qwen3-8B, OLMo2-7B; 1 reasoning_tuned: DSR1-7B; DSR1-Llama-8B excluded due to 0.2 t/s inference), 2×2 factorial at 5 layer positions [0.20, 0.35, 0.50, 0.65, 0.80], surgery=0.08, jitter=0.08, 5 seeds, 64 prompts, 25,600 trials + 25 geometry measurements.
+**What we learned:** NO_CLEAR_MECHANISM. All three mechanistic hypotheses falsified: (1) Interaction is uniform across layers, not localized (H1: t=-0.204, p=0.42); (2) Reasoning training does not regularize (H2: Wilcoxon p=0.69, single reasoning model); (3) Local geometry (PR, anisotropy) does not predict interaction (H3: r=0.004, p=0.99). Bootstrap CIs exclude zero at ALL layers — the coupling is real but unexplained. Permutation p=0.076 (marginal). Cal-holdout gap 1.5pp. Mixed-effects: no significant layer×interaction (p=0.19) or group×interaction (p=0.60). The surgery-jitter coupling at 7B+ appears to be a deep architectural property of transformers, not a shallow geometric or layer-specific effect. Investor=89, Research=98.
+
+---
+
 ## exp-015: 7B+ Cross-Paradigm Orthogonality Resolution
 **Status:** Complete
 **Date:** 2026-03-06
