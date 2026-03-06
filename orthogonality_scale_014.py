@@ -55,21 +55,20 @@ MAX_NEW_TOKENS = 10
 # Batch size by paradigm (conservative for VRAM on RTX 5090 25.7GB)
 BATCH_SIZES = {"transformer": 4, "ssm": 4, "hybrid": 1, "reasoning": 1}
 
-# ── Model registry (7B+ panel) ──────────────────────────────────────────
+# ── Model registry (7B+ panel, ordered cached-first) ────────────────────
 MODELS: List[Tuple[str, str, str, float]] = [
+    # Cached transformers (done or fast startup)
     ("Qwen/Qwen2.5-7B", "Qwen2.5-7B", "transformer", 7.0),
-    ("meta-llama/Llama-3.1-8B-Instruct", "Llama3.1-8B", "transformer", 8.0),
-    ("tiiuae/falcon-mamba-7b", "FalconMamba-7B", "ssm", 7.0),
-    ("tiiuae/falcon-mamba-7b-instruct", "FalconMamba-7B-I", "ssm", 7.0),
-    ("tiiuae/Falcon-H1-7B-Instruct", "FalconH1-7B", "hybrid", 7.0),
-    ("Zyphra/Zamba2-7B", "Zamba2-7B", "hybrid", 7.0),
+    ("Qwen/Qwen3-8B", "Qwen3-8B", "transformer", 8.0),
+    ("allenai/OLMo-2-1124-7B", "OLMo2-7B", "transformer", 7.0),
+    # Cached reasoning
     ("deepseek-ai/DeepSeek-R1-Distill-Qwen-7B", "DSR1-7B", "reasoning", 7.0),
     ("deepseek-ai/DeepSeek-R1-Distill-Llama-8B", "DSR1-Llama-8B", "reasoning", 8.0),
-]
-
-BACKUP_MODELS: List[Tuple[str, str, str, float]] = [
-    ("Qwen/Qwen3-8B", "Qwen3-8B", "transformer", 8.0),
-    ("togethercomputer/StripedHyena-Nous-7B", "StripedHyena-7B", "hybrid", 7.0),
+    # SSM — cached RWKV7 variant
+    ("RWKV-Red-Team/ARWKV-R1-7B", "ARWKV-R1-7B", "ssm", 7.0),
+    # Models needing download
+    ("Zyphra/Zamba2-7B-Instruct", "Zamba2-7B-I", "hybrid", 7.0),
+    ("tiiuae/falcon-mamba-7b", "FalconMamba-7B", "ssm", 7.0),
 ]
 
 # ── Prompts: 64 total (32 cal + 32 holdout) ─────────────────────────────
@@ -840,6 +839,11 @@ def _scale_moderation_meta(model_int_df: pd.DataFrame, tables_dir: Path) -> Dict
     for exp_id, csv_path in prior_paths:
         if csv_path.exists():
             prior_df = pd.read_csv(csv_path)
+            # Normalize column names: exp-012 uses 'surgery'/'jitter' (strings),
+            # exp-013 uses 'surgery_strength'/'jitter_strength' (float)
+            if "surgery" in prior_df.columns and "surgery_strength" not in prior_df.columns:
+                prior_df["surgery_strength"] = (prior_df["surgery"] != "control").astype(float)
+                prior_df["jitter_strength"] = (prior_df["jitter"] != "off").astype(float)
             for mn in prior_df["model_name"].unique():
                 mdf = prior_df[prior_df["model_name"] == mn]
                 paradigm = mdf["paradigm"].iloc[0]

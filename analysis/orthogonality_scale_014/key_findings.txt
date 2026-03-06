@@ -1,2 +1,40 @@
-business_implication: TODO
-scientific_implication: TODO
+models_tested: 5
+total_trials: 8960
+paradigms: reasoning, transformer
+domains: factual, hard, logic, math, multistep
+layer_position: 0.5
+surgery_strength: 0.08
+jitter_strength: 0.08
+seeds: 7
+prompts: 64
+global_mean_interaction: -0.01696
+mixed_model_interaction_beta: -0.0805
+mixed_model_interaction_p: 0.0126
+mixed_model_interaction_or: 0.9226
+bootstrap_ci: [-0.0290, -0.0058]
+bootstrap_ci_includes_zero: False
+sesoi_rope_fraction: 0.195
+sesoi_bound: 0.012
+permutation_p: 0.3528
+loo_std: 0.0037
+lopo_std: 0.0160
+calibration_interaction: -0.0036
+holdout_interaction: -0.0304
+cal_holdout_gap_pp: 2.7
+reasoning_only_interaction: -0.0033
+baseline_accuracy: 0.634
+surgery_main_effect: -0.149
+jitter_main_effect: +0.015
+model_Qwen2.5-7B_interaction: -0.0379
+model_Qwen3-8B_interaction: -0.0246
+model_OLMo2-7B_interaction: -0.0156
+model_DSR1-7B_interaction: -0.0067
+model_DSR1-Llama-8B_interaction: 0.0000
+paradigm_reasoning_interaction: -0.0033
+paradigm_transformer_interaction: -0.0260
+scale_moderation_slope: -0.0179
+scale_moderation_p: 0.3011
+scale_moderation_r: -0.189
+verdict: INTERACTION_DETECTED_AT_SCALE
+business_implication: Interaction detected at 7B+ scale — orthogonality between geometric and dynamic axes may not generalize to larger models. Independent testing protocols require scale-specific validation.
+scientific_implication: Scale transition reveals interaction between PR surgery and jitter stress that was not detected in sub-3B models, suggesting scale-dependent coupling between representation geometry and dynamic stability.

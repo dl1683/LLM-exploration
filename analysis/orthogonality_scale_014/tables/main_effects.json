@@ -1,0 +1,9 @@
+{
+  "baseline_accuracy": 0.634375,
+  "surgery_main_effect": -0.14910714285714288,
+  "jitter_main_effect": 0.01473214285714286,
+  "acc_control": 0.634375,
+  "acc_surgery_only": 0.48526785714285714,
+  "acc_jitter_only": 0.6491071428571429,
+  "acc_both": 0.4830357142857143
+}

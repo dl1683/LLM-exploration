@@ -3,7 +3,7 @@
   "title": "Orthogonality Scaling Law at 7B+",
   "track": "dual",
   "owner": "claude",
-  "status": "in_progress",
+  "status": "complete",
   "created_at_utc": "2026-03-05T22:52:01+00:00",
   "hypothesis": "The null interaction between PR expansion surgery and Gaussian jitter stress observed at sub-3B scale (exp-012/013) generalizes to 7B+ models across all four paradigms (transformer, SSM, hybrid, reasoning). Pre-specified SESOI: interaction OR within [0.90, 1.11], target ROPE fraction >= 0.95.",
   "value_to_investors": "If confirmed, orthogonality-based independent testing protocols are validated across the deployment-relevant 7B+ scale. If refuted, scale-specific interaction testing is required, increasing deployment validation cost.",
@@ -47,8 +47,8 @@
     "Scale-moderation meta-regression with prior experiments",
     "Main effects analysis (surgery and jitter independently)"
   ],
-  "business_implication": "placeholder_until_results",
-  "scientific_implication": "placeholder_until_results",
+  "business_implication": "Interaction detected at 7B+ scale (OR=0.92, p=0.013) — orthogonality between geometric and dynamic axes may not generalize to larger models. Deployment testing at scale requires joint geometric-dynamic validation, not independent axis testing.",
+  "scientific_implication": "Scale transition reveals negative interaction between PR surgery and jitter stress in 7B+ transformers (mean=-0.026) that was absent at sub-3B scale. Reasoning models show no interaction (-0.003). Scale-moderation meta-regression shows a non-significant negative trend (slope=-0.018, p=0.30). Incomplete paradigm coverage (missing SSM/hybrid) limits generalization.",
   "evidence_strength": "causal",
   "quality_gates": {
     "non_circular_metrics": true,

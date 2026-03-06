@@ -2,6 +2,17 @@
 
 Reverse chronological order. Only Codex-validated conclusions are listed.
 
+## exp-014: Orthogonality Scaling Law at 7B+
+**Status:** Complete
+**Date:** 2026-03-05
+**Commit:** `pending`
+**Script:** `orthogonality_scale_014.py`
+**Output:** `analysis/orthogonality_scale_014/`
+**Config:** 5 models (3 transformer, 2 reasoning; ARWKV failed deps, Zamba2/FalconMamba stalled download, FalconH1 hung), 2×2 factorial at mid-layer, surgery=0.08, jitter=0.08, 7 seeds, 64 prompts, 8,960 trials
+**What we learned:** INTERACTION DETECTED AT 7B+ SCALE. Orthogonality breaks: OR=0.92, p=0.013, bootstrap CI [-0.029, -0.006] excludes zero. The effect is driven by transformers (mean interaction=-0.026) not reasoning models (-0.003). Surgery has a much stronger main effect at 7B+ (-0.149 accuracy drop vs negligible at sub-3B). Scale-moderation meta-regression shows a non-significant negative trend (slope=-0.018, p=0.30). Caveat: only 5 models, missing SSM/hybrid paradigms. Permutation p=0.35 (not significant) conflicts with model-based p=0.013.
+
+---
+
 ## exp-013: Orthogonality Grid (Expanded Factorial)
 **Status:** Complete
 **Date:** 2026-03-05

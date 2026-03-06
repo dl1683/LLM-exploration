@@ -1,0 +1,20 @@
+{
+  "coef_intercept": -7.147840412467516,
+  "se_intercept": 14.713011938748975,
+  "coef_surgery_bin": -0.6789260484626163,
+  "se_surgery_bin": 0.5523075599337318,
+  "coef_jitter_bin": 0.07051695186953823,
+  "se_jitter_bin": 0.04032995227773607,
+  "coef_interaction": -0.08053783840841255,
+  "se_interaction": 0.03229406879820773,
+  "coef_domain_bin": -1.3238900621609562,
+  "se_domain_bin": 0.3428457925296172,
+  "coef_log10_params": 9.903868569088038,
+  "se_log10_params": 16.792577809654436,
+  "interaction_beta": -0.08053783840841255,
+  "interaction_se": 0.03229406879820773,
+  "interaction_z": -2.4938894789523167,
+  "interaction_p": 0.01263518796461928,
+  "interaction_or": 0.922619992451186,
+  "method": "Logit_ClusterRobust"
+}
