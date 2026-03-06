@@ -1,0 +1,79 @@
+{
+  "analysis_id": "orthogonality-submodule-017",
+  "title": "Submodule Locus of 7B+ Coupling",
+  "track": "dual",
+  "owner": "claude",
+  "status": "in_progress",
+  "created_at_utc": "2026-03-06T08:15:33+00:00",
+  "hypothesis": "The 7B+ surgery x jitter coupling (confirmed in exp-014/015/016 but mechanism-unresolved) is carried by a specific transformer submodule pathway: most likely the attention/residual branch rather than the MLP branch. Exp-016 ruled out layer localization, training regularization, and geometric prediction.",
+  "value_to_investors": "Determines which transformer submodule carries the coupling. If attention-localized, deployment perturbation testing can focus on attention outputs. If MLP-localized, MLP monitoring suffices. If residual integration, full-block testing required. Directly informs testing protocol efficiency.",
+  "value_to_researchers": "First submodule decomposition of the 7B+ surgery-jitter interaction. Tests three pathway hypotheses (attention, MLP, residual integration) with 30,720 factorial trials, wild-cluster bootstrap (exact enumeration), and branch diagnostic measurements. Connects perturbation effects to specific computational pathways.",
+  "identification_strategy": "Same 2x2 factorial as exp-014/015/016 (surgery=0.08, jitter=0.08) applied at 3 hook targets (full block output, self_attn output, mlp output) x 2 layer positions [0.50, 0.80]. 4 models (3 base_transformer, 1 reasoning_tuned). Phase 1: 30,720 factorial trials. Phase 2: clean branch diagnostics (norms, cosine alignment). Interaction computed per model x layer x target. Wild-cluster bootstrap for p-values. Model-clustered bootstrap for CIs.",
+  "falsification_tests": [
+    "If self_attn shows no significant interaction (CI includes zero), H1 (attention path) is falsified",
+    "If mlp shows no significant interaction (CI includes zero), H2 (MLP path) is falsified",
+    "If both branches show significant interaction individually, clean separation is not possible",
+    "If calibration-holdout gap > 5pp, prompt-level overfitting is present"
+  ],
+  "success_criteria": [
+    "All 4 models complete (all cached, no downloads needed)",
+    "Clear verdict: ATTENTION_PATH_COUPLING, MLP_PATH_COUPLING, RESIDUAL_STREAM_INTEGRATION, GENERIC_BLOCK_COUPLING, or STOP_MECHANISM_CHASING",
+    "At least one target shows distinct behavior from others",
+    "Branch diagnostics collected at all 8 model-layer positions",
+    "Cal-holdout gap < 5pp"
+  ],
+  "data_lineage": [
+    {
+      "source": "HuggingFace Hub models (all pre-cached from exp-014/015/016)",
+      "provenance": "4 models at 7B+ (3 base transformer, 1 reasoning-tuned transformer), NF4 quantized via bitsandbytes on RTX 5090 Laptop (23.9GB VRAM). All models cached locally from prior experiments.",
+      "transformations": "Phase 1: Forward pass with hook-based hidden-state perturbation at 3 submodule targets (block, self_attn, mlp) x 2 layer positions, greedy decoding (max_new_tokens=10), strict answer parsing. Phase 2: Clean forward pass with branch capture hooks measuring output norms and cosine alignment."
+    }
+  ],
+  "out_of_sample_validation_plan": "32 calibration prompts used for analysis tuning; 32 holdout prompts reserved for final validation. Interaction computed on both splits per target with divergence check.",
+  "uncertainty_methods": [
+    "Wild-cluster bootstrap (exact enumeration of 2^4=16 sign combinations)",
+    "Model-clustered bootstrap CIs (5000 resamples)",
+    "Within-model permutation (5000 shuffles, sensitivity only)",
+    "Leave-one-model-out sensitivity per target",
+    "Cal vs holdout split comparison per target"
+  ],
+  "robustness_checks": [
+    "Per-model interaction profiles across targets",
+    "LOO sensitivity per target",
+    "Mixed-effects logistic regression with target x interaction terms",
+    "Mid-layer (primary) vs late-layer (confirmation) consistency",
+    "Branch diagnostics as covariates",
+    "Calibration vs holdout split comparison"
+  ],
+  "business_implication": "IN_PROGRESS",
+  "scientific_implication": "IN_PROGRESS",
+  "evidence_strength": "causal",
+  "quality_gates": {
+    "non_circular_metrics": true,
+    "causal_design_matches_claim": true,
+    "out_of_sample_validation": true,
+    "uncertainty_reported": true,
+    "robustness_checks": true,
+    "reproducible_pipeline": true
+  },
+  "rubric": {
+    "investor": {
+      "actionability": 5,
+      "deployment_relevance": 5,
+      "cost_signal": 4,
+      "adoption_signal": 3,
+      "timeliness": 4,
+      "data_quality": 5,
+      "identification_strength": 5
+    },
+    "research": {
+      "novelty": 5,
+      "theoretical_depth": 5,
+      "measurement_quality": 5,
+      "causal_identification": 5,
+      "robustness": 5,
+      "reproducibility": 5,
+      "generality": 4
+    }
+  }
+}
